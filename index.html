@@ -1,70 +1,259 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Regolamento | Sud Italy RP</title>
+    <title>Sud Italy RP | Regolamento</title>
 
+    <meta name="description" content="Regolamento ufficiale del server Sud Italy RP">
+
+    <link rel="icon" href="assets/favicon.ico">
+
+    <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
 </head>
 
 <body>
 
-<nav class="navbar">
+<header>
 
-    <a href="#" class="brand">
-        <img src="assets/logo.png" alt="Sud Italy RP" class="logo">
-    </a>
+    <nav class="navbar">
 
-    <div class="nav-links">
-        <a href="#regolamento">Regolamento</a>
-        <a href="#">Discord</a>
-    </div>
+        <a href="#" class="brand">
 
-</nav>
+            <img src="assets/logo.png" alt="Sud Italy RP">
 
-<header class="hero">
+            <span>Sud Italy RP</span>
 
-    <div class="overlay"></div>
+        </a>
+
+        <div class="nav-menu">
+
+            <a href="#home">Home</a>
+
+            <a href="#regolamento">Regolamento</a>
+
+            <a href="#faq">FAQ</a>
+
+            <a href="#" class="discord">
+
+                <i class="fab fa-discord"></i>
+
+                Discord
+
+            </a>
+
+            <button id="theme-toggle">
+
+                <i class="fa-solid fa-moon"></i>
+
+            </button>
+
+        </div>
+
+    </nav>
+
+</header>
+
+<section id="home" class="hero">
+
+    <div class="hero-overlay"></div>
 
     <div class="hero-content">
 
         <h1>Regolamento Ufficiale</h1>
 
         <p>
-            Benvenuto nel regolamento ufficiale di Sud Italy RP.
-            Leggi attentamente tutte le regole prima di entrare nel server.
+
+            Consulta il regolamento ufficiale del server Sud Italy RP.
+            Rimani sempre aggiornato sulle modifiche e sulle nuove regole.
+
         </p>
 
-        <a href="#regolamento" class="btn">
-            Leggi il Regolamento
-        </a>
+        <div class="hero-buttons">
+
+            <a href="#regolamento" class="primary">
+
+                <i class="fa-solid fa-book"></i>
+
+                Leggi il regolamento
+
+            </a>
+
+            <a href="#" class="secondary">
+
+                <i class="fab fa-discord"></i>
+
+                Entra nel Discord
+
+            </a>
+
+        </div>
 
     </div>
 
-</header>
+</section>
 
-<main id="regolamento">
+<section id="regolamento" class="layout">
 
-    <section class="section">
+    <aside class="sidebar">
 
-        <h2>Benvenuto</h2>
+        <h3>Categorie</h3>
 
-        <p>
-            Qui verrà inserito il regolamento del server.
-        </p>
+        <ul>
 
-    </section>
+            <li><a href="#generali">📖 Regole Generali</a></li>
 
-</main>
+            <li><a href="#rp">🎭 Roleplay</a></li>
 
-<script src="js/script.js"></script>
+            <li><a href="#economia">💰 Economia</a></li>
+
+            <li><a href="#veicoli">🚗 Veicoli</a></li>
+
+            <li><a href="#crimine">🔫 Criminalità</a></li>
+
+            <li><a href="#staff">👮 Staff</a></li>
+
+            <li><a href="#ban">⚖️ Sanzioni</a></li>
+
+        </ul>
+
+    </aside>
+
+    <main class="content">
+
+        <div class="search-box">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+                type="text"
+                id="search"
+                placeholder="Cerca nel regolamento...">
+
+        </div>
+
+        <section class="card" id="generali">
+
+            <h2>📖 Regole Generali</h2>
+
+            <p>
+
+                Qui verranno inseriti gli articoli del regolamento.
+
+            </p>
+
+        </section>
+
+        <section class="card" id="rp">
+
+            <h2>🎭 Roleplay</h2>
+
+            <p>
+
+                Contenuto...
+
+            </p>
+
+        </section>
+
+        <section class="card" id="economia">
+
+            <h2>💰 Economia</h2>
+
+            <p>
+
+                Contenuto...
+
+            </p>
+
+        </section>
+
+        <section class="card" id="veicoli">
+
+            <h2>🚗 Veicoli</h2>
+
+            <p>
+
+                Contenuto...
+
+            </p>
+
+        </section>
+
+        <section class="card" id="crimine">
+
+            <h2>🔫 Criminalità</h2>
+
+            <p>
+
+                Contenuto...
+
+            </p>
+
+        </section>
+
+        <section class="card" id="staff">
+
+            <h2>👮 Staff</h2>
+
+            <p>
+
+                Contenuto...
+
+            </p>
+
+        </section>
+
+        <section class="card" id="ban">
+
+            <h2>⚖️ Sanzioni</h2>
+
+            <p>
+
+                Contenuto...
+
+            </p>
+
+        </section>
+
+    </main>
+
+</section>
+
+<footer>
+
+    <p>
+
+        © 2026 Sud Italy RP • Tutti i diritti riservati
+
+    </p>
+
+</footer>
+
+<button id="topButton">
+
+    <i class="fa-solid fa-arrow-up"></i>
+
+</button>
+
+<script src="js/app.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/search.js"></script>
 
 </body>
-      </html>
+
+                </html>
