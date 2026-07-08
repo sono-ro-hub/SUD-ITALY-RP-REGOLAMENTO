@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sud Italy RP | Sito Ufficiale</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#0b0b0b;
+color:#fff;
+overflow-x:hidden;
+}
+
+.page{
+display:none;
+min-height:100vh;
+animation:fade .5s;
+}
+
+.page.active{
+display:block;
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:70px 8%;
+text-align:center;
+background:
+linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.88)),
+url("https://cdn.discordapp.com/attachments/1420059113462960229/1524493311598137414/file_00000000afbc7230a86542c26c19021e.png?ex=6a4ff289&is=6a4ea109&hm=86257359e5ff10b9cc37f11aa61a6c6813326d6fbfb2799056333f390eb2ee85&")
+center center/cover no-repeat;
+}
+
+.content{
+width:100%;
+max-width:1250px;
+}
+
+.content h1{
+font-size:70px;
+font-weight:800;
+color:#d4af37;
+margin-bottom:25px;
+text-shadow:0 0 25px rgba(212,175,55,.5);
+}
+
+.content p{
+font-size:22px;
+line-height:2;
+color:#f0f0f0;
+max-width:1000px;
+margin:0 auto 55px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(290px,1fr));
+gap:30px;
+margin-top:30px;
+}
+
+.card{
+background:rgba(15,15,15,.88);
+backdrop-filter:blur(8px);
+padding:35px;
+border-radius:20px;
+border:1px solid rgba(212,175,55,.15);
+transition:.35s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+border-color:#d4af37;
+box-shadow:0 0 30px rgba(212,175,55,.25);
+}
+
+.card h3{
+color:#d4af37;
+margin-bottom:18px;
+font-size:25px;
+}
+
+.card p,
+.card li{
+color:#ddd;
+line-height:1.9;
+}
+
+.card ul{
+padding-left:20px;
+}
+
+.buttons{
+margin-top:60px;
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:18px 42px;
+border-radius:50px;
+font-size:17px;
+font-weight:700;
+cursor:pointer;
+text-decoration:none;
+transition:.3s;
+}
+
+.discord{
+background:#d4af37;
+color:#000;
+}
+
+.discord:hover{
+transform:translateY(-5px);
+box-shadow:0 0 30px #d4af37;
+}
+
+.secondary{
+background:transparent;
+border:2px solid #d4af37;
+color:#fff;
+}
+
+.secondary:hover{
+background:#d4af37;
+color:#000;
+}
+
+footer{
+background:#050505;
+padding:50px;
+text-align:center;
+border-top:1px solid #222;
+color:#888;
+}
+
+footer h2{
+color:#d4af37;
+margin-bottom:15px;
+}
+
+@media(max-width:768px){
+
+.content h1{
+font-size:42px;
+}
+
+.content p{
+font-size:18px;
+}
+
+.buttons{
+flex-direction:column;
+}
+
+.btn{
+width:100%;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+     <!-- =========================
+          HOME
+========================= -->
+
+<section id="home" class="page active">
+
+<div class="hero">
+
+<div class="content">
+
+<h1>SUD ITALY RP 🇮🇹</h1>
+
+<p>
+
+Benvenuti su <strong>Sud Italy RP</strong>.
+
+Una community italiana dedicata al Roleplay su Emergency Hamburg.
+
+Vivi un'esperienza seria, realistica e coinvolgente insieme alla nostra community.
+
+</p>
+
+<div class="buttons">
+
+<a class="btn discord"
+href="https://discord.gg/sud-italy-rp-eh-v-1-1402407968879808656"
+target="_blank">
+
+🚀 ENTRA NEL DISCORD
+
+</a>
+
+<button class="btn secondary"
+onclick="showPage('game')">
+
+📜 REGOLAMENTO GAME
+
+</button>
+
+<button class="btn secondary"
+onclick="showPage('discord')">
+
+💬 REGOLAMENTO DISCORD
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+      PRESENTAZIONE
+========================= -->
+
+<section style="padding:100px 8%;background:#0d0d0d;">
+
+<div class="content">
+
+<h1 style="font-size:55px;">
+Benvenuti su Sud Italy RP 🇮🇹
+</h1>
+
+<p>
+
+Sud Italy RP è una community italiana dedicata al Roleplay su Emergency Hamburg.
+
+Il nostro obiettivo è offrire un'esperienza seria, realistica e divertente, dove ogni giocatore possa sentirsi parte di una vera città.
+
+</p>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>👥 Chi siamo</h3>
+
+<p>
+
+Siamo una community costruita dalla passione per il Roleplay.
+
+Ogni giorno lavoriamo per migliorare il server e offrire un'esperienza sempre più coinvolgente.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>🚓 Lavori Disponibili</h3>
+
+<ul>
+
+<li>Polizia di Stato</li>
+<li>Polizia Locale</li>
+<li>NOCS</li>
+<li>UOPI</li>
+<li>Carabinieri</li>
+<li>GIS</li>
+<li>Guardia di Finanza</li>
+<li>GICO</li>
+<li>Militare</li>
+<li>Medico</li>
+<li>Vigili del Fuoco</li>
+<li>HARS</li>
+<li>Bus Training</li>
+<li>Camionista</li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>💬 Discord</h3>
+
+<p>
+
+✔ Supporto<br>
+✔ Ticket<br>
+✔ Eventi<br>
+✔ Annunci<br>
+✔ Chat Vocali<br>
+✔ Canali dedicati alle fazioni
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>🆘 Supporto</h3>
+
+<p>
+
+Hai bisogno di aiuto?
+
+Contatta uno Staff Member oppure apri un Ticket nel nostro Discord.
+
+Riceverai assistenza il prima possibile.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+            </section>
+            <!-- =========================
+     PAGINA REGOLAMENTO GAME
+========================= -->
+
+<section id="game" class="page">
+
+<div class="hero">
+
+<div class="content">
+
+<h1>📜 REGOLAMENTO GAME</h1>
+
+<p>
+Per garantire un’esperienza RP corretta ed equilibrata, entrando nel server si accettano automaticamente tutte le regole presenti in questo regolamento.
+</p>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>1. Comportamento RP scorretto</h3>
+
+<p>
+
+<b>Fail RP (FRP):</b> Azioni irrealistiche o incoerenti.<br><br>
+
+<b>No Fear:</b> Ignorare la paura in situazioni pericolose.<br><br>
+
+<b>Powergaming (PG):</b> Azioni impossibili o personaggio troppo forte.<br><br>
+
+<b>Revenge Kill (RK):</b> Tornare per vendetta senza motivo RP.<br><br>
+
+<b>Random Deathmatch (RDM):</b> Uccidere senza motivo RP.<br><br>
+
+<b>Vehicle Deathmatch (VDM):</b> Investire o uccidere con veicoli.<br><br>
+
+<b>Cuff-Rush:</b> Arrestare senza contesto RP.<br><br>
+
+<b>Combat Logging:</b> Uscire durante una scena RP.<br><br>
+
+<b>No Crash:</b> Ignorare incidenti realistici.<br><br>
+
+<b>VIETATO USARE GLI STOP STICK.</b><br><br>
+
+<b>VIETATO USARE BOMBE E C4. BAN PERMANENTE.</b><br><br>
+
+<b>VIETATO USARE FLASHBANG E GPS.</b><br><br>
+
+<b>1v1 CONSENTITI NELLE ZONE RDM.</b>
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>2. Abusi verso altri giocatori</h3>
+
+<p>
+
+• Bunny Hopping: Saltare continuamente per vantaggi.<br><br>
+
+• Car-Surf: Stare sopra veicoli senza motivo RP.<br><br>
+
+• Cop Baiting: Provocare la polizia inutilmente.<br><br>
+
+• Cop Evading: Fuggire dalla polizia in modo non realistico o abusivo.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>3. Violazioni OOC</h3>
+
+<p>
+
+• Metagaming: Usare informazioni esterne nel gioco.<br><br>
+
+• MixChat: Mischiare IC e OOC.<br><br>
+
+• LTAA: Disconnettersi per evitare arresti.<br><br>
+
+• Stream Sniping: Usare live per disturbare altri.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>4. Safe Zone</h3>
+
+<p>
+
+Questura<br>
+Caserma Vigili del Fuoco<br>
+Ospedale<br>
+Tuning<br>
+Prigione<br>
+Zone Militari FDO e NOCS<br>
+Ville<br><br>
+
+<b>Se entrate in zone militari riservate sarete arrestati immediatamente.</b><br><br>
+
+Le scene iniziate fuori Safe-Zone possono continuare all’interno.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>5. Extra / Regole Generali</h3>
+
+<p>
+
+Sponsor: Ban permanente e blacklist.<br><br>
+
+Flame: Insulti gravi verso altri utenti.<br><br>
+
+Respawn: Morire definitivamente.<br><br>
+
+Se un medico vi cura siete solamente feriti e la polizia può arrestarvi da terra.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>6. Norme per le Gang</h3>
+
+<p>
+
+Vietato insultare nelle ville delle altre gang.<br><br>
+
+Vietato fare RDM tra membri della stessa gang.<br><br>
+
+1vs1 consentiti solo vicino alla zona HARS.<br><br>
+
+I poliziotti non possono arrestare durante i 1vs1.<br><br>
+
+Ville e ghetti sono Safe-Zone.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>7. Norme Rapine</h3>
+
+<p>
+
+Farm Shop: 2 rapinatori + ostaggio | max 4.000$<br><br>
+
+Gioielleria e Banca: non ce max police | ostaggi max<br><br>
+
+Club: 5 rapinatori | max 8.000$<br><br>
+
+Gas-N-Go / Fuel / Tool Shop: max 2 rapinatori<br><br>
+
+Tutte le rapine devono rispettare le regole RP.<br><br>
+
+Ogni abuso comporterà sanzioni.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="buttons">
+
+<button class="btn secondary" onclick="showPage('home')">
+
+⬅ TORNA ALLA HOME
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<!-- =========================
+     PAGINA REGOLAMENTO DISCORD
+========================= -->
+
+<section id="discord" class="page">
+
+<div class="hero">
+
+<div class="content">
+
+<h1>💬 REGOLAMENTO DISCORD</h1>
+
+<p>
+Nel nostro Discord è obbligatorio mantenere un comportamento rispettoso verso tutti.
+</p>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>1. Rispetto Generale</h3>
+
+<p>
+
+È severamente vietato insultare le mamme o i familiari di altri utenti.<br><br>
+
+<b>Punizione:</b> Ban permanente dal server e da Discord.<br><br>
+
+È vietato insultare o mancare di rispetto tra staff e cittadini.<br><br>
+
+È obbligatorio mantenere un linguaggio educato in tutti i canali.<br><br>
+
+È vietato divulgare informazioni personali di altri utenti.<br><br>
+
+È vietato inviare link malevoli.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>2. Linguaggio</h3>
+
+<p>
+
+È vietato usare parolacce nei canali Discord.<br><br>
+
+<b>Punizione:</b> Timeout da 1 minuto fino a 1 settimana.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>3. Gerarchia</h3>
+
+<p>
+
+È richiesto massimo rispetto verso i gradi più alti dello staff.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>4. Staff</h3>
+
+<p>
+
+È vietato chiedere di diventare Staff o Admin in chat o privato.<br><br>
+
+Esiste un canale apposito per le candidature.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>5. Ticket</h3>
+
+<p>
+
+Tutti i ticket senza risposta per 2–3 ore verranno chiusi automaticamente.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>© Copyright</h3>
+
+<p>
+
+© 2026 Tutti i diritti riservati.<br><br>
+
+Questo contenuto è protetto dalle leggi sul diritto d'autore.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="buttons">
+
+<button class="btn secondary" onclick="showPage('home')">
+
+⬅ TORNA ALLA HOME
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<h2>SUD ITALY RP</h2>
+
+<p>
+
+© 2026 Sud Italy RP<br><br>
+
+Tutti i diritti riservati.
+
+</p>
+
+</footer>
+
+<script>
+
+function showPage(id){
+
+document.querySelectorAll(".page").forEach(function(page){
+page.classList.remove("active");
+});
+
+document.getElementById(id).classList.add("active");
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+}
+
+showPage("home");
+
+</script>
+
+</body>
+  </html>
