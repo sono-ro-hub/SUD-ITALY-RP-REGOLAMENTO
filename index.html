@@ -4,7 +4,9 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Stesso layout del PC anche da telefono -->
+<meta name="viewport" content="width=1200">
 
 <title>Sud Italy RP | Sito Ufficiale</title>
 
@@ -54,7 +56,7 @@ transform:translateY(0);
 }
 
 /* =========================
-          HOME
+            HOME
 ========================= */
 
 .hero{
@@ -72,75 +74,62 @@ text-align:center;
 padding:70px 8%;
 
 background:
-
-linear-gradient(rgba(0,0,0,.18),rgba(0,0,0,.45)),
-
+linear-gradient(rgba(0,0,0,.15),rgba(0,0,0,.35)),
 url("https://cdn.discordapp.com/attachments/1420059113462960229/1524493311598137414/file_00000000afbc7230a86542c26c19021e.png?ex=6a4ff289&is=6a4ea109&hm=86257359e5ff10b9cc37f11aa61a6c6813326d6fbfb2799056333f390eb2ee85&");
 
-background-size:cover;
-
+background-size:90%;
 background-position:center;
-
 background-repeat:no-repeat;
+background-color:#090909;
 
 }
 
 .content{
 
 max-width:900px;
-
 margin:auto;
+padding:55px;
 
-background:rgba(0,0,0,.35);
+background:rgba(0,0,0,.45);
 
-backdrop-filter:blur(8px);
-
-padding:50px;
+backdrop-filter:blur(10px);
 
 border-radius:30px;
 
 border:1px solid rgba(255,255,255,.10);
 
+box-shadow:0 0 40px rgba(0,0,0,.4);
+
 }
 
 .content h1{
 
-font-size:72px;
-
+font-size:70px;
 font-weight:800;
-
 color:#FFD54A;
-
 margin-bottom:25px;
-
-text-shadow:0 0 30px rgba(255,213,74,.8);
+text-shadow:0 0 25px rgba(255,213,74,.8);
 
 }
 
 .content p{
 
 font-size:22px;
-
 line-height:1.9;
-
-color:#fff;
-
+color:#f5f5f5;
 margin-bottom:45px;
 
 }
 
 /* =========================
-         BOTTONI
+           BOTTONI
 ========================= */
 
 .buttons{
 
 display:flex;
-
 justify-content:center;
-
 gap:20px;
-
 flex-wrap:wrap;
 
 }
@@ -168,14 +157,13 @@ transition:.35s;
 .discord{
 
 background:#FFD54A;
-
 color:#000;
 
 }
 
 .discord:hover{
 
-transform:translateY(-6px) scale(1.05);
+transform:translateY(-6px);
 
 box-shadow:0 0 35px rgba(255,213,74,.8);
 
@@ -204,7 +192,7 @@ box-shadow:0 0 35px rgba(255,213,74,.8);
 }
 
 /* =========================
-        PAGINE
+          PAGINE
 ========================= */
 
 .section{
@@ -214,15 +202,11 @@ min-height:100vh;
 padding:90px 8%;
 
 background:
-
-linear-gradient(rgba(15,15,15,.82),rgba(20,20,20,.82)),
-
+linear-gradient(rgba(20,20,20,.75),rgba(20,20,20,.75)),
 url("https://cdn.discordapp.com/attachments/1420059113462960229/1524493311598137414/file_00000000afbc7230a86542c26c19021e.png?ex=6a4ff289&is=6a4ea109&hm=86257359e5ff10b9cc37f11aa61a6c6813326d6fbfb2799056333f390eb2ee85&");
 
 background-size:cover;
-
 background-position:center;
-
 background-attachment:fixed;
 
 }
@@ -230,13 +214,9 @@ background-attachment:fixed;
 .section-title{
 
 font-size:52px;
-
 text-align:center;
-
 color:#FFD54A;
-
 margin-bottom:25px;
-
 text-shadow:0 0 20px rgba(255,213,74,.8);
 
 }
@@ -244,15 +224,10 @@ text-shadow:0 0 20px rgba(255,213,74,.8);
 .section-text{
 
 max-width:900px;
-
 margin:auto;
-
 text-align:center;
-
 font-size:20px;
-
 line-height:2;
-
 color:#eee;
 
 }
@@ -271,7 +246,7 @@ margin-top:50px;
 
 .card{
 
-background:rgba(20,20,20,.78);
+background:rgba(25,25,25,.82);
 
 backdrop-filter:blur(12px);
 
@@ -283,7 +258,7 @@ padding:35px;
 
 transition:.35s;
 
-box-shadow:0 0 25px rgba(255,213,74,.10);
+box-shadow:0 0 25px rgba(255,213,74,.15);
 
 }
 
@@ -299,10 +274,7 @@ box-shadow:0 0 35px rgba(255,213,74,.35);
 
 .card h3{
 
-font-size:24px;
-
 color:#FFD54A;
-
 margin-bottom:18px;
 
 }
@@ -311,7 +283,6 @@ margin-bottom:18px;
 .card li{
 
 line-height:1.9;
-
 color:#f0f0f0;
 
 }
@@ -351,7 +322,6 @@ border-top:1px solid rgba(255,213,74,.2);
 footer h2{
 
 color:#FFD54A;
-
 margin-bottom:15px;
 
 }
@@ -362,52 +332,15 @@ color:#aaa;
 
 }
 
-@media(max-width:768px){
-
-.content{
-
-padding:30px 20px;
-
-}
-
-.content h1{
-
-font-size:42px;
-
-}
-
-.content p{
-
-font-size:18px;
-
-}
-
-.buttons{
-
-flex-direction:column;
-
-}
-
-.btn{
-
-width:100%;
-
-}
-
-.section-title{
-
-font-size:36px;
-
-}
-
-}
+/* Nessun @media:
+tutte le pagine avranno lo stesso layout del PC */
 
 </style>
 
 </head>
 
 <body>
-        <!-- =========================
+          <!-- =========================
             HOME
 ========================= -->
 
@@ -421,9 +354,13 @@ font-size:36px;
 
 <p>
 
-Benvenuti su <b>Sud Italy RP</b>.<br><br>
+Benvenuti su <strong>Sud Italy RP</strong>.
 
-Una community italiana dedicata al Roleplay su <b>Emergency Hamburg</b>.
+<br><br>
+
+Una community italiana dedicata al Roleplay su <strong>Emergency Hamburg</strong>.
+
+<br><br>
 
 Vivi un'esperienza seria, realistica e coinvolgente insieme alla nostra community.
 
@@ -440,6 +377,13 @@ target="_blank">
 </a>
 
 <button class="btn secondary"
+onclick="showPage('about')">
+
+❓ CHI SIAMO
+
+</button>
+
+<button class="btn secondary"
 onclick="showPage('game')">
 
 📜 REGOLAMENTO GAME
@@ -450,13 +394,6 @@ onclick="showPage('game')">
 onclick="showPage('discord')">
 
 💬 REGOLAMENTO DISCORD
-
-</button>
-
-<button class="btn secondary"
-onclick="showPage('about')">
-
-❓ CHI SIAMO
 
 </button>
 
@@ -500,7 +437,7 @@ Il nostro obiettivo è offrire un'esperienza seria, realistica e divertente, dov
 
 Siamo una community costruita dalla passione per il Roleplay.
 
-Ogni giorno lavoriamo per migliorare il server, organizzare eventi e offrire un'esperienza sempre più coinvolgente a tutti i nostri giocatori.
+Ogni giorno lavoriamo per migliorare il server e offrire un'esperienza sempre più coinvolgente.
 
 </p>
 
@@ -533,11 +470,11 @@ Ogni giorno lavoriamo per migliorare il server, organizzare eventi e offrire un'
 
 <div class="card">
 
-<h3>🚓 Discord FDO</h3>
+<h3>🚓 Discord Reparti FDO</h3>
 
 <p>
 
-Per entrare nei reparti delle Forze dell'Ordine è necessario accedere al server Discord dedicato.
+Per entrare nei reparti delle Forze dell'Ordine accedi al server dedicato.
 
 <br><br>
 
@@ -555,24 +492,35 @@ target="_blank">
 
 <div class="card">
 
-<h3>💬 Discord & Supporto</h3>
+<h3>💬 Supporto</h3>
 
 <p>
 
-Nel nostro Discord troverai:
+✔ Supporto Staff
 
-<br><br>
+<br>
 
-✔ Supporto Staff<br>
-✔ Sistema Ticket<br>
-✔ Eventi RP<br>
-✔ Annunci Ufficiali<br>
-✔ Chat Vocali<br>
+✔ Sistema Ticket
+
+<br>
+
+✔ Eventi RP
+
+<br>
+
+✔ Annunci
+
+<br>
+
+✔ Chat Vocali
+
+<br>
+
 ✔ Canali dedicati alle Fazioni
 
 <br><br>
 
-Hai bisogno di aiuto?
+Hai bisogno di assistenza?
 
 Apri un Ticket oppure contatta uno Staff Member.
 
@@ -595,9 +543,9 @@ onclick="showPage('home')">
 
 </div>
 
-</section>
-<!-- =========================
-     PAGINA REGOLAMENTO GAME
+          </section>
+          <!-- =========================
+      REGOLAMENTO GAME
 ========================= -->
 
 <section id="game" class="page">
@@ -610,50 +558,67 @@ onclick="showPage('home')">
 
 <p class="section-text">
 
-Per garantire un’esperienza RP corretta ed equilibrata, entrando nel server si accettano automaticamente tutte le regole presenti in questo regolamento.
+Per garantire un'esperienza RP seria e realistica, tutti i giocatori sono tenuti a rispettare il seguente regolamento.
 
 </p>
 
 <div class="card" style="max-width:1100px;margin:50px auto;text-align:left;">
 
-<h3>1️⃣ Comportamento RP scorretto</h3>
+<h3>1️⃣ Comportamento RP</h3>
 
 <ul>
 
-<li><b>Fail RP (FRP):</b> Azioni irrealistiche o incoerenti.</li>
-<li><b>No Fear:</b> Ignorare la paura in situazioni pericolose.</li>
-<li><b>Powergaming (PG):</b> Azioni impossibili o personaggio troppo forte.</li>
-<li><b>Revenge Kill (RK):</b> Tornare per vendetta senza motivo RP.</li>
-<li><b>Random Deathmatch (RDM):</b> Uccidere senza motivo RP.</li>
-<li><b>Vehicle Deathmatch (VDM):</b> Investire o uccidere con veicoli.</li>
-<li><b>Cuff-Rush:</b> Arrestare senza contesto RP.</li>
-<li><b>Combat Logging:</b> Uscire durante una scena RP.</li>
-<li><b>No Crash:</b> Ignorare incidenti realistici.</li>
+<li><strong>Fail RP (FRP):</strong> Azioni irrealistiche o prive di senso RP.</li>
+
+<li><strong>No Fear:</strong> Ignorare situazioni di pericolo.</li>
+
+<li><strong>Powergaming (PG):</strong> Compiere azioni impossibili nella realtà.</li>
+
+<li><strong>Revenge Kill (RK):</strong> Tornare per vendetta dopo la morte RP.</li>
+
+<li><strong>Random Deathmatch (RDM):</strong> Uccidere senza motivo RP.</li>
+
+<li><strong>Vehicle Deathmatch (VDM):</strong> Investire volontariamente altri giocatori.</li>
+
+<li><strong>Cuff Rush:</strong> Ammanettare senza una scena RP.</li>
+
+<li><strong>Combat Logging:</strong> Uscire dal server durante una scena.</li>
+
+<li><strong>No Crash:</strong> Ignorare gli incidenti stradali.</li>
 
 </ul>
 
-<div style="margin-top:25px;padding:20px;background:#8b0000;border-left:6px solid #ff4444;border-radius:12px;">
+<div style="margin-top:30px;padding:25px;background:#8b0000;border-left:6px solid #ff3b3b;border-radius:15px;">
 
-<b style="color:#fff;">🚫 VIETATO USARE GLI STOP STICK.</b><br><br>
+<h3 style="color:#fff;margin-bottom:15px;">🚫 DIVIETI ASSOLUTI</h3>
 
-<b style="color:#fff;">🚫 VIETATO USARE BOMBE E C4. BAN PERMANENTE.</b><br><br>
+<p style="color:#fff;line-height:2;">
 
-<b style="color:#fff;">🚫 VIETATO USARE FLASHBANG E GPS.</b><br><br>
+❌ Vietato utilizzare <strong>Stop Stick</strong>.<br>
 
-<b style="color:#fff;">⚔️ 1v1 CONSENTITI NELLE ZONE RDM.</b>
+❌ Vietato utilizzare <strong>Bombe e C4</strong> (Ban Permanente).<br>
+
+❌ Vietato utilizzare <strong>Flashbang</strong> e <strong>GPS</strong>.<br>
+
+✅ I combattimenti <strong>1vs1</strong> sono consentiti solo nelle zone dedicate.
+
+</p>
 
 </div>
 
 <hr>
 
-<h3>2️⃣ Abusi verso altri giocatori</h3>
+<h3>2️⃣ Abusi</h3>
 
 <ul>
 
-<li><b>Bunny Hopping:</b> Saltare continuamente per vantaggi.</li>
-<li><b>Car-Surf:</b> Stare sopra veicoli senza motivo RP.</li>
-<li><b>Cop Baiting:</b> Provocare la polizia inutilmente.</li>
-<li><b>Cop Evading:</b> Fuggire dalla polizia in modo non realistico o abusivo.</li>
+<li>Bunny Hopping.</li>
+
+<li>Car Surf.</li>
+
+<li>Cop Baiting.</li>
+
+<li>Cop Evading.</li>
 
 </ul>
 
@@ -663,10 +628,13 @@ Per garantire un’esperienza RP corretta ed equilibrata, entrando nel server si
 
 <ul>
 
-<li><b>Metagaming:</b> Usare informazioni esterne nel gioco.</li>
-<li><b>MixChat:</b> Mischiare IC e OOC.</li>
-<li><b>LTAA:</b> Disconnettersi per evitare arresti.</li>
-<li><b>Stream Sniping:</b> Usare live per disturbare altri.</li>
+<li>Metagaming.</li>
+
+<li>Mix Chat.</li>
+
+<li>LTAA.</li>
+
+<li>Stream Sniping.</li>
 
 </ul>
 
@@ -677,89 +645,86 @@ Per garantire un’esperienza RP corretta ed equilibrata, entrando nel server si
 <ul>
 
 <li>Questura</li>
-<li>Caserma Vigili del Fuoco</li>
+
 <li>Ospedale</li>
-<li>Tuning</li>
+
+<li>Caserma Vigili del Fuoco</li>
+
 <li>Prigione</li>
-<li>Zone Militari FDO e NOCS</li>
+
+<li>Tuning</li>
+
 <li>Ville</li>
+
+<li>Zone Militari</li>
 
 </ul>
 
-<div style="margin-top:20px;padding:18px;background:#1b1b1b;border-left:5px solid #FFD54A;border-radius:10px;">
+<div style="margin-top:25px;padding:20px;background:#1b1b1b;border-left:5px solid #FFD54A;border-radius:12px;">
 
-Se entrate in zone militari riservate sarete arrestati immediatamente.
+Le scene iniziate fuori dalla Safe Zone possono continuare al suo interno.
 
 <br><br>
 
-Le scene iniziate fuori Safe-Zone possono continuare all'interno.
+L'accesso alle aree militari senza autorizzazione comporterà l'arresto immediato.
 
 </div>
 
 <hr>
 
-<h3>5️⃣ Extra / Regole Generali</h3>
+<h3>5️⃣ Regole Generali</h3>
 
 <ul>
 
-<li>Sponsor: <b>Ban permanente e blacklist.</b></li>
-<li>Flame: Insulti gravi verso altri utenti.</li>
-<li>Respawn: Morire definitivamente.</li>
+<li>Sponsor ➜ Ban Permanente.</li>
+
+<li>Flame ➜ Punibile dallo Staff.</li>
+
+<li>Respawn ➜ Morte definitiva del personaggio.</li>
 
 </ul>
 
-<div style="margin-top:20px;padding:18px;background:#1b1b1b;border-left:5px solid #FFD54A;border-radius:10px;">
+<div style="margin-top:25px;padding:20px;background:#1b1b1b;border-left:5px solid #FFD54A;border-radius:12px;">
 
-Se un medico vi cura siete solamente feriti e la polizia può arrestarvi da terra.
+Se un medico ti rianima, il tuo personaggio risulta solamente ferito e può essere arrestato.
 
 </div>
 
 <hr>
 
-<h3>6️⃣ Norme per le Gang</h3>
+<h3>6️⃣ Gang</h3>
 
 <ul>
 
 <li>Vietato insultare nelle ville delle altre gang.</li>
+
 <li>Vietato fare RDM tra membri della stessa gang.</li>
-<li>1vs1 consentiti solo vicino alla zona HARS.</li>
-<li>I poliziotti non possono arrestare durante i 1vs1.</li>
-<li>Ville e ghetti sono Safe-Zone.</li>
+
+<li>I combattimenti 1vs1 sono consentiti solo nell'area HARS.</li>
+
+<li>Le ville e i ghetti sono considerati Safe Zone.</li>
 
 </ul>
 
 <hr>
 
-<h3>7️⃣ Norme Rapine</h3>
+<h3>7️⃣ Rapine</h3>
 
 <ul>
 
-<li>Farm Shop: 2 rapinatori + ostaggio | max 4.000$</li>
-<li>Gioielleria e Banca: non ce max police | ostaggi max</li>
-<li>Club: 5 rapinatori | max 8.000$</li>
-<li>Gas-N-Go / Fuel / Tool Shop: max 2 rapinatori</li>
+<li>Farm Shop ➜ 2 rapinatori + ostaggio.</li>
+
+<li>Club ➜ 5 rapinatori.</li>
+
+<li>Gas-N-Go / Fuel / Tool Shop ➜ massimo 2 rapinatori.</li>
+
+<li>Le rapine devono sempre rispettare il Roleplay.</li>
 
 </ul>
 
-<div style="margin-top:20px;padding:18px;background:#1b1b1b;border-left:5px solid #FFD54A;border-radius:10px;">
-
-Tutte le rapine devono rispettare le regole RP.
-
-<br><br>
-
-Ogni abuso comporterà sanzioni.
-
 </div>
 
-<div style="text-align:center;margin-top:40px;font-size:20px;color:#FFD54A;font-weight:700;">
-
-✨ SUD ITALY RP © 2026 - Tutti i diritti riservati ✨
-
-</div>
-
-</div>
-
-<div class="buttons" style="margin-top:50px;">
+<div class="buttons" style="margin-top:60px;">
 
 <button class="btn secondary" onclick="showPage('home')">
 
@@ -772,8 +737,8 @@ Ogni abuso comporterà sanzioni.
 </div>
 
 </section>
-<!-- =========================
-     PAGINA REGOLAMENTO DISCORD
+          <!-- =========================
+     REGOLAMENTO DISCORD
 ========================= -->
 
 <section id="discord" class="page">
@@ -786,7 +751,7 @@ Ogni abuso comporterà sanzioni.
 
 <p class="section-text">
 
-Per mantenere una community seria e rispettosa, tutti gli utenti sono tenuti a seguire il seguente regolamento.
+Per mantenere una community seria, organizzata e rispettosa, tutti gli utenti sono tenuti a seguire il seguente regolamento.
 
 </p>
 
@@ -796,19 +761,39 @@ Per mantenere una community seria e rispettosa, tutti gli utenti sono tenuti a s
 
 <ul>
 
-<li>È severamente vietato insultare le mamme o i familiari di altri utenti.</li>
-<li>È vietato insultare o mancare di rispetto tra Staff e cittadini.</li>
-<li>È obbligatorio mantenere un linguaggio educato in tutti i canali.</li>
-<li>È vietato divulgare informazioni personali di altri utenti.</li>
-<li>È vietato inviare link malevoli.</li>
+<li>È severamente vietato insultare familiari o altri utenti.</li>
+
+<li>Rispetta Staff, cittadini e tutti i membri della community.</li>
+
+<li>È vietato divulgare dati personali.</li>
+
+<li>È vietato inviare link dannosi o contenuti non consentiti.</li>
+
+<li>Mantieni sempre un linguaggio educato.</li>
 
 </ul>
 
-<div style="margin-top:20px;padding:20px;background:#8b0000;border-left:6px solid #ff4444;border-radius:12px;">
+<div style="margin-top:25px;padding:25px;background:#8b0000;border-left:6px solid #ff3b3b;border-radius:15px;">
 
-<b style="color:#fff;">
-🚫 Punizione: Ban permanente dal server e da Discord.
-</b>
+<h3 style="color:#fff;margin-bottom:15px;">🚫 SANZIONI</h3>
+
+<p style="color:#fff;line-height:2;">
+
+Le violazioni più gravi possono comportare:
+
+<br>
+
+• Timeout
+
+<br>
+
+• Kick
+
+<br>
+
+• Ban Permanente
+
+</p>
 
 </div>
 
@@ -818,64 +803,61 @@ Per mantenere una community seria e rispettosa, tutti gli utenti sono tenuti a s
 
 <ul>
 
-<li>È vietato usare parolacce nei canali Discord.</li>
+<li>Evita spam e flood.</li>
+
+<li>Evita bestemmie e linguaggio offensivo.</li>
+
+<li>Non disturbare gli altri utenti nei canali vocali.</li>
 
 </ul>
 
-<div style="margin-top:20px;padding:18px;background:#1b1b1b;border-left:5px solid #FFD54A;border-radius:10px;">
+<hr>
 
-Timeout da <b>1 minuto</b> fino a <b>1 settimana</b>.
+<h3>3️⃣ Staff</h3>
+
+<ul>
+
+<li>È vietato chiedere ruoli Staff.</li>
+
+<li>Le candidature vengono aperte solo quando necessario.</li>
+
+<li>Le decisioni dello Staff devono essere rispettate.</li>
+
+</ul>
+
+<hr>
+
+<h3>4️⃣ Ticket</h3>
+
+<ul>
+
+<li>Apri ticket solo se realmente necessario.</li>
+
+<li>Non aprire ticket multipli per lo stesso problema.</li>
+
+<li>Rispetta sempre lo Staff durante l'assistenza.</li>
+
+</ul>
+
+<div style="margin-top:25px;padding:20px;background:#1b1b1b;border-left:5px solid #FFD54A;border-radius:12px;">
+
+I ticket inattivi potranno essere chiusi automaticamente dallo Staff.
 
 </div>
 
 <hr>
 
-<h3>3️⃣ Gerarchia</h3>
+<div style="text-align:center;margin-top:40px;">
 
-<ul>
+<h3 style="color:#FFD54A;">
 
-<li>È richiesto il massimo rispetto verso i gradi più alti dello Staff.</li>
+Grazie per far parte di Sud Italy RP ❤️
 
-</ul>
+</h3>
 
-<hr>
+<p style="margin-top:15px;line-height:2;">
 
-<h3>4️⃣ Staff</h3>
-
-<ul>
-
-<li>È vietato chiedere di diventare Staff o Admin in chat o in privato.</li>
-<li>Esiste un canale dedicato alle candidature.</li>
-
-</ul>
-
-<hr>
-
-<h3>5️⃣ Ticket</h3>
-
-<ul>
-
-<li>Tutti i ticket senza risposta per 2–3 ore verranno chiusi automaticamente.</li>
-
-</ul>
-
-<div style="margin-top:20px;padding:18px;background:#1b1b1b;border-left:5px solid #FFD54A;border-radius:10px;">
-
-Apri un ticket solo quando è realmente necessario e rispetta sempre lo Staff durante l'assistenza.
-
-</div>
-
-<hr>
-
-<div style="text-align:center;margin-top:35px;">
-
-<p style="font-size:18px;line-height:2;">
-
-© 2026 Tutti i diritti riservati.
-
-<br><br>
-
-Questo contenuto è protetto dalle leggi sul diritto d'autore.
+Seguendo queste semplici regole aiuterai a mantenere una community seria, ordinata e divertente per tutti.
 
 </p>
 
@@ -883,9 +865,10 @@ Questo contenuto è protetto dalle leggi sul diritto d'autore.
 
 </div>
 
-<div class="buttons" style="margin-top:50px;">
+<div class="buttons" style="margin-top:60px;">
 
-<button class="btn secondary" onclick="showPage('home')">
+<button class="btn secondary"
+onclick="showPage('home')">
 
 ⬅ TORNA ALLA HOME
 
