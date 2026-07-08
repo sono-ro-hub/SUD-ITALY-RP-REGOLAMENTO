@@ -461,3 +461,61 @@ footer{
     box-shadow:0 10px 25px rgba(0,0,0,.35);
 
 }
+/* ==========================
+   LIGHT THEME
+========================== */
+
+body.light-theme{
+
+    background:#f4f6fb;
+    color:#111827;
+
+}
+
+body.light-theme .navbar{
+
+    background:rgba(255,255,255,.9);
+
+}
+
+body.light-theme .brand,
+body.light-theme .nav-menu a{
+
+    color:#111827;
+
+}
+
+body.light-theme .sidebar{
+
+    background:#ffffff;
+    border:1px solid #e5e7eb;
+
+}
+
+body.light-theme .card{
+
+    background:#ffffff;
+    border:1px solid #e5e7eb;
+
+}
+
+body.light-theme .search-box{
+
+    background:#ffffff;
+    border:1px solid #e5e7eb;
+
+}
+
+body.light-theme .search-box input{
+
+    color:#111827;
+
+}
+
+body.light-theme .card p,
+body.light-theme .hero p,
+body.light-theme footer{
+
+    color:#4b5563;
+
+   }
