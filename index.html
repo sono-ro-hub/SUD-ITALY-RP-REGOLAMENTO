@@ -1,258 +1,460 @@
 <!DOCTYPE html>
 <html lang="it">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Sud Italy RP | Regolamento</title>
+<title>Sud Italy RP | Sito Ufficiale</title>
 
-    <meta name="description" content="Regolamento ufficiale del server Sud Italy RP">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-    <link rel="icon" href="assets/favicon.ico">
+<style>
 
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+scroll-behavior:smooth;
+}
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+body{
+background:#090909;
+color:#fff;
+overflow-x:hidden;
+}
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:18px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(0,0,0,.55);
+backdrop-filter:blur(12px);
+z-index:999;
+border-bottom:1px solid rgba(212,175,55,.15);
+}
 
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
+.logo{
+font-size:28px;
+font-weight:800;
+color:#d4af37;
+letter-spacing:2px;
+}
 
+nav a{
+text-decoration:none;
+color:white;
+margin-left:25px;
+font-weight:500;
+transition:.3s;
+}
+
+nav a:hover{
+color:#d4af37;
+}
+
+.hero{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:0 20px;
+background:
+linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.88)),
+url("hero.jpg") center center/cover;
+}
+
+.hero h1{
+font-size:72px;
+font-weight:800;
+color:#d4af37;
+text-shadow:0 0 30px rgba(212,175,55,.4);
+margin-bottom:15px;
+}
+
+.hero p{
+font-size:22px;
+max-width:850px;
+margin:auto;
+line-height:1.8;
+color:#ddd;
+}
+
+.buttons{
+margin-top:45px;
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:16px 36px;
+border-radius:50px;
+font-weight:700;
+text-decoration:none;
+transition:.3s;
+}
+
+.discord{
+background:#d4af37;
+color:#000;
+}
+
+.discord:hover{
+transform:translateY(-5px);
+box-shadow:0 0 25px #d4af37;
+}
+
+.rules{
+border:2px solid #d4af37;
+color:white;
+}
+
+.rules:hover{
+background:#d4af37;
+color:black;
+}
+
+section{
+padding:100px 8%;
+}
+
+.title{
+text-align:center;
+font-size:42px;
+color:#d4af37;
+margin-bottom:30px;
+}
+
+.intro{
+max-width:1000px;
+margin:auto;
+font-size:18px;
+line-height:2;
+text-align:center;
+color:#ddd;
+}
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+margin-top:60px;
+}
+
+.feature{
+background:#111;
+border:1px solid #222;
+padding:35px;
+border-radius:20px;
+transition:.3s;
+}
+
+.feature:hover{
+transform:translateY(-8px);
+border-color:#d4af37;
+}
+
+.feature h3{
+margin:15px 0;
+color:#d4af37;
+font-size:22px;
+}
+
+.feature p{
+line-height:1.8;
+color:#ccc;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:42px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+nav{
+display:none;
+}
+
+}
+
+</style>
 </head>
 
 <body>
 
 <header>
 
-    <nav class="navbar">
+<div class="logo">
+SUD ITALY RP
+</div>
 
-        <a href="#" class="brand">
-
-            <img src="assets/logo.png" alt="Sud Italy RP">
-
-            <span>Sud Italy RP</span>
-
-        </a>
-
-        <div class="nav-menu">
-
-            <a href="#home">Home</a>
-
-            <a href="#regolamento">Regolamento</a>
-
-            <a href="#faq">FAQ</a>
-
-            <a href="#" class="discord">
-
-                <i class="fab fa-discord"></i>
-
-                Discord
-
-            </a>
-
-            <button id="theme-toggle">
-
-                <i class="fa-solid fa-moon"></i>
-
-            </button>
-
-        </div>
-
-    </nav>
+<nav>
+<a href="#home">Home</a>
+<a href="#about">Server</a>
+<a href="#discord">Discord</a>
+<a href="#rules">Regolamento</a>
+</nav>
 
 </header>
 
-<section id="home" class="hero">
+<section class="hero" id="home">
 
-    <div class="hero-overlay"></div>
+<div>
 
-    <div class="hero-content">
+<h1>SUD ITALY RP</h1>
 
-        <h1>Regolamento Ufficiale</h1>
+<p>
+La tua storia. La tua città. Il tuo Roleplay.
+Un'esperienza italiana immersiva, costruita per chi cerca qualità, realismo e una community attiva.
+</p>
 
-        <p>
+<div class="buttons">
 
-            Consulta il regolamento ufficiale del server Sud Italy RP.
-            Rimani sempre aggiornato sulle modifiche e sulle nuove regole.
+<a class="btn discord"
+href="https://discord.gg/sud-italy-rp-eh-v-1-1402407968879808656"
+target="_blank">
+ENTRA NEL DISCORD
+</a>
 
-        </p>
+<a class="btn rules"
+href="#rules">
+LEGGI IL REGOLAMENTO
+</a>
 
-        <div class="hero-buttons">
+</div>
 
-            <a href="#regolamento" class="primary">
-
-                <i class="fa-solid fa-book"></i>
-
-                Leggi il regolamento
-
-            </a>
-
-            <a href="#" class="secondary">
-
-                <i class="fab fa-discord"></i>
-
-                Entra nel Discord
-
-            </a>
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
-<section id="regolamento" class="layout">
+<section id="about">
 
-    <aside class="sidebar">
+<h2 class="title">
+Benvenuto su Sud Italy RP
+</h2>
 
-        <h3>Categorie</h3>
+<p class="intro">
 
-        <ul>
+Sud Italy RP nasce con l'obiettivo di offrire un'esperienza Roleplay realistica e coinvolgente, ambientata in un contesto italiano. Ogni giocatore ha la possibilità di creare la propria storia, costruire il proprio futuro e vivere un percorso unico all'interno della città.
 
-            <li><a href="#generali">📖 Regole Generali</a></li>
+La nostra community punta sul rispetto, sulla qualità delle scene RP e sulla collaborazione tra tutti i giocatori, garantendo un ambiente serio ma allo stesso tempo divertente.
 
-            <li><a href="#rp">🎭 Roleplay</a></li>
+</p>
 
-            <li><a href="#economia">💰 Economia</a></li>
+<div class="features">
 
-            <li><a href="#veicoli">🚗 Veicoli</a></li>
+<div class="feature">
 
-            <li><a href="#crimine">🔫 Criminalità</a></li>
+<h3>🎭 Serious Roleplay</h3>
 
-            <li><a href="#staff">👮 Staff</a></li>
+<p>
+Scene curate, interpretazione del personaggio e massimo rispetto del regolamento.
+</p>
 
-            <li><a href="#ban">⚖️ Sanzioni</a></li>
+</div>
 
-        </ul>
+<div class="feature">
 
-    </aside>
+<h3>🚔 Fazioni Ufficiali</h3>
 
-    <main class="content">
+<p>
+Polizia, EMS, aziende, organizzazioni criminali e tante opportunità di gioco.
+</p>
 
-        <div class="search-box">
-    <i class="fa-solid fa-magnifying-glass"></i>
+</div>
 
-    <input
-        type="search"
-        id="search"
-        placeholder="Cerca articoli, regole, parole chiave..."
-        autocomplete="off">
-        </div>
+<div class="feature">
 
-        <section class="card" id="generali">
+<h3>💼 Economia Dinamica</h3>
 
-            <h2>📖 Regole Generali</h2>
+<p>
+Lavora, apri un'attività, investi e costruisci il tuo patrimonio nel tempo.
+</p>
 
-            <p>
+</div>
 
-                Qui verranno inseriti gli articoli del regolamento.
+<div class="feature">
 
-            </p>
+<h3>🏙️ Community Attiva</h3>
 
-        </section>
+<p>
+Eventi, aggiornamenti frequenti e uno staff sempre disponibile ad aiutare i giocatori.
+</p>
 
-        <section class="card" id="rp">
+</div>
 
-            <h2>🎭 Roleplay</h2>
+</div>
 
-            <p>
+    </section>
+    <!-- DISCORD -->
 
-                Contenuto...
+<section id="discord">
 
-            </p>
+<h2 class="title">Unisciti alla Community</h2>
 
-        </section>
+<p class="intro">
+Il nostro server Discord è il punto di riferimento della community.
+Potrai richiedere assistenza, leggere gli annunci, aprire ticket,
+seguire gli aggiornamenti e completare la whitelist.
+</p>
 
-        <section class="card" id="economia">
+<div class="features">
 
-            <h2>💰 Economia</h2>
+<div class="feature">
+<h3>💬 Supporto</h3>
+<p>Apri un ticket e ricevi assistenza dallo staff.</p>
+</div>
 
-            <p>
+<div class="feature">
+<h3>📢 Annunci</h3>
+<p>Resta aggiornato su eventi, manutenzioni e novità.</p>
+</div>
 
-                Contenuto...
+<div class="feature">
+<h3>🎮 Whitelist</h3>
+<p>Segui la procedura per entrare in città.</p>
+</div>
 
-            </p>
+</div>
 
-        </section>
+<div style="text-align:center;margin-top:50px;">
 
-        <section class="card" id="veicoli">
+<a class="btn discord"
+href="https://discord.gg/sud-italy-rp-eh-v-1-1402407968879808656"
+target="_blank">
 
-            <h2>🚗 Veicoli</h2>
+ENTRA NEL DISCORD
 
-            <p>
+</a>
 
-                Contenuto...
-
-            </p>
-
-        </section>
-
-        <section class="card" id="crimine">
-
-            <h2>🔫 Criminalità</h2>
-
-            <p>
-
-                Contenuto...
-
-            </p>
-
-        </section>
-
-        <section class="card" id="staff">
-
-            <h2>👮 Staff</h2>
-
-            <p>
-
-                Contenuto...
-
-            </p>
-
-        </section>
-
-        <section class="card" id="ban">
-
-            <h2>⚖️ Sanzioni</h2>
-
-            <p>
-
-                Contenuto...
-
-            </p>
-
-        </section>
-
-    </main>
+</div>
 
 </section>
 
-<footer>
+<!-- REGOLAMENTO -->
 
-    <p>
+<section id="rules">
 
-        © 2026 Sud Italy RP • Tutti i diritti riservati
+<h2 class="title">Regolamento Ufficiale</h2>
 
-    </p>
+<p class="intro">
+
+Prima di accedere al server è obbligatorio leggere
+l'intero regolamento. Il rispetto delle regole garantisce
+un'esperienza di gioco corretta e piacevole per tutta la community.
+
+</p>
+
+<div class="feature" style="margin-top:50px;">
+
+<h3>📜 Introduzione</h3>
+
+<p>
+
+Entrando in Sud Italy RP accetti automaticamente il regolamento.
+Lo staff si riserva il diritto di intervenire in qualsiasi momento
+per mantenere un ambiente serio, rispettoso e orientato al Roleplay.
+
+</p>
+
+</div>
+
+<div class="feature" style="margin-top:30px;">
+
+<h3>⚖️ Principi Fondamentali</h3>
+
+<ul style="line-height:2;margin-top:20px;padding-left:20px;color:#ddd;">
+
+<li>Rispetta tutti i giocatori.</li>
+
+<li>Non utilizzare cheat o exploit.</li>
+
+<li>Interpreta sempre il tuo personaggio.</li>
+
+<li>Evita qualsiasi comportamento tossico.</li>
+
+<li>Segui sempre le indicazioni dello Staff.</li>
+
+<li>Divertiti rispettando il Roleplay.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer style="background:#050505;padding:60px 8%;text-align:center;border-top:1px solid #222;">
+
+<h2 style="color:#d4af37;margin-bottom:20px;">
+SUD ITALY RP
+</h2>
+
+<p style="color:#aaa;max-width:700px;margin:auto;line-height:1.8;">
+
+Grazie per aver scelto Sud Italy RP.
+Ti aspettiamo in città per iniziare la tua nuova avventura.
+
+</p>
+
+<div style="margin-top:35px;">
+
+<a class="btn discord"
+href="https://discord.gg/sud-italy-rp-eh-v-1-1402407968879808656"
+target="_blank">
+
+DISCORD
+
+</a>
+
+</div>
+
+<p style="margin-top:40px;color:#666;">
+© 2026 Sud Italy RP - Tutti i diritti riservati
+</p>
 
 </footer>
 
-<button id="topButton">
+<script>
 
-    <i class="fa-solid fa-arrow-up"></i>
+const observer = new IntersectionObserver(entries=>{
 
-</button>
+entries.forEach(entry=>{
 
-<script src="js/app.js"></script>
-<script src="js/theme.js"></script>
-<script src="js/search.js"></script>
+if(entry.isIntersecting){
+
+entry.target.animate([
+{opacity:0,transform:'translateY(40px)'},
+{opacity:1,transform:'translateY(0px)'}
+],{
+duration:700,
+fill:'forwards'
+});
+
+}
+
+});
+
+});
+
+document.querySelectorAll("section,.feature").forEach(el=>{
+observer.observe(el);
+});
+
+</script>
 
 </body>
-
-                </html>
+</html>
