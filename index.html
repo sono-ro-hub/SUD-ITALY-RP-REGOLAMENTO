@@ -6,7 +6,7 @@
 
 <title>Sud Italy RP | Sito Ufficiale</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
@@ -14,15 +14,20 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Poppins,sans-serif;
+font-family:'Poppins',sans-serif;
+}
+
+html{
 scroll-behavior:smooth;
 }
 
 body{
-background:#090909;
+background:#0b0b0b;
 color:#fff;
 overflow-x:hidden;
 }
+
+/* NAVBAR */
 
 header{
 position:fixed;
@@ -33,10 +38,10 @@ padding:18px 8%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-background:rgba(0,0,0,.55);
-backdrop-filter:blur(12px);
-z-index:999;
-border-bottom:1px solid rgba(212,175,55,.15);
+background:rgba(0,0,0,.65);
+backdrop-filter:blur(15px);
+z-index:1000;
+border-bottom:1px solid rgba(212,175,55,.2);
 }
 
 .logo{
@@ -46,293 +51,533 @@ color:#d4af37;
 letter-spacing:2px;
 }
 
+nav{
+display:flex;
+gap:25px;
+}
+
 nav a{
-text-decoration:none;
 color:white;
-margin-left:25px;
-font-weight:500;
+text-decoration:none;
 transition:.3s;
+font-weight:500;
+cursor:pointer;
 }
 
 nav a:hover{
 color:#d4af37;
 }
 
+/* PAGINE */
+
+.page{
+display:none;
+min-height:100vh;
+padding-top:90px;
+animation:fade .5s;
+}
+
+.page.active{
+display:block;
+}
+
+@keyframes fade{
+
+from{
+opacity:0;
+transform:translateY(20px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+/* HERO */
+
 .hero{
+
 height:100vh;
+
 display:flex;
+
 align-items:center;
+
 justify-content:center;
+
 text-align:center;
-padding:0 20px;
+
+padding:20px;
+
 background:
-linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.88)),
+
+linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.88)),
+
 url("hero.jpg") center center/cover;
+
 }
 
 .hero h1{
-font-size:72px;
-font-weight:800;
+
+font-size:70px;
+
 color:#d4af37;
-text-shadow:0 0 30px rgba(212,175,55,.4);
-margin-bottom:15px;
+
+text-shadow:0 0 20px rgba(212,175,55,.4);
+
+margin-bottom:20px;
+
 }
 
 .hero p{
+
 font-size:22px;
-max-width:850px;
-margin:auto;
+
+max-width:800px;
+
 line-height:1.8;
+
 color:#ddd;
+
+margin:auto;
+
 }
 
 .buttons{
-margin-top:45px;
+
+margin-top:40px;
+
 display:flex;
+
 justify-content:center;
+
 gap:20px;
+
 flex-wrap:wrap;
+
 }
 
 .btn{
-padding:16px 36px;
-border-radius:50px;
-font-weight:700;
+
+padding:15px 35px;
+
+border-radius:40px;
+
 text-decoration:none;
+
+font-weight:700;
+
 transition:.3s;
+
+cursor:pointer;
+
 }
 
-.discord{
+.btn.discord{
+
 background:#d4af37;
+
 color:#000;
+
 }
 
-.discord:hover{
+.btn.discord:hover{
+
 transform:translateY(-5px);
-box-shadow:0 0 25px #d4af37;
+
+box-shadow:0 0 30px #d4af37;
+
 }
 
-.rules{
+.btn.secondary{
+
 border:2px solid #d4af37;
-color:white;
+
+color:#fff;
+
+background:transparent;
+
 }
 
-.rules:hover{
+.btn.secondary:hover{
+
 background:#d4af37;
-color:black;
+
+color:#000;
+
 }
 
-section{
-padding:100px 8%;
+/* CONTENUTO */
+
+.container{
+
+max-width:1200px;
+
+margin:auto;
+
+padding:80px 8%;
+
 }
 
 .title{
+
 text-align:center;
+
 font-size:42px;
+
 color:#d4af37;
+
 margin-bottom:30px;
+
 }
 
-.intro{
-max-width:1000px;
-margin:auto;
+.text{
+
 font-size:18px;
+
 line-height:2;
-text-align:center;
+
 color:#ddd;
+
+text-align:center;
+
+max-width:900px;
+
+margin:auto;
+
 }
 
-.features{
+.cards{
+
 display:grid;
+
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
 gap:30px;
+
 margin-top:60px;
+
 }
 
-.feature{
+.card{
+
 background:#111;
-border:1px solid #222;
+
 padding:35px;
+
 border-radius:20px;
+
+border:1px solid #222;
+
 transition:.3s;
+
 }
 
-.feature:hover{
+.card:hover{
+
 transform:translateY(-8px);
+
 border-color:#d4af37;
+
+box-shadow:0 0 30px rgba(212,175,55,.15);
+
 }
 
-.feature h3{
-margin:15px 0;
+.card h3{
+
 color:#d4af37;
-font-size:22px;
+
+margin-bottom:15px;
+
 }
 
-.feature p{
+.card p{
+
 line-height:1.8;
+
 color:#ccc;
+
 }
+
+/* FOOTER */
+
+footer{
+
+background:#050505;
+
+padding:40px;
+
+text-align:center;
+
+color:#777;
+
+border-top:1px solid #222;
+
+}
+
+/* MOBILE */
 
 @media(max-width:768px){
-
-.hero h1{
-font-size:42px;
-}
-
-.hero p{
-font-size:18px;
-}
 
 nav{
 display:none;
 }
 
+.hero h1{
+font-size:42px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+.title{
+font-size:32px;
+}
+
 }
 
 </style>
+
 </head>
 
 <body>
 
 <header>
 
-<div class="logo">
-SUD ITALY RP
-</div>
+<div class="logo">SUD ITALY RP</div>
 
 <nav>
-<a href="#home">Home</a>
-<a href="#about">Server</a>
-<a href="#discord">Discord</a>
-<a href="#rules">Regolamento</a>
+
+<a onclick="showPage('home')">Home</a>
+
+<a onclick="showPage('about')">Chi siamo</a>
+
+<a onclick="showPage('discord')">Discord</a>
+
+<a onclick="showPage('rules')">Regolamento</a>
+
 </nav>
 
 </header>
 
-<section class="hero" id="home">
+<!-- HOME -->
+
+<section id="home" class="page active">
+
+<div class="hero">
 
 <div>
 
 <h1>SUD ITALY RP</h1>
 
 <p>
-La tua storia. La tua città. Il tuo Roleplay.
-Un'esperienza italiana immersiva, costruita per chi cerca qualità, realismo e una community attiva.
+
+La tua storia. La tua città.
+Un'esperienza Roleplay italiana moderna,
+realistica e coinvolgente.
+
 </p>
 
 <div class="buttons">
 
 <a class="btn discord"
+
 href="https://discord.gg/sud-italy-rp-eh-v-1-1402407968879808656"
+
 target="_blank">
+
 ENTRA NEL DISCORD
+
 </a>
 
-<a class="btn rules"
-href="#rules">
+<a class="btn secondary"
+
+onclick="showPage('rules')">
+
 LEGGI IL REGOLAMENTO
+
 </a>
 
 </div>
 
 </div>
 
+</div>
+
 </section>
+<!-- =========================
+     CHI SIAMO
+========================= -->
 
-<section id="about">
+<section id="about" class="page">
 
-<h2 class="title">
-Benvenuto su Sud Italy RP
-</h2>
+<div class="container">
 
-<p class="intro">
+<h2 class="title">Benvenuti su Sud Italy RP 🇮🇹</h2>
 
-Sud Italy RP nasce con l'obiettivo di offrire un'esperienza Roleplay realistica e coinvolgente, ambientata in un contesto italiano. Ogni giocatore ha la possibilità di creare la propria storia, costruire il proprio futuro e vivere un percorso unico all'interno della città.
+<p class="text">
 
-La nostra community punta sul rispetto, sulla qualità delle scene RP e sulla collaborazione tra tutti i giocatori, garantendo un ambiente serio ma allo stesso tempo divertente.
+Benvenuti su <strong>Sud Italy RP</strong>, una community italiana dedicata al Roleplay su Emergency Hamburg.
+
+Il nostro obiettivo è offrire un'esperienza seria, divertente e realistica, dove ogni giocatore possa sentirsi parte di una vera comunità.
+
+Rappresentiamo il Sud Italia e lavoriamo ogni giorno per migliorare il server grazie all'impegno dello Staff e dei nostri giocatori.
 
 </p>
 
-<div class="features">
+<div class="cards">
 
-<div class="feature">
+<div class="card">
 
-<h3>🎭 Serious Roleplay</h3>
+<h3>👥 Chi siamo</h3>
 
 <p>
-Scene curate, interpretazione del personaggio e massimo rispetto del regolamento.
+
+Siamo un server italiano nato dalla passione per il Roleplay. Puntiamo a creare scene realistiche, una community unita e un ambiente sempre piacevole per tutti.
+
 </p>
 
 </div>
 
-<div class="feature">
+<div class="card">
 
-<h3>🚔 Fazioni Ufficiali</h3>
+<h3>🚓 Lavori disponibili</h3>
 
 <p>
-Polizia, EMS, aziende, organizzazioni criminali e tante opportunità di gioco.
+
+Entrando nel server potrai scegliere tra numerosi lavori, tra cui:
+
+<br><br>
+
+• Polizia
+
+<br>
+
+• Carabinieri
+
+<br>
+
+• Guardia di Finanza
+
+<br>
+
+• Militare
+
+<br>
+
+• SABR
+
+<br>
+
+• Medico
+
+<br>
+
+• Pompiere
+
+<br>
+
+• ADAC
+
+<br>
+
+• Bus Training
+
 </p>
 
 </div>
 
-<div class="feature">
+<div class="card">
 
-<h3>💼 Economia Dinamica</h3>
+<h3>📜 Regole</h3>
 
 <p>
-Lavora, apri un'attività, investi e costruisci il tuo patrimonio nel tempo.
+
+Per mantenere un ambiente sereno è richiesto il rispetto verso tutti i giocatori.
+
+Nelle chat testuali non sono ammessi insulti o linguaggio offensivo.
+
+Nelle chat vocali è comunque richiesto buon senso e rispetto.
+
 </p>
 
 </div>
 
-<div class="feature">
+<div class="card">
 
-<h3>🏙️ Community Attiva</h3>
+<h3>💬 Il nostro Discord</h3>
 
 <p>
-Eventi, aggiornamenti frequenti e uno staff sempre disponibile ad aiutare i giocatori.
+
+Sul nostro server Discord troverai:
+
+<br><br>
+
+• Supporto
+
+<br>
+
+• Ticket
+
+<br>
+
+• Annunci
+
+<br>
+
+• Bando Orale
+
+<br>
+
+• Chat Vocali
+
+<br>
+
+• Canali dedicati alle fazioni
+
+<br>
+
+• Assistenza Staff
+
 </p>
 
 </div>
 
-</div>
+<div class="card">
 
-    </section>
-    <!-- DISCORD -->
+<h3>🆘 Hai bisogno di aiuto?</h3>
 
-<section id="discord">
+<p>
 
-<h2 class="title">Unisciti alla Community</h2>
+Se durante il gioco hai bisogno di assistenza, contatta uno Staff Member.
 
-<p class="intro">
-Il nostro server Discord è il punto di riferimento della community.
-Potrai richiedere assistenza, leggere gli annunci, aprire ticket,
-seguire gli aggiornamenti e completare la whitelist.
+Se nessuno è disponibile, entra nel Discord e apri un ticket selezionando il tipo di assistenza richiesta.
+
 </p>
 
-<div class="features">
-
-<div class="feature">
-<h3>💬 Supporto</h3>
-<p>Apri un ticket e ricevi assistenza dallo staff.</p>
 </div>
 
-<div class="feature">
-<h3>📢 Annunci</h3>
-<p>Resta aggiornato su eventi, manutenzioni e novità.</p>
-</div>
+<div class="card">
 
-<div class="feature">
-<h3>🎮 Whitelist</h3>
-<p>Segui la procedura per entrare in città.</p>
-</div>
+<h3>🚀 Entra nella Community</h3>
 
-</div>
+<p>
 
-<div style="text-align:center;margin-top:50px;">
+Che aspetti?
+
+Entra a far parte di Sud Italy RP e vivi una vera esperienza di Roleplay italiana insieme alla nostra community.
+
+</p>
+
+<br>
 
 <a class="btn discord"
+
 href="https://discord.gg/sud-italy-rp-eh-v-1-1402407968879808656"
+
 target="_blank">
 
 ENTRA NEL DISCORD
@@ -341,120 +586,96 @@ ENTRA NEL DISCORD
 
 </div>
 
+</div>
+
+</div>
+
 </section>
 
-<!-- REGOLAMENTO -->
+<!-- =========================
+     DISCORD
+========================= -->
 
-<section id="rules">
+<section id="discord" class="page">
 
-<h2 class="title">Regolamento Ufficiale</h2>
+<div class="container">
 
-<p class="intro">
+<h2 class="title">Discord Ufficiale</h2>
 
-Prima di accedere al server è obbligatorio leggere
-l'intero regolamento. Il rispetto delle regole garantisce
-un'esperienza di gioco corretta e piacevole per tutta la community.
+<p class="text">
+
+Il nostro server Discord è il punto di ritrovo della community.
+
+Qui potrai ricevere assistenza, rimanere aggiornato su tutte le novità del server, partecipare agli eventi e comunicare con gli altri giocatori.
 
 </p>
 
-<div class="feature" style="margin-top:50px;">
+<div class="cards">
 
-<h3>📜 Introduzione</h3>
+<div class="card">
+
+<h3>📢 Annunci</h3>
 
 <p>
 
-Entrando in Sud Italy RP accetti automaticamente il regolamento.
-Lo staff si riserva il diritto di intervenire in qualsiasi momento
-per mantenere un ambiente serio, rispettoso e orientato al Roleplay.
+Rimani sempre aggiornato su aggiornamenti, manutenzioni ed eventi del server.
 
 </p>
 
 </div>
 
-<div class="feature" style="margin-top:30px;">
+<div class="card">
 
-<h3>⚖️ Principi Fondamentali</h3>
+<h3>🎫 Ticket</h3>
 
-<ul style="line-height:2;margin-top:20px;padding-left:20px;color:#ddd;">
+<p>
 
-<li>Rispetta tutti i giocatori.</li>
-
-<li>Non utilizzare cheat o exploit.</li>
-
-<li>Interpreta sempre il tuo personaggio.</li>
-
-<li>Evita qualsiasi comportamento tossico.</li>
-
-<li>Segui sempre le indicazioni dello Staff.</li>
-
-<li>Divertiti rispettando il Roleplay.</li>
-
-</ul>
-
-</div>
-
-</section>
-
-<!-- FOOTER -->
-
-<footer style="background:#050505;padding:60px 8%;text-align:center;border-top:1px solid #222;">
-
-<h2 style="color:#d4af37;margin-bottom:20px;">
-SUD ITALY RP
-</h2>
-
-<p style="color:#aaa;max-width:700px;margin:auto;line-height:1.8;">
-
-Grazie per aver scelto Sud Italy RP.
-Ti aspettiamo in città per iniziare la tua nuova avventura.
+Apri un ticket per ricevere assistenza direttamente dallo Staff.
 
 </p>
 
-<div style="margin-top:35px;">
+</div>
+
+<div class="card">
+
+<h3>🎤 Chat Vocali</h3>
+
+<p>
+
+Entra nei canali vocali per giocare insieme alla community.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>🛡️ Supporto</h3>
+
+<p>
+
+Lo Staff è sempre disponibile ad aiutarti in caso di problemi.
+
+</p>
+
+</div>
+
+</div>
+
+<div style="text-align:center;margin-top:60px;">
 
 <a class="btn discord"
+
 href="https://discord.gg/sud-italy-rp-eh-v-1-1402407968879808656"
+
 target="_blank">
 
-DISCORD
+🚀 UNISCITI AL DISCORD
 
 </a>
 
 </div>
 
-<p style="margin-top:40px;color:#666;">
-© 2026 Sud Italy RP - Tutti i diritti riservati
-</p>
+</div>
 
-</footer>
-
-<script>
-
-const observer = new IntersectionObserver(entries=>{
-
-entries.forEach(entry=>{
-
-if(entry.isIntersecting){
-
-entry.target.animate([
-{opacity:0,transform:'translateY(40px)'},
-{opacity:1,transform:'translateY(0px)'}
-],{
-duration:700,
-fill:'forwards'
-});
-
-}
-
-});
-
-});
-
-document.querySelectorAll("section,.feature").forEach(el=>{
-observer.observe(el);
-});
-
-</script>
-
-</body>
-</html>
+</section>
