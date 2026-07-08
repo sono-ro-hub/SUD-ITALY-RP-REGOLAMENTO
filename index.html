@@ -1001,9 +1001,7 @@ Tutti i diritti riservati.
 function showPage(id){
 
 document.querySelectorAll(".page").forEach(page=>{
-
 page.classList.remove("active");
-
 });
 
 document.getElementById(id).classList.add("active");
@@ -1013,7 +1011,19 @@ top:0,
 behavior:"smooth"
 });
 
+document.querySelectorAll("nav a").forEach(link=>{
+link.style.color="#fff";
+});
+
+if(id==="home") document.querySelectorAll("nav a")[0].style.color="#d4af37";
+if(id==="about") document.querySelectorAll("nav a")[1].style.color="#d4af37";
+if(id==="discord") document.querySelectorAll("nav a")[2].style.color="#d4af37";
+if(id==="rules") document.querySelectorAll("nav a")[3].style.color="#d4af37";
+if(id==="discord-rules") document.querySelectorAll("nav a")[4].style.color="#d4af37";
+
 }
+
+showPage("home");
 
 </script>
 
