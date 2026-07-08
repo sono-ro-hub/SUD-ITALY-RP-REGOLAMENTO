@@ -74,11 +74,11 @@ text-align:center;
 padding:70px 8%;
 
 background:
-linear-gradient(rgba(0,0,0,.15),rgba(0,0,0,.35)),
-url("https://cdn.discordapp.com/attachments/1420059113462960229/1524493311598137414/file_00000000afbc7230a86542c26c19021e.png?ex=6a4ff289&is=6a4ea109&hm=86257359e5ff10b9cc37f11aa61a6c6813326d6fbfb2799056333f390eb2ee85&");
+linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.10)),
+url(...);
 
-background-size:90%;
-background-position:center;
+background-size:contain;
+background-position:center center;
 background-repeat:no-repeat;
 background-color:#090909;
 
@@ -90,17 +90,17 @@ max-width:900px;
 margin:auto;
 padding:55px;
 
-background:rgba(0,0,0,.45);
+background:transparent;
 
-backdrop-filter:blur(10px);
+backdrop-filter:none;
 
-border-radius:30px;
+border:none;
 
-border:1px solid rgba(255,255,255,.10);
+border-radius:0;
 
-box-shadow:0 0 40px rgba(0,0,0,.4);
+box-shadow:none;
 
-}
+            }
 
 .content h1{
 
@@ -205,10 +205,11 @@ background:
 linear-gradient(rgba(20,20,20,.75),rgba(20,20,20,.75)),
 url("https://cdn.discordapp.com/attachments/1420059113462960229/1524493311598137414/file_00000000afbc7230a86542c26c19021e.png?ex=6a4ff289&is=6a4ea109&hm=86257359e5ff10b9cc37f11aa61a6c6813326d6fbfb2799056333f390eb2ee85&");
 
-background-size:cover;
-background-position:center;
-background-attachment:fixed;
-
+background-size:contain;
+background-position:center center;
+background-repeat:no-repeat;
+background-color:#090909;
+background-attachment:scroll;
 }
 
 .section-title{
@@ -246,9 +247,9 @@ margin-top:50px;
 
 .card{
 
-background:rgba(25,25,25,.82);
+background:rgba(20,20,20,.35);
 
-backdrop-filter:blur(12px);
+backdrop-filter:blur(4px);
 
 border:1px solid rgba(255,213,74,.30);
 
@@ -368,7 +369,7 @@ Vivi un'esperienza seria, realistica e coinvolgente insieme alla nostra communit
 
 <div class="buttons">
 
-<a class="btn discord"
+<a class="btn discord" style="display:inline-block;margin-top:20px;"
 href="https://discord.gg/sud-italy-rp-eh-v-1-1402407968879808656"
 target="_blank">
 
