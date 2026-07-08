@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Sud Italy RP</title>
+<title>Sud Italy RP | Sito Ufficiale</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
@@ -16,6 +17,9 @@ margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:'Poppins',sans-serif;
+}
+
+html{
 scroll-behavior:smooth;
 }
 
@@ -25,158 +29,217 @@ color:#fff;
 overflow-x:hidden;
 }
 
+a{
+text-decoration:none;
+}
+
 /* HERO */
 
 .hero{
+
 min-height:100vh;
+
 display:flex;
+
 justify-content:center;
+
 align-items:center;
-text-align:center;
-padding:40px;
+
+padding:50px 8%;
+
 background:
-linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.90)),
-url(hero.jpg) center/cover;
+
+linear-gradient(rgba(0,0,0,.82),rgba(0,0,0,.90)),
+url("hero.jpg") center center/cover;
+
 }
 
 .hero-content{
+
 max-width:1100px;
+
+text-align:center;
+
 }
 
-.logo{
-font-size:90px;
-font-weight:800;
+.hero h1{
+
+font-size:60px;
+
 color:#d4af37;
-text-shadow:0 0 35px rgba(212,175,55,.5);
+
 margin-bottom:30px;
+
+text-shadow:0 0 25px rgba(212,175,55,.4);
+
 }
 
-.subtitle{
-font-size:25px;
+.hero p{
+
+font-size:20px;
+
+line-height:2;
+
 color:#ddd;
-line-height:1.8;
-margin-bottom:50px;
+
+margin-bottom:20px;
+
+}
+
+.info{
+
+margin-top:50px;
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+gap:30px;
+
+}
+
+.box{
+
+background:#111;
+
+padding:30px;
+
+border-radius:18px;
+
+border:1px solid #222;
+
+transition:.3s;
+
+}
+
+.box:hover{
+
+transform:translateY(-8px);
+
+border-color:#d4af37;
+
+box-shadow:0 0 25px rgba(212,175,55,.2);
+
+}
+
+.box h3{
+
+color:#d4af37;
+
+margin-bottom:15px;
+
+font-size:24px;
+
+}
+
+.box p{
+
+line-height:1.9;
+
+color:#ddd;
+
+}
+
+.box ul{
+
+padding-left:20px;
+
+line-height:2;
+
+color:#ddd;
+
 }
 
 .buttons{
+
+margin-top:60px;
+
 display:flex;
+
 justify-content:center;
+
 gap:20px;
+
 flex-wrap:wrap;
+
 }
 
 .btn{
+
 padding:18px 40px;
-border-radius:50px;
+
+border-radius:40px;
+
 font-weight:700;
-text-decoration:none;
+
 transition:.3s;
+
 }
 
 .discord{
+
 background:#d4af37;
+
 color:#000;
+
 }
 
 .discord:hover{
+
 transform:translateY(-5px);
-box-shadow:0 0 30px #d4af37;
+
+box-shadow:0 0 25px #d4af37;
+
 }
 
 .secondary{
+
 border:2px solid #d4af37;
+
 color:white;
+
 }
 
 .secondary:hover{
+
 background:#d4af37;
+
 color:black;
-}
 
-/* SEZIONI */
-
-section{
-padding:100px 8%;
-}
-
-.title{
-font-size:45px;
-text-align:center;
-color:#d4af37;
-margin-bottom:25px;
-}
-
-.text{
-max-width:1000px;
-margin:auto;
-text-align:center;
-font-size:19px;
-line-height:2;
-color:#ddd;
-}
-
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:30px;
-margin-top:60px;
-}
-
-.card{
-background:#121212;
-padding:35px;
-border-radius:20px;
-border:1px solid #242424;
-transition:.3s;
-}
-
-.card:hover{
-transform:translateY(-10px);
-border-color:#d4af37;
-box-shadow:0 0 30px rgba(212,175,55,.2);
-}
-
-.card h3{
-color:#d4af37;
-margin-bottom:20px;
-font-size:24px;
-}
-
-.card p,
-.card li{
-line-height:1.9;
-color:#ddd;
-}
-
-.card ul{
-padding-left:20px;
 }
 
 footer{
+
 background:#050505;
-padding:60px;
+
+padding:50px;
+
 text-align:center;
+
+margin-top:80px;
+
 border-top:1px solid #222;
+
 color:#888;
+
 }
 
 footer h2{
+
 color:#d4af37;
-margin-bottom:20px;
+
+margin-bottom:15px;
+
 }
 
 @media(max-width:768px){
 
-.logo{
-font-size:50px;
+.hero h1{
+font-size:42px;
 }
 
-.subtitle{
-font-size:18px;
-}
-
-.title{
-font-size:34px;
+.hero p{
+font-size:17px;
 }
 
 .buttons{
@@ -185,6 +248,7 @@ flex-direction:column;
 
 .btn{
 width:100%;
+text-align:center;
 }
 
 }
@@ -199,287 +263,308 @@ width:100%;
 
 <div class="hero-content">
 
-<div class="logo">
-SUD ITALY RP
-</div>
+<h1>Benvenuti su Sud Italy RP 🇮🇹</h1>
 
-<p class="subtitle">
-La tua storia. La tua città.<br>
-Vivi un'esperienza Roleplay italiana moderna, realistica e coinvolgente.
-</p>
-
-<div class="buttons">
-
-<a class="btn discord"
-href="https://discord.gg/sud-italy-rp-eh-v-1-1402407968879808656"
-target="_blank">
-🚀 ENTRA NEL DISCORD
-</a>
-
-<a class="btn secondary"
-href="#regolamento-game">
-📜 REGOLAMENTO GAME
-</a>
-
-<a class="btn secondary"
-href="#regolamento-discord">
-💬 REGOLAMENTO DISCORD
-</a>
-
-</div>
-
-</div>
-
-</section>
-<!-- =========================
-     CHI SIAMO
-========================= -->
-
-<section id="about">
-
-<h2 class="title">Benvenuti su Sud Italy RP 🇮🇹</h2>
-
-<p class="text">
+<p>
 
 Sud Italy RP è una community italiana dedicata al Roleplay su Emergency Hamburg.
 Il nostro obiettivo è offrire un'esperienza seria, realistica e divertente, dove ogni giocatore possa sentirsi parte di una vera città.
 
 </p>
 
-<div class="cards">
+<div class="info">
 
-<div class="card">
+<div class="box">
+
 <h3>👥 Chi siamo</h3>
+
 <p>
+
 Siamo una community costruita dalla passione per il Roleplay.
 Ogni giorno lavoriamo per migliorare il server e offrire un'esperienza sempre più coinvolgente.
+
 </p>
+
 </div>
 
-<div class="card">
+<div class="box">
+
 <h3>🚓 Lavori Disponibili</h3>
 
 <ul>
+
 <li>Polizia</li>
+
 <li>Carabinieri</li>
+
 <li>Guardia di Finanza</li>
+
 <li>Militare</li>
+
 <li>SABR</li>
+
 <li>Medico</li>
+
 <li>Vigili del Fuoco</li>
+
 <li>ADAC</li>
+
 <li>Bus Training</li>
+
 </ul>
 
-</div>
-
-<div class="card">
-<h3>💬 Discord</h3>
-
-<p>
-
-Nel nostro Discord troverai:
-
-<br><br>
-
-✔ Supporto
-
-<br>
-
-✔ Ticket
-
-<br>
-
-✔ Eventi
-
-<br>
-
-✔ Annunci
-
-<br>
-
-✔ Chat Vocali
-
-<br>
-
-✔ Canali dedicati alle fazioni
-
-</p>
-
-</div>
-
-<div class="card">
-<h3>🆘 Supporto</h3>
-
-<p>
-
-Hai bisogno di aiuto?
-
-Contatta uno Staff Member oppure apri un Ticket nel nostro Discord.
-
-Riceverai assistenza il prima possibile.
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-     <!-- =========================
-     REGOLAMENTO GAME
+                           </div>
+                           <!-- =========================
+     PAGINA REGOLAMENTO GAME
 ========================= -->
 
-<section id="rules">
+<section id="game-page" class="page">
 
-<h2 class="title">📜 Regolamento Game</h2>
+<div class="container">
+
+<h2 class="title">📜 REGOLAMENTO GAME</h2>
 
 <p class="text">
-Entrando nel server accetti automaticamente il seguente regolamento.
-Il rispetto delle regole garantisce un'esperienza Roleplay seria e divertente per tutti.
+Per garantire un'esperienza RP corretta ed equilibrata, entrando nel server si accettano automaticamente tutte le regole presenti in questo regolamento.
 </p>
 
 <div class="cards">
 
 <div class="card">
-<h3>⚖️ Fail RP</h3>
+<h3>1. Comportamento RP scorretto</h3>
 <ul>
-<li>Fail RP</li>
+<li>Fail RP (FRP)</li>
 <li>No Fear</li>
 <li>Powergaming (PG)</li>
 <li>Revenge Kill (RK)</li>
 <li>Random Deathmatch (RDM)</li>
 <li>Vehicle Deathmatch (VDM)</li>
-<li>Cuff Rush</li>
+<li>Cuff-Rush</li>
 <li>Combat Logging</li>
+<li>No Crash</li>
+<li>Vietato usare Stop Stick.</li>
+<li>Vietato usare Bombe e C4.</li>
+<li>Vietato usare Flashbang e GPS.</li>
+<li>I combattimenti 1vs1 sono consentiti solo nelle zone RDM.</li>
 </ul>
 </div>
 
 <div class="card">
-<h3>👥 Comportamenti Vietati</h3>
+<h3>2. Abusi verso altri giocatori</h3>
+
 <ul>
 <li>Bunny Hopping</li>
 <li>Car Surf</li>
 <li>Cop Baiting</li>
-<li>Metagaming (MG)</li>
-<li>MixChat</li>
-<li>Stream Sniping</li>
-<li>LTAA</li>
+<li>Cop Evading</li>
 </ul>
+
 </div>
 
 <div class="card">
-<h3>🛡 Safe Zone</h3>
+
+<h3>3. Violazioni OOC</h3>
+
+<ul>
+<li>Metagaming</li>
+<li>MixChat</li>
+<li>LTAA</li>
+<li>Stream Sniping</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>4. Safe Zone</h3>
+
 <ul>
 <li>Questura</li>
-<li>Ospedale</li>
 <li>Caserma Vigili del Fuoco</li>
+<li>Ospedale</li>
 <li>Tuning</li>
-<li>Ingresso ACI</li>
+<li>Prigione</li>
+<li>Zone Militari</li>
 <li>Ville</li>
 </ul>
+
+<p style="margin-top:20px;">
+Le scene iniziate fuori dalle Safe Zone possono continuare al loro interno.
+</p>
+
 </div>
 
 <div class="card">
-<h3>🏴 Regole Gang</h3>
+
+<h3>5. Extra</h3>
+
 <ul>
-<li>Vietate le bombe.</li>
+<li>Sponsor = Ban permanente</li>
+<li>Flame = Punizione Staff</li>
+<li>Respawn = Morte definitiva</li>
+<li>Se un medico ti cura sei solamente ferito.</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>6. Gang e Rapine</h3>
+
+<ul>
 <li>No RDM tra membri della stessa gang.</li>
 <li>Ville e Ghetti sono Safe Zone.</li>
-<li>Ogni abuso comporta Warn.</li>
+<li>Rapine consentite solo rispettando il regolamento.</li>
+<li>Ogni abuso comporterà sanzioni.</li>
 </ul>
-</div>
 
-<div class="card">
-<h3>💰 Rapine</h3>
-<p>
-Tutte le rapine devono rispettare il regolamento RP e il numero massimo di partecipanti previsto dal server.
-</p>
-</div>
-
-<div class="card">
-<h3>⚠️ Sanzioni</h3>
-<p>
-Ogni violazione sarà valutata dallo Staff e potrà comportare Warn, Kick, Ban temporaneo o Ban permanente.
-</p>
 </div>
 
 </div>
 
-</section>
+<div style="text-align:center;margin-top:60px;">
+
+<a class="btn secondary" onclick="showPage('home')">
+⬅ Torna alla Home
+</a>
+
+</div>
+
+</div>
+
+     </section>
      <!-- =========================
-     REGOLAMENTO DISCORD
+     PAGINA REGOLAMENTO DISCORD
 ========================= -->
 
-<section id="discord-rules">
+<section id="discord-page" class="page">
 
 <div class="container">
 
-<h2 class="title">💬 Regolamento Discord</h2>
+<h2 class="title">💬 REGOLAMENTO DISCORD</h2>
 
 <p class="text">
-Nel nostro Discord è obbligatorio mantenere un comportamento rispettoso verso tutti.
+Anche sul nostro Discord è obbligatorio mantenere un comportamento corretto, educato e rispettoso verso tutti i membri della community.
 </p>
 
 <div class="cards">
 
 <div class="card">
-<h3>🤝 Rispetto</h3>
+
+<h3>1. Rispetto Generale</h3>
+
 <ul>
-<li>Vietato insultare altri utenti.</li>
-<li>Vietato insultare familiari.</li>
-<li>Rispetto obbligatorio verso Staff e membri.</li>
-<li>Vietata la divulgazione di dati personali.</li>
+<li>È severamente vietato insultare le mamme o i familiari di altri utenti.</li>
+<li>Punizione: Ban permanente dal server e da Discord.</li>
+<li>È vietato insultare o mancare di rispetto tra Staff e cittadini.</li>
+<li>È obbligatorio mantenere un linguaggio educato.</li>
+<li>È vietato divulgare dati personali.</li>
+<li>È vietato inviare link malevoli.</li>
 </ul>
+
 </div>
 
 <div class="card">
-<h3>🗣 Linguaggio</h3>
-<p>
-Sono vietate bestemmie, spam,atti osceni, flame e linguaggio offensivo.
-Le sanzioni variano dal timeout al ban.
-</p>
+
+<h3>2. Linguaggio</h3>
+
+<ul>
+<li>Vietato usare parolacce nei canali Discord.</li>
+<li>Timeout da 1 minuto fino a 1 settimana.</li>
+<li>Spam e Flame vietati.</li>
+<li>Bestemmie vietate.</li>
+</ul>
+
 </div>
 
 <div class="card">
-<h3>🎫 Ticket</h3>
-<p>
-Apri un ticket per richiedere assistenza.
-Lo Staff risponderà il prima possibile.
-</p>
+
+<h3>3. Gerarchia</h3>
+
+<ul>
+<li>Massimo rispetto verso Staff.</li>
+<li>Rispettare i gradi superiori.</li>
+<li>Seguire sempre le indicazioni dello Staff.</li>
+</ul>
+
 </div>
 
 <div class="card">
-<h3>👑 Staff</h3>
-<p>
-È vietato chiedere ruoli Staff nei messaggi privati o nelle chat pubbliche.
-</p>
+
+<h3>4. Staff</h3>
+
+<ul>
+<li>Vietato chiedere ruoli Staff.</li>
+<li>Vietato scrivere allo Staff in privato per ottenere privilegi.</li>
+<li>Usare il canale candidature.</li>
+</ul>
+
 </div>
 
 <div class="card">
-<h3>🚫 Punizioni</h3>
-<p>
-Il mancato rispetto del regolamento comporterà Warn, Timeout o Ban a discrezione dello Staff.
-</p>
+
+<h3>5. Ticket</h3>
+
+<ul>
+<li>I Ticket senza risposta per 2-3 ore possono essere chiusi automaticamente.</li>
+<li>Aprire Ticket solo quando necessario.</li>
+<li>Non abusare del sistema Ticket.</li>
+</ul>
+
 </div>
 
 <div class="card">
-<h3>💛 Grazie</h3>
+
+<h3>⚠️ Sanzioni</h3>
+
 <p>
-Grazie per far parte della community di Sud Italy RP.
-Divertiti e rispetta tutti!
+
+Ogni violazione sarà valutata dallo Staff e potrà comportare:
+
+<br><br>
+
+• Warn
+
+<br>
+
+• Timeout
+
+<br>
+
+• Kick
+
+<br>
+
+• Ban Temporaneo
+
+<br>
+
+• Ban Permanente
+
 </p>
+
 </div>
+
+</div>
+
+<div style="text-align:center;margin-top:60px;">
+
+<a class="btn secondary" onclick="showPage('home')">
+
+⬅ TORNA ALLA HOME
+
+</a>
 
 </div>
 
 </div>
 
 </section>
-
 <footer>
 
-<h2>SUD ITALY RP</h2>
+<h2 style="color:#d4af37;margin-bottom:20px;">
+SUD ITALY RP
+</h2>
 
 <p>
 © 2026 Sud Italy RP<br>
@@ -487,6 +572,31 @@ Tutti i diritti riservati.
 </p>
 
 </footer>
+
+<script>
+
+function showPage(pageId){
+
+// Nasconde tutte le pagine
+document.querySelectorAll(".page").forEach(page=>{
+page.style.display="none";
+});
+
+// Mostra la pagina richiesta
+document.getElementById(pageId).style.display="block";
+
+// Torna in cima
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+}
+
+// Mostra la Home all'apertura
+showPage("home");
+
+</script>
 
 </body>
 </html>
