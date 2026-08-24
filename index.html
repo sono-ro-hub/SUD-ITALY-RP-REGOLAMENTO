@@ -1,0 +1,1925 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#07090d">
+    <meta name="description" content="Sud Italy RP — Community italiana dedicata al Roleplay su Emergency Hamburg.">
+    <meta name="keywords" content="Sud Italy RP, Emergency Hamburg, Roblox, Roleplay, Discord">
+
+    <title>Sud Italy RP — Official</title>
+
+    <link rel="icon" href="https://cdn.discordapp.com/attachments/1533498424379310292/1541562283245969459/IMG_0273-2.jpg?ex=6a8e0b41&is=6a8cb9c1&hm=9aa11e03ef300b9caabb0a617f58d38b6531655bf8fd46923e94b3b9f9ecc2ca&">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        :root {
+            --bg: #050609;
+            --bg-2: #080a0f;
+            --panel: rgba(14, 17, 24, .72);
+            --panel-solid: #0d1016;
+
+            --white: #f7f8fb;
+            --muted: #8b94a5;
+            --muted-2: #606978;
+
+            --yellow: #ffd447;
+            --yellow-2: #ff9d00;
+
+            --blue: #6170ff;
+            --green: #19d98b;
+            --red: #ff4058;
+
+            --border: rgba(255,255,255,.08);
+            --border-hover: rgba(255,212,71,.32);
+
+            --radius: 24px;
+
+            --shadow:
+                0 25px 90px rgba(0,0,0,.45);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            background:
+                radial-gradient(
+                    circle at 15% 10%,
+                    rgba(255,212,71,.08),
+                    transparent 25%
+                ),
+                radial-gradient(
+                    circle at 85% 20%,
+                    rgba(97,112,255,.10),
+                    transparent 25%
+                ),
+                var(--bg);
+
+            color: var(--white);
+            font-family: Inter, sans-serif;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -5;
+            pointer-events: none;
+
+            background-image:
+                linear-gradient(
+                    rgba(255,255,255,.025) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(255,255,255,.025) 1px,
+                    transparent 1px
+                );
+
+            background-size: 70px 70px;
+            mask-image: linear-gradient(
+                to bottom,
+                black,
+                transparent 85%
+            );
+        }
+
+        ::selection {
+            background: var(--yellow);
+            color: #111;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(
+                var(--yellow),
+                var(--yellow-2)
+            );
+            border-radius: 99px;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        button,
+        a {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* =========================================================
+           CURSOR GLOW
+        ========================================================= */
+
+        .cursor-glow {
+            position: fixed;
+            width: 420px;
+            height: 420px;
+
+            border-radius: 50%;
+
+            pointer-events: none;
+            z-index: -1;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(255,212,71,.075),
+                    transparent 68%
+                );
+
+            transform: translate(-50%, -50%);
+        }
+
+        /* =========================================================
+           NAVBAR
+        ========================================================= */
+
+        .navbar {
+            position: fixed;
+            top: 18px;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            width: min(1180px, calc(100% - 30px));
+
+            z-index: 1000;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 10px 12px;
+
+            border: 1px solid var(--border);
+            border-radius: 18px;
+
+            background: rgba(6,8,12,.72);
+            backdrop-filter: blur(25px);
+
+            box-shadow:
+                0 20px 60px rgba(0,0,0,.35);
+
+            transition: .3s ease;
+        }
+
+        .navbar.scrolled {
+            background: rgba(5,7,10,.92);
+            border-color: rgba(255,255,255,.12);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+
+            text-decoration: none;
+        }
+
+        .brand img {
+            width: 43px;
+            height: 43px;
+
+            border-radius: 12px;
+
+            object-fit: cover;
+
+            border: 1px solid rgba(255,255,255,.13);
+
+            box-shadow:
+                0 0 30px rgba(255,212,71,.12);
+        }
+
+        .brand-text {
+            line-height: 1;
+        }
+
+        .brand-text strong {
+            display: block;
+
+            font-family: "Space Grotesk";
+            font-size: 14px;
+            font-weight: 800;
+            letter-spacing: .5px;
+        }
+
+        .brand-text span {
+            display: block;
+
+            margin-top: 4px;
+
+            color: var(--muted);
+
+            font-size: 9px;
+            font-weight: 800;
+
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .nav-links a {
+            position: relative;
+
+            padding: 12px 13px;
+
+            color: #9ba3b1;
+
+            text-decoration: none;
+
+            font-size: 11px;
+            font-weight: 800;
+
+            border-radius: 11px;
+
+            transition: .25s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #fff;
+            background: rgba(255,255,255,.055);
+        }
+
+        .nav-links a.active::after {
+            content: "";
+
+            position: absolute;
+
+            left: 50%;
+            bottom: 5px;
+
+            width: 4px;
+            height: 4px;
+
+            border-radius: 50%;
+
+            background: var(--yellow);
+
+            transform: translateX(-50%);
+
+            box-shadow: 0 0 10px var(--yellow);
+        }
+
+        .nav-discord {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            min-height: 42px;
+
+            padding: 0 17px;
+
+            border-radius: 12px;
+
+            background: var(--yellow);
+
+            color: #111;
+
+            text-decoration: none;
+
+            font-size: 11px;
+            font-weight: 900;
+
+            transition: .25s ease;
+
+            box-shadow:
+                0 10px 30px rgba(255,212,71,.15);
+        }
+
+        .nav-discord:hover {
+            transform: translateY(-2px);
+            box-shadow:
+                0 15px 40px rgba(255,212,71,.25);
+        }
+
+        .mobile-menu {
+            display: none;
+
+            width: 42px;
+            height: 42px;
+
+            border: 1px solid var(--border);
+            border-radius: 12px;
+
+            background: rgba(255,255,255,.04);
+
+            color: #fff;
+
+            cursor: pointer;
+
+            font-size: 20px;
+        }
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .hero {
+            position: relative;
+
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+
+            overflow: hidden;
+
+            padding:
+                150px
+                max(6vw, 30px)
+                100px;
+        }
+
+        .hero-background {
+            position: absolute;
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(5,6,9,.98) 0%,
+                    rgba(5,6,9,.88) 35%,
+                    rgba(5,6,9,.52) 65%,
+                    rgba(5,6,9,.72) 100%
+                ),
+                url("https://cdn.discordapp.com/attachments/1420059113462960229/1530641651607933008/file_00000000463081f4b60ce751997abd67.png?ex=6a66509f&is=6a64ff1f&hm=4720bd94e7e6c2d7d023f728d6140e3d241c696d8509a33bea3327885c4724c6&")
+                center / cover no-repeat;
+
+            transform: scale(1.04);
+
+            animation: heroZoom 14s ease-in-out infinite alternate;
+        }
+
+        @keyframes heroZoom {
+            from {
+                transform: scale(1.04);
+            }
+
+            to {
+                transform: scale(1.09);
+            }
+        }
+
+        .hero::after {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+
+            pointer-events: none;
+
+            background:
+                radial-gradient(
+                    circle at 70% 50%,
+                    rgba(255,212,71,.08),
+                    transparent 28%
+                ),
+                linear-gradient(
+                    to bottom,
+                    transparent 65%,
+                    var(--bg)
+                );
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+
+            width: min(850px, 100%);
+        }
+
+        .hero-logo {
+            width: 90px;
+            height: 90px;
+
+            object-fit: cover;
+
+            border-radius: 25px;
+
+            border: 1px solid rgba(255,255,255,.15);
+
+            box-shadow:
+                0 25px 80px rgba(0,0,0,.5),
+                0 0 45px rgba(255,212,71,.12);
+
+            margin-bottom: 27px;
+
+            animation: logoFloat 5s ease-in-out infinite;
+        }
+
+        @keyframes logoFloat {
+            0%,100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        .hero-kicker {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+
+            color: #ffe68b;
+
+            font-size: 11px;
+            font-weight: 900;
+
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .hero-kicker i {
+            width: 38px;
+            height: 2px;
+
+            background: var(--yellow);
+
+            box-shadow:
+                0 0 15px var(--yellow);
+        }
+
+        .hero h1 {
+            margin-top: 25px;
+
+            font-family: "Space Grotesk";
+            font-size: clamp(60px, 10vw, 135px);
+
+            line-height: .82;
+
+            letter-spacing: -8px;
+
+            font-weight: 700;
+        }
+
+        .hero h1 span {
+            color: var(--yellow);
+
+            text-shadow:
+                0 0 55px rgba(255,212,71,.24);
+        }
+
+        .hero-description {
+            max-width: 650px;
+
+            margin-top: 30px;
+
+            color: #b9c0cd;
+
+            font-size: 17px;
+            line-height: 1.85;
+        }
+
+        .hero-description strong {
+            color: #fff;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 11px;
+
+            margin-top: 35px;
+        }
+
+        .btn {
+            min-height: 54px;
+
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 9px;
+
+            padding: 0 20px;
+
+            border-radius: 14px;
+
+            border: 1px solid var(--border);
+
+            text-decoration: none;
+
+            font-size: 11px;
+            font-weight: 900;
+
+            cursor: pointer;
+
+            transition: .3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+        }
+
+        .btn-primary {
+            background: var(--yellow);
+            color: #111;
+
+            border-color: var(--yellow);
+
+            box-shadow:
+                0 15px 40px rgba(255,212,71,.15);
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,.06);
+            color: #fff;
+
+            backdrop-filter: blur(15px);
+        }
+
+        .btn-blue {
+            background: var(--blue);
+            color: #fff;
+
+            border-color: var(--blue);
+        }
+
+        .hero-info {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 30px;
+
+            margin-top: 52px;
+        }
+
+        .hero-info-item {
+            padding-left: 15px;
+
+            border-left: 2px solid var(--yellow);
+        }
+
+        .hero-info-item strong {
+            display: block;
+
+            font-family: "Space Grotesk";
+
+            font-size: 19px;
+        }
+
+        .hero-info-item span {
+            display: block;
+
+            margin-top: 5px;
+
+            color: var(--muted);
+
+            font-size: 9px;
+            font-weight: 800;
+
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* =========================================================
+           GENERAL
+        ========================================================= */
+
+        .section {
+            position: relative;
+
+            width: min(1220px, calc(100% - 40px));
+
+            margin: auto;
+
+            padding: 120px 0;
+        }
+
+        .section-header {
+            display: grid;
+
+            grid-template-columns: .8fr 1.2fr;
+
+            gap: 60px;
+
+            align-items: end;
+
+            margin-bottom: 55px;
+        }
+
+        .eyebrow {
+            color: var(--yellow);
+
+            font-size: 10px;
+            font-weight: 900;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 13px;
+        }
+
+        .section-title {
+            font-family: "Space Grotesk";
+
+            font-size: clamp(42px, 6vw, 75px);
+
+            line-height: .88;
+
+            letter-spacing: -4px;
+        }
+
+        .section-description {
+            color: var(--muted);
+
+            max-width: 650px;
+
+            font-size: 15px;
+            line-height: 1.9;
+        }
+
+        /* =========================================================
+           FEATURE CARDS
+        ========================================================= */
+
+        .features {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 16px;
+        }
+
+        .feature {
+            position: relative;
+
+            overflow: hidden;
+
+            min-height: 270px;
+
+            padding: 29px;
+
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(20,24,32,.92),
+                    rgba(8,10,14,.9)
+                );
+
+            box-shadow: var(--shadow);
+
+            transition: .4s ease;
+        }
+
+        .feature.large {
+            grid-column: span 2;
+        }
+
+        .feature:hover {
+            transform: translateY(-8px);
+
+            border-color: var(--border-hover);
+
+            box-shadow:
+                0 35px 100px rgba(0,0,0,.55),
+                0 0 45px rgba(255,212,71,.05);
+        }
+
+        .feature::before {
+            content: "";
+
+            position: absolute;
+
+            width: 190px;
+            height: 190px;
+
+            right: -90px;
+            top: -90px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(255,212,71,.10),
+                    transparent 70%
+                );
+        }
+
+        .feature-number {
+            color: #4e5665;
+
+            font-family: "Space Grotesk";
+
+            font-size: 11px;
+            font-weight: 800;
+        }
+
+        .feature-icon {
+            margin: 20px 0;
+
+            font-size: 30px;
+        }
+
+        .feature h3 {
+            font-size: 20px;
+
+            margin-bottom: 12px;
+        }
+
+        .feature p,
+        .feature li {
+            color: #aab2c0;
+
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .feature ul {
+            padding-left: 18px;
+        }
+
+        .feature li + li {
+            margin-top: 5px;
+        }
+
+        /* =========================================================
+           FACTIONS
+        ========================================================= */
+
+        .factions {
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 14px;
+        }
+
+        .faction {
+            padding: 25px 20px;
+
+            border: 1px solid var(--border);
+            border-radius: 20px;
+
+            background: rgba(255,255,255,.025);
+
+            transition: .3s ease;
+        }
+
+        .faction:hover {
+            transform: translateY(-5px);
+
+            border-color: rgba(255,212,71,.25);
+
+            background: rgba(255,212,71,.035);
+        }
+
+        .faction-icon {
+            font-size: 28px;
+
+            margin-bottom: 17px;
+        }
+
+        .faction h3 {
+            font-size: 15px;
+
+            margin-bottom: 7px;
+        }
+
+        .faction p {
+            color: var(--muted);
+
+            font-size: 11px;
+
+            line-height: 1.7;
+        }
+
+        /* =========================================================
+           LINKS
+        ========================================================= */
+
+        .links-grid {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 16px;
+        }
+
+        .link-card {
+            position: relative;
+
+            min-height: 180px;
+
+            padding: 28px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            border: 1px solid var(--border);
+            border-radius: 22px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #11151d,
+                    #090b10
+                );
+
+            text-decoration: none;
+
+            overflow: hidden;
+
+            transition: .35s ease;
+        }
+
+        .link-card:hover {
+            transform: translateY(-7px);
+
+            border-color: rgba(255,212,71,.28);
+        }
+
+        .link-card-icon {
+            font-size: 29px;
+        }
+
+        .link-card h3 {
+            font-size: 18px;
+        }
+
+        .link-card span {
+            color: var(--muted);
+
+            font-size: 11px;
+        }
+
+        .link-arrow {
+            position: absolute;
+
+            right: 22px;
+            top: 22px;
+
+            width: 35px;
+            height: 35px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 10px;
+
+            background: rgba(255,255,255,.05);
+
+            color: var(--yellow);
+
+            font-weight: 900;
+        }
+
+        <!-- =========================================================
+     RULES
+========================================================= -->
+
+<section class="section" id="rules">
+
+    <div class="section-header reveal">
+
+        <div>
+
+            <div class="eyebrow">03 — Regolamenti</div>
+
+            <h2 class="section-title">
+                PLAY<br>
+                FAIR.
+            </h2>
+
+        </div>
+
+        <p class="section-description">
+            Le regole servono a garantire un'esperienza
+            equilibrata, realistica e piacevole per tutti.
+            Entrando nella community accetti di rispettarle.
+        </p>
+
+    </div>
+
+
+    <div class="rules-layout reveal">
+
+        <div class="rules-nav">
+
+            <button
+                class="active"
+                onclick="openRule('rp', this)"
+            >
+                🎮 Regolamento RP
+            </button>
+
+            <button
+                onclick="openRule('discord', this)"
+            >
+                💬 Regolamento Discord
+            </button>
+
+            <button
+                onclick="openRule('safezone', this)"
+            >
+                🛡️ Safe Zone
+            </button>
+
+            <button
+                onclick="openRule('gang', this)"
+            >
+                ⚔️ Gang
+            </button>
+
+            <button
+                onclick="openRule('robbery', this)"
+            >
+                💰 Rapine
+            </button>
+
+        </div>
+
+
+        <div class="rules-content">
+
+
+            <!-- RP -->
+
+            <div
+                class="rule-panel active"
+                id="rule-rp"
+            >
+
+                <h3>🎮 Regolamento Roleplay</h3>
+
+                <p>
+                    Tutti i giocatori sono tenuti a mantenere
+                    comportamenti coerenti con il proprio personaggio
+                    e con lo scenario RP.
+                </p>
+
+
+                <div class="warning">
+
+                    <strong>🚫 VIOLAZIONI GRAVI</strong>
+
+                    <p>
+                        Stop Stick, atti osceni, bombe e C4,
+                        utilizzo scorretto di equipaggiamento
+                        e altre azioni gravemente irrealistiche
+                        possono portare a sanzioni severe.
+                    </p>
+
+                </div>
+
+
+                <h4>Comportamenti vietati</h4>
+
+                <ul>
+
+                    <li>
+                        <strong>Fail RP:</strong>
+                        azioni irrealistiche o incoerenti.
+                    </li>
+
+                    <li>
+                        <strong>No Fear:</strong>
+                        ignorare situazioni di pericolo.
+                    </li>
+
+                    <li>
+                        <strong>Powergaming:</strong>
+                        costringere altri giocatori ad azioni
+                        impossibili o irrealistiche.
+                    </li>
+
+                    <li>
+                        <strong>Revenge Kill:</strong>
+                        tornare dopo la morte per vendicarsi.
+                    </li>
+
+                    <li>
+                        <strong>RDM:</strong>
+                        uccidere senza valido motivo RP.
+                    </li>
+
+                    <li>
+                        <strong>VDM:</strong>
+                        utilizzare veicoli per danneggiare
+                        o uccidere senza motivo RP.
+                    </li>
+
+                    <li>
+                        <strong>Cuff Rush:</strong>
+                        arrestare o immobilizzare senza valido motivo.
+                    </li>
+
+                    <li>
+                        <strong>Combat Logging:</strong>
+                        disconnettersi durante una scena o combattimento.
+                    </li>
+
+                    <li>
+                        <strong>LTAA:</strong>
+                        uscire o resettare per evitare conseguenze RP.
+                    </li>
+
+                    <li>
+                        <strong>Metagaming:</strong>
+                        utilizzare informazioni ottenute fuori dall'RP.
+                    </li>
+
+                    <li>
+                        <strong>MixChat:</strong>
+                        confondere comunicazioni IC e OOC.
+                    </li>
+
+                    <li>
+                        <strong>Stream Sniping:</strong>
+                        utilizzare una live per ottenere vantaggi.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- DISCORD -->
+
+            <div
+                class="rule-panel"
+                id="rule-discord"
+            >
+
+                <h3>💬 Regolamento Discord</h3>
+
+                <h4>Rispetto generale</h4>
+
+                <ul>
+
+                    <li>È vietato insultare familiari o altri utenti.</li>
+                    <li>È vietato divulgare dati personali.</li>
+                    <li>È vietato condividere contenuti osceni.</li>
+                    <li>È obbligatorio rispettare Staff e membri.</li>
+                    <li>È vietato inviare link dannosi.</li>
+                    <li>È richiesto un linguaggio rispettoso.</li>
+
+                </ul>
+
+
+                <div class="warning">
+
+                    <strong>🚫 SANZIONI</strong>
+
+                    <p>
+                        Le violazioni più gravi possono comportare
+                        Timeout, Kick o Ban Permanente.
+                    </p>
+
+                </div>
+
+
+                <div class="rule-divider"></div>
+
+
+                <h4>Linguaggio</h4>
+
+                <ul>
+
+                    <li>Evita spam e flood.</li>
+                    <li>Evita comportamenti offensivi.</li>
+                    <li>Non disturbare gli utenti nei vocali.</li>
+
+                </ul>
+
+
+                <div class="rule-divider"></div>
+
+
+                <h4>Staff</h4>
+
+                <ul>
+
+                    <li>È vietato chiedere ruoli Staff.</li>
+                    <li>Le candidature vengono aperte quando necessario.</li>
+                    <li>Le decisioni dello Staff devono essere rispettate.</li>
+
+                </ul>
+
+
+                <div class="rule-divider"></div>
+
+
+                <h4>Ticket</h4>
+
+                <ul>
+
+                    <li>Apri un ticket solo quando necessario.</li>
+                    <li>Non aprire ticket multipli per lo stesso problema.</li>
+                    <li>Rispetta lo Staff durante l'assistenza.</li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- SAFE ZONE -->
+
+            <div
+                class="rule-panel"
+                id="rule-safezone"
+            >
+
+                <h3>🛡️ Safe Zone</h3>
+
+                <p>
+                    Le Safe Zone sono aree nelle quali
+                    determinati comportamenti RP aggressivi
+                    non sono consentiti.
+                </p>
+
+
+                <div class="notice">
+
+                    <strong>Zone protette</strong>
+
+                    <p>
+                        🚔 Questura<br>
+                        🚒 Caserma Vigili del Fuoco<br>
+                        🏥 Ospedale<br>
+                        ⛓️ Prigione<br>
+                        🔧 Tuning<br>
+                        🏠 Ville<br>
+                        🪖 Zone Militari
+                    </p>
+
+                </div>
+
+
+                <p>
+                    Le scene iniziate fuori dalla Safe Zone
+                    possono continuare all'interno solamente
+                    quando previsto dalle regole RP.
+                </p>
+
+            </div>
+
+
+            <!-- GANG -->
+
+            <div
+                class="rule-panel"
+                id="rule-gang"
+            >
+
+                <h3>⚔️ Norme Gang</h3>
+
+                <ul>
+
+                    <li>💣 Vietato utilizzare bombe.</li>
+
+                    <li>
+                        🏠 Vietato entrare nelle ville
+                        di altre gang per provocare.
+                    </li>
+
+                    <li>
+                        ❌ Vietato RDM tra membri della stessa gang
+                        nella città.
+                    </li>
+
+                    <li>
+                        ⚔️ Gli 1vs1 tra membri della stessa gang
+                        sono consentiti esclusivamente nel
+                        grande parcheggio davanti alla nave del porto.
+                    </li>
+
+                </ul>
+
+
+                <div class="notice">
+
+                    <strong>⚔️ Regole 1vs1</strong>
+
+                    <p>
+                        I poliziotti non possono arrestare
+                        i partecipanti durante gli 1vs1.
+                        Tutte le altre regole RP rimangono valide.
+                        Gli 1vs1 sono situazioni OFF-RP.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ROBBERY -->
+
+            <div
+                class="rule-panel"
+                id="rule-robbery"
+            >
+
+                <h3>💰 Norme Rapine</h3>
+
+                <ul>
+
+                    <li>
+                        🏪 <strong>Farm Shop:</strong>
+                        2 rapinatori + 1 ostaggio ·
+                        Polizia 3-4 · Max 4.000$
+                    </li>
+
+                    <li>
+                        💎 <strong>Gioielleria:</strong>
+                        5 rapinatori + ostaggio ·
+                        Polizia come da RP · Illimitata
+                    </li>
+
+                    <li>
+                        🏦 <strong>Banca:</strong>
+                        5 rapinatori + ostaggio ·
+                        Richiesta illimitata
+                    </li>
+
+                    <li>
+                        👕 <strong>Clothing:</strong>
+                        2 rapinatori + 1 ostaggio ·
+                        Polizia 3-4 · Max 4.000$
+                    </li>
+
+                    <li>
+                        🎵 <strong>Club:</strong>
+                        5 rapinatori ·
+                        Polizia 8-9 · Max 8.000$
+                    </li>
+
+                    <li>
+                        ⛽ <strong>Gas-N-Go Fuel:</strong>
+                        2 rapinatori + 1 ostaggio ·
+                        Polizia 3-4 · Max 4.000$
+                    </li>
+
+                    <li>
+                        ⛽ <strong>Ares Fuel:</strong>
+                        2 rapinatori + 1 ostaggio ·
+                        Polizia 3-4 · Max 4.000$
+                    </li>
+
+                    <li>
+                        🛠️ <strong>Tool Shop:</strong>
+                        2 rapinatori + 1 ostaggio ·
+                        Polizia 3-4 · Max 4.000$
+                    </li>
+
+                    <li>
+                        ⛽ <strong>Osso Fuel:</strong>
+                        2 rapinatori + 1 ostaggio ·
+                        Polizia 3-4 · Max 4.000$
+                    </li>
+
+                </ul>
+
+
+                <div class="notice">
+
+                    <strong>⚠️ Nota</strong>
+
+                    <p>
+                        Tutte le rapine devono rispettare
+                        il regolamento RP.
+                        Gli abusi saranno sanzionati dallo Staff.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+      <!-- =========================================================
+     STAFF
+========================================================= -->
+
+<section class="section" id="staff">
+
+    <div class="section-header reveal">
+
+        <div>
+
+            <div class="eyebrow">04 — Team</div>
+
+            <h2 class="section-title">
+                IL NOSTRO<br>
+                STAFF.
+            </h2>
+
+        </div>
+
+        <p class="section-description">
+            Lo Staff è il cuore della community.
+            I membri del team si occupano di moderazione,
+            assistenza, organizzazione e sviluppo del progetto.
+        </p>
+
+    </div>
+
+
+    <div class="staff-grid">
+
+        <article class="staff-card reveal">
+
+            <div class="staff-avatar">👑</div>
+
+            <h3>Founder</h3>
+
+            <p>Management</p>
+
+        </article>
+
+
+        <article class="staff-card reveal">
+
+            <div class="staff-avatar">🛡️</div>
+
+            <h3>Administration</h3>
+
+            <p>Management</p>
+
+        </article>
+
+
+        <article class="staff-card reveal">
+
+            <div class="staff-avatar">🔨</div>
+
+            <h3>Moderation</h3>
+
+            <p>Moderazione</p>
+
+        </article>
+
+
+        <article class="staff-card reveal">
+
+            <div class="staff-avatar">🎮</div>
+
+            <h3>Game Staff</h3>
+
+            <p>Roleplay</p>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     LINKS
+========================================================= -->
+
+<section class="section" id="links">
+
+    <div class="section-header reveal">
+
+        <div>
+
+            <div class="eyebrow">05 — Community</div>
+
+            <h2 class="section-title">
+                LINK<br>
+                UFFICIALI.
+            </h2>
+
+        </div>
+
+        <p class="section-description">
+            Tutti i collegamenti ufficiali di Sud Italy RP
+            raccolti in un unico posto.
+        </p>
+
+    </div>
+
+
+    <div class="links-grid">
+
+
+        <a
+            class="link-card reveal"
+            href="https://discord.gg/suditalyrp"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+
+            <div class="link-arrow">↗</div>
+
+            <div class="link-card-icon">🇮🇹</div>
+
+            <div>
+                <h3>Server Principale</h3>
+
+                <span>
+                    La community ufficiale Sud Italy RP
+                </span>
+            </div>
+
+        </a>
+
+
+        <a
+            class="link-card reveal"
+            href="https://discord.gg/tuPPbM64vS"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+
+            <div class="link-arrow">↗</div>
+
+            <div class="link-card-icon">🚔</div>
+
+            <div>
+                <h3>Server FDO</h3>
+
+                <span>
+                    Spazio dedicato alle Forze dell'Ordine
+                </span>
+            </div>
+
+        </a>
+
+
+        <a
+            class="link-card reveal"
+            href="https://www.tiktok.com/@sud.italy.rp1"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+
+            <div class="link-arrow">↗</div>
+
+            <div class="link-card-icon">🎵</div>
+
+            <div>
+                <h3>TikTok</h3>
+
+                <span>
+                    Video, contenuti e aggiornamenti
+                </span>
+            </div>
+
+        </a>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FINAL CTA
+========================================================= -->
+
+<section class="section">
+
+    <div class="final-cta reveal">
+
+        <div class="eyebrow">
+            Sud Italy RP
+        </div>
+
+        <h2>
+            PRONTO A ENTRARE
+            <span style="color:var(--yellow)">
+                IN CITTÀ?
+            </span>
+        </h2>
+
+        <p>
+            Unisciti alla community, conosci nuovi giocatori
+            e vivi il tuo Roleplay su Emergency Hamburg.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a
+                class="btn btn-primary"
+                href="https://discord.gg/suditalyrp"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                🚀 ENTRA NEL DISCORD
+            </a>
+
+            <a
+                class="btn btn-secondary"
+                href="https://www.tiktok.com/@sud.italy.rp1"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                🎵 SEGUICI SU TIKTOK
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <div class="footer-inner">
+
+
+        <div class="footer-brand">
+
+            <img
+                src="https://cdn.discordapp.com/attachments/1533498424379310292/1541562283245969459/IMG_0273-2.jpg?ex=6a8e0b41&is=6a8cb9c1&hm=9aa11e03ef300b9caabb0a617f58d38b6531655bf8fd46923e94b3b9f9ecc2ca&"
+                alt="Sud Italy RP Logo"
+            >
+
+            <div>
+
+                <h3>SUD ITALY RP 🇮🇹</h3>
+
+                <p>
+                    Community italiana dedicata al Roleplay
+                    su Emergency Hamburg.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>Navigazione</h4>
+
+            <a href="#home">Home</a>
+            <a href="#about">Il progetto</a>
+            <a href="#factions">Fazioni</a>
+            <a href="#rules">Regolamenti</a>
+            <a href="#staff">Staff</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>Community</h4>
+
+            <a
+                href="https://discord.gg/suditalyrp"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Discord principale
+            </a>
+
+            <a
+                href="https://discord.gg/tuPPbM64vS"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Server FDO
+            </a>
+
+            <a
+                href="https://www.tiktok.com/@sud.italy.rp1"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                TikTok
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 Sud Italy RP. Tutti i diritti riservati.
+        </span>
+
+        <span>
+            Made for the community 🇮🇹
+        </span>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+    /* =========================================================
+       CURSOR GLOW
+    ========================================================= */
+
+    const cursorGlow =
+        document.getElementById("cursorGlow");
+
+    document.addEventListener("mousemove", function(event) {
+
+        cursorGlow.style.left =
+            event.clientX + "px";
+
+        cursorGlow.style.top =
+            event.clientY + "px";
+
+    });
+
+
+    /* =========================================================
+       NAVBAR SCROLL
+    ========================================================= */
+
+    const navbar =
+        document.getElementById("navbar");
+
+    window.addEventListener("scroll", function() {
+
+        if (window.scrollY > 40) {
+
+            navbar.classList.add("scrolled");
+
+        } else {
+
+            navbar.classList.remove("scrolled");
+
+        }
+
+    });
+
+
+    /* =========================================================
+       MOBILE MENU
+    ========================================================= */
+
+    const mobileMenu =
+        document.getElementById("mobileMenu");
+
+    const navLinks =
+        document.getElementById("navLinks");
+
+    mobileMenu.addEventListener("click", function() {
+
+        navLinks.classList.toggle("open");
+
+    });
+
+
+    document.querySelectorAll(".nav-links a")
+        .forEach(function(link) {
+
+            link.addEventListener("click", function() {
+
+                navLinks.classList.remove("open");
+
+            });
+
+        });
+
+
+    /* =========================================================
+       ACTIVE NAVIGATION
+    ========================================================= */
+
+    const sections =
+        document.querySelectorAll("main section[id]");
+
+    const navigationLinks =
+        document.querySelectorAll(".nav-links a");
+
+
+    const navigationObserver =
+        new IntersectionObserver(
+
+            function(entries) {
+
+                entries.forEach(function(entry) {
+
+                    if (!entry.isIntersecting)
+                        return;
+
+                    navigationLinks.forEach(function(link) {
+
+                        link.classList.remove("active");
+
+                    });
+
+                    const activeLink =
+                        document.querySelector(
+                            '.nav-links a[href="#' +
+                            entry.target.id +
+                            '"]'
+                        );
+
+                    if (activeLink) {
+
+                        activeLink.classList.add("active");
+
+                    }
+
+                });
+
+            },
+
+            {
+                threshold: .35
+            }
+
+        );
+
+
+    sections.forEach(function(section) {
+
+        navigationObserver.observe(section);
+
+    });
+
+
+    /* =========================================================
+       REVEAL ANIMATION
+    ========================================================= */
+
+    const revealElements =
+        document.querySelectorAll(".reveal");
+
+
+    const revealObserver =
+        new IntersectionObserver(
+
+            function(entries, observer) {
+
+                entries.forEach(function(entry) {
+
+                    if (!entry.isIntersecting)
+                        return;
+
+                    entry.target.classList.add("visible");
+
+                    observer.unobserve(entry.target);
+
+                });
+
+            },
+
+            {
+                threshold: .12
+            }
+
+        );
+
+
+    revealElements.forEach(function(element) {
+
+        revealObserver.observe(element);
+
+    });
+
+
+    /* =========================================================
+       RULE SYSTEM
+    ========================================================= */
+
+    function openRule(rule, button) {
+
+        document
+            .querySelectorAll(".rule-panel")
+            .forEach(function(panel) {
+
+                panel.classList.remove("active");
+
+            });
+
+
+        document
+            .querySelectorAll(".rules-nav button")
+            .forEach(function(btn) {
+
+                btn.classList.remove("active");
+
+            });
+
+
+        const selectedPanel =
+            document.getElementById(
+                "rule-" + rule
+            );
+
+
+        if (selectedPanel) {
+
+            selectedPanel.classList.add("active");
+
+        }
+
+
+        if (button) {
+
+            button.classList.add("active");
+
+        }
+
+    }
+
+
+    /* =========================================================
+       SMOOTH ANCHOR FALLBACK
+    ========================================================= */
+
+    document
+        .querySelectorAll('a[href^="#"]')
+        .forEach(function(link) {
+
+            link.addEventListener("click", function(event) {
+
+                const targetId =
+                    this.getAttribute("href");
+
+                const target =
+                    document.querySelector(targetId);
+
+                if (!target)
+                    return;
+
+                event.preventDefault();
+
+                target.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+            });
+
+        });
+
+
+    /* =========================================================
+       YEAR
+    ========================================================= */
+
+    document
+        .querySelectorAll(".footer-bottom span:first-child")
+        .forEach(function(element) {
+
+            element.innerHTML =
+                "© " +
+                new Date().getFullYear() +
+                " Sud Italy RP. Tutti i diritti riservati.";
+
+        });
+
+</script>
+
+</body>
+</html>
+
+  
