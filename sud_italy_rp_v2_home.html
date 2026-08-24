@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#050609">
+<meta name="description" content="Sud Italy RP — Community italiana dedicata al Roleplay su Emergency Hamburg.">
+<title>Sud Italy RP — Official</title>
+
+<link rel="icon" href="https://cdn.discordapp.com/attachments/1533498424379310292/1541562283245969459/IMG_0273-2.jpg?ex=6a8e0b41&is=6a8cb9c1&hm=9aa11e03ef300b9caabb0a617f58d38b6531655bf8fd46923e94b3b9f9ecc2ca&">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --bg:#050609;
+    --bg2:#090b10;
+    --card:rgba(13,16,22,.72);
+    --white:#f7f8fb;
+    --muted:#929aaa;
+    --yellow:#ffd21f;
+    --yellow2:#ff9d00;
+    --red:#e93636;
+    --blue:#4d7cff;
+    --green:#19d98b;
+    --border:rgba(255,255,255,.09);
+    --radius:26px;
+    --shadow:0 30px 100px rgba(0,0,0,.48);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+    min-height:100vh;
+    color:var(--white);
+    background:
+      radial-gradient(circle at 12% 8%,rgba(255,210,31,.08),transparent 24%),
+      radial-gradient(circle at 88% 30%,rgba(77,124,255,.08),transparent 26%),
+      var(--bg);
+    font-family:Inter,Arial,sans-serif;
+    overflow-x:hidden;
+}
+body:before{
+    content:"";
+    position:fixed;inset:0;z-index:-5;pointer-events:none;
+    background-image:
+      linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);
+    background-size:70px 70px;
+    mask-image:linear-gradient(to bottom,#000,transparent 88%);
+}
+body:after{
+    content:"";
+    position:fixed;inset:0;z-index:20;pointer-events:none;
+    opacity:.025;
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
+}
+::selection{background:var(--yellow);color:#111}
+::-webkit-scrollbar{width:8px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:linear-gradient(var(--yellow),var(--yellow2));border-radius:99px}
+a{color:inherit}
+button{font:inherit}
+.container{width:min(1220px,calc(100% - 40px));margin:auto}
+
+/* NAV */
+.navbar{
+    position:fixed;top:18px;left:50%;transform:translateX(-50%);
+    width:min(1220px,calc(100% - 30px));z-index:1000;
+    display:flex;align-items:center;justify-content:space-between;gap:18px;
+    padding:10px 12px;
+    border:1px solid rgba(255,255,255,.11);border-radius:18px;
+    background:rgba(5,7,10,.62);backdrop-filter:blur(24px);
+    box-shadow:0 20px 60px rgba(0,0,0,.35);
+    transition:.3s ease;
+}
+.navbar.scrolled{background:rgba(5,7,10,.94);border-color:rgba(255,210,31,.16)}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;min-width:max-content}
+.brand img{width:44px;height:44px;border-radius:12px;object-fit:cover;border:1px solid rgba(255,255,255,.14)}
+.brand strong{display:block;font-family:"Space Grotesk";font-size:14px;letter-spacing:.4px}
+.brand span{display:block;color:var(--muted);font-size:9px;font-weight:800;letter-spacing:1.8px;margin-top:4px}
+.nav-links{display:flex;align-items:center;gap:3px}
+.nav-links a{
+    text-decoration:none;color:#aeb5c1;font-size:10px;font-weight:900;
+    letter-spacing:.4px;padding:12px 12px;border-radius:11px;transition:.25s;
+}
+.nav-links a:hover,.nav-links a.active{color:#fff;background:rgba(255,255,255,.055)}
+.nav-links a.active:after{content:"";display:block;width:4px;height:4px;border-radius:50%;background:var(--yellow);margin:5px auto -9px;box-shadow:0 0 12px var(--yellow)}
+.nav-discord{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    min-height:42px;padding:0 16px;border-radius:12px;
+    background:linear-gradient(135deg,#ffd21f,#ffb000);color:#111;text-decoration:none;
+    font-size:10px;font-weight:900;white-space:nowrap;box-shadow:0 12px 35px rgba(255,210,31,.16);transition:.25s;
+}
+.nav-discord:hover{transform:translateY(-2px);box-shadow:0 18px 45px rgba(255,210,31,.26)}
+.mobile-menu{display:none;width:42px;height:42px;border:1px solid var(--border);border-radius:12px;background:rgba(255,255,255,.04);color:#fff;cursor:pointer}
+
+/* HERO */
+.hero{
+    position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden;
+    padding:150px 30px 80px;
+}
+.hero-bg{
+    position:absolute;inset:0;
+    background:
+      linear-gradient(90deg,rgba(3,4,7,.91) 0%,rgba(3,4,7,.62) 42%,rgba(3,4,7,.34) 70%,rgba(3,4,7,.68) 100%),
+      linear-gradient(0deg,var(--bg) 0%,transparent 25%,rgba(0,0,0,.15) 100%),
+      url("https://cdn.discordapp.com/attachments/1420059113462960229/1541584866477350943/1786849976791.png?ex=6a8e2049&is=6a8ccec9&hm=5695620c0593e6b71dbeef6b7ea012233a50e11adf85913132d67711c01e84df&")
+      center/cover no-repeat;
+    transform:scale(1.03);animation:heroZoom 18s ease-in-out infinite alternate;
+}
+@keyframes heroZoom{from{transform:scale(1.03)}to{transform:scale(1.08)}}
+.hero:before{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background:
+      radial-gradient(circle at 50% 46%,rgba(255,210,31,.12),transparent 28%),
+      linear-gradient(90deg,transparent 0 78%,rgba(255,210,31,.05) 100%);
+}
+.hero-content{position:relative;z-index:2;width:min(950px,100%);margin-left:max(2vw,0)}
+.hero-badge{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:8px 12px;border:1px solid rgba(255,210,31,.23);border-radius:999px;
+    background:rgba(7,9,13,.48);backdrop-filter:blur(15px);
+    color:#ffe36c;font-size:10px;font-weight:900;letter-spacing:2px;text-transform:uppercase;
+}
+.hero-badge i{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 14px var(--green)}
+.hero h1{
+    margin-top:22px;font-family:"Space Grotesk";font-size:clamp(65px,10vw,145px);
+    line-height:.78;letter-spacing:-8px;font-weight:700;text-transform:uppercase;
+}
+.hero h1 span{color:var(--yellow);text-shadow:0 0 60px rgba(255,210,31,.25)}
+.hero-subtitle{margin-top:28px;font-family:"Space Grotesk";font-size:clamp(18px,2.4vw,30px);font-weight:700;letter-spacing:4px}
+.hero-subtitle span{color:var(--yellow)}
+.hero-description{max-width:660px;margin-top:18px;color:#c1c7d1;font-size:15px;line-height:1.85}
+.hero-actions{display:flex;flex-wrap:wrap;gap:11px;margin-top:30px}
+.btn{
+    min-height:54px;padding:0 20px;display:inline-flex;align-items:center;justify-content:center;gap:9px;
+    border:1px solid var(--border);border-radius:14px;text-decoration:none;font-size:10px;font-weight:900;
+    letter-spacing:.5px;transition:.3s;cursor:pointer;
+}
+.btn:hover{transform:translateY(-4px)}
+.btn-primary{background:linear-gradient(135deg,var(--yellow),#ffb300);color:#111;border-color:var(--yellow);box-shadow:0 15px 40px rgba(255,210,31,.18)}
+.btn-secondary{background:rgba(7,9,13,.55);backdrop-filter:blur(15px);color:#fff}
+.hero-stats{
+    display:grid;grid-template-columns:repeat(3,1fr);width:min(760px,100%);margin-top:45px;
+    border:1px solid rgba(255,255,255,.11);border-radius:18px;background:rgba(4,6,9,.55);backdrop-filter:blur(18px);overflow:hidden;
+}
+.hero-stat{padding:18px 20px;border-right:1px solid rgba(255,255,255,.08)}
+.hero-stat:last-child{border-right:0}
+.hero-stat strong{display:block;font-family:"Space Grotesk";font-size:15px}
+.hero-stat span{display:block;color:var(--muted);font-size:9px;font-weight:800;letter-spacing:1px;text-transform:uppercase;margin-top:5px}
+.scroll-hint{position:absolute;z-index:3;bottom:25px;left:50%;transform:translateX(-50%);color:#aab0bb;font-size:9px;font-weight:900;letter-spacing:4px;text-align:center}
+.scroll-hint div{margin-top:9px;color:var(--yellow);font-size:22px;animation:bounce 1.8s infinite}
+@keyframes bounce{50%{transform:translateY(7px)}}
+
+/* SECTIONS */
+.section{position:relative;padding:115px 0}
+.section-header{display:grid;grid-template-columns:.85fr 1.15fr;gap:60px;align-items:end;margin-bottom:50px}
+.eyebrow{color:var(--yellow);font-size:10px;font-weight:900;letter-spacing:3px;text-transform:uppercase;margin-bottom:13px}
+.section-title{font-family:"Space Grotesk";font-size:clamp(42px,6vw,78px);line-height:.86;letter-spacing:-4px}
+.section-description{color:var(--muted);max-width:650px;font-size:14px;line-height:1.9}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .75s ease,transform .75s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* PROJECT */
+.project-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:16px}
+.project-main,.project-side-card{
+    border:1px solid var(--border);border-radius:var(--radius);background:linear-gradient(145deg,rgba(18,22,30,.92),rgba(7,9,13,.94));box-shadow:var(--shadow)
+}
+.project-main{padding:34px;min-height:360px;position:relative;overflow:hidden}
+.project-main:after{content:"";position:absolute;width:320px;height:320px;right:-150px;bottom:-160px;border-radius:50%;background:radial-gradient(circle,rgba(255,210,31,.13),transparent 68%)}
+.project-main h3{font-family:"Space Grotesk";font-size:32px;margin-bottom:16px}
+.project-main p{color:#aeb6c3;line-height:1.9;max-width:760px;font-size:14px}
+.project-points{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:28px}
+.project-point{padding:17px;border:1px solid var(--border);border-radius:16px;background:rgba(255,255,255,.025)}
+.project-point b{display:block;color:var(--yellow);font-size:11px;letter-spacing:1px}
+.project-point span{display:block;color:#a9b0bd;font-size:11px;line-height:1.6;margin-top:6px}
+.project-side{display:grid;gap:16px}
+.project-side-card{padding:25px;min-height:172px}
+.project-side-card .icon{font-size:28px;margin-bottom:15px}
+.project-side-card h4{font-size:17px;margin-bottom:8px}
+.project-side-card p{color:var(--muted);font-size:12px;line-height:1.7}
+
+/* FACTIONS */
+.factions{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.faction{
+    position:relative;overflow:hidden;padding:25px 20px;min-height:220px;
+    border:1px solid var(--border);border-radius:21px;background:rgba(255,255,255,.025);transition:.35s
+}
+.faction:hover{transform:translateY(-7px);border-color:rgba(255,210,31,.3);background:rgba(255,210,31,.035)}
+.faction .icon{font-size:31px;margin-bottom:18px}
+.faction h3{font-size:16px;margin-bottom:8px}
+.faction p{color:var(--muted);font-size:11px;line-height:1.75}
+.faction .line{position:absolute;left:20px;right:20px;bottom:20px;height:2px;background:linear-gradient(90deg,var(--yellow),transparent)}
+
+/* RULES */
+.rules-wrap{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.rules-card{
+    border:1px solid var(--border);border-radius:var(--radius);background:linear-gradient(145deg,rgba(16,20,27,.94),rgba(7,9,13,.96));overflow:hidden
+}
+.rules-head{padding:28px 30px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:20px}
+.rules-head h3{font-family:"Space Grotesk";font-size:24px}
+.rules-head span{font-size:9px;font-weight:900;letter-spacing:1.5px;color:var(--yellow);border:1px solid rgba(255,210,31,.25);padding:8px 10px;border-radius:999px}
+.rules-body{padding:28px 30px}
+.rules-body p{color:#aeb6c3;font-size:13px;line-height:1.8}
+.warning,.notice{
+    margin:20px 0;padding:17px;border-radius:15px;border:1px solid rgba(255,210,31,.18);background:rgba(255,210,31,.045)
+}
+.warning strong,.notice strong{display:block;color:var(--yellow);font-size:11px;letter-spacing:.5px;margin-bottom:7px}
+.warning p,.notice p{font-size:12px}
+.rules-body h4{font-size:13px;margin:23px 0 12px}
+.rules-list{list-style:none;display:grid;gap:8px}
+.rules-list li{
+    position:relative;padding:10px 12px 10px 30px;border:1px solid rgba(255,255,255,.06);border-radius:11px;
+    background:rgba(255,255,255,.018);color:#aeb6c3;font-size:11px;line-height:1.65
+}
+.rules-list li:before{content:"";position:absolute;left:12px;top:16px;width:6px;height:6px;border-radius:50%;background:var(--yellow);box-shadow:0 0 9px rgba(255,210,31,.45)}
+.rules-list strong{color:#fff}
+.rule-divider{height:1px;background:var(--border);margin:24px 0}
+
+/* ROBBERY */
+.robbery{margin-top:16px;padding:28px;border:1px solid var(--border);border-radius:var(--radius);background:linear-gradient(145deg,rgba(16,20,27,.9),rgba(7,9,13,.94))}
+.robbery h3{font-family:"Space Grotesk";font-size:25px;margin-bottom:18px}
+.robbery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.robbery-item{padding:15px;border:1px solid rgba(255,255,255,.07);border-radius:13px;background:rgba(255,255,255,.018)}
+.robbery-item b{display:block;font-size:12px;margin-bottom:6px}
+.robbery-item span{color:var(--muted);font-size:10px;line-height:1.65}
+
+/* COMMUNITY */
+.links-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.link-card{
+    position:relative;min-height:205px;padding:28px;display:flex;flex-direction:column;justify-content:space-between;
+    border:1px solid var(--border);border-radius:22px;background:linear-gradient(145deg,#11151d,#090b10);
+    text-decoration:none;overflow:hidden;transition:.35s
+}
+.link-card:hover{transform:translateY(-7px);border-color:rgba(255,210,31,.3)}
+.link-card:before{content:"";position:absolute;inset:auto -70px -100px auto;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(255,210,31,.11),transparent 68%)}
+.link-icon{font-size:31px}
+.link-card h3{font-size:18px;margin-bottom:6px}
+.link-card span{color:var(--muted);font-size:11px}
+.link-arrow{position:absolute;right:20px;top:20px;width:35px;height:35px;display:grid;place-items:center;border-radius:10px;background:rgba(255,255,255,.05);color:var(--yellow);font-weight:900}
+
+/* CTA */
+.final-cta{
+    position:relative;overflow:hidden;text-align:center;padding:75px 30px;border:1px solid rgba(255,210,31,.16);
+    border-radius:32px;background:
+      radial-gradient(circle at 50% 0%,rgba(255,210,31,.12),transparent 42%),
+      linear-gradient(145deg,rgba(18,21,28,.95),rgba(7,9,13,.98));
+}
+.final-cta h2{font-family:"Space Grotesk";font-size:clamp(38px,6vw,70px);line-height:.9;letter-spacing:-3px;margin-top:12px}
+.final-cta p{max-width:620px;margin:20px auto 0;color:var(--muted);line-height:1.8;font-size:14px}
+.final-cta .hero-actions{justify-content:center}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:45px 0 20px;background:#040507}
+.footer-inner{width:min(1220px,calc(100% - 40px));margin:auto;display:grid;grid-template-columns:1.5fr .7fr .7fr;gap:40px}
+.footer-brand{display:flex;gap:14px}
+.footer-brand img{width:48px;height:48px;border-radius:13px;object-fit:cover}
+.footer-brand h3{font-size:13px}
+.footer-brand p{color:var(--muted);font-size:11px;line-height:1.7;max-width:330px;margin-top:6px}
+.footer-column h4{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--yellow);margin-bottom:13px}
+.footer-column a{display:block;text-decoration:none;color:#929aaa;font-size:11px;margin:8px 0;transition:.2s}
+.footer-column a:hover{color:#fff}
+.footer-bottom{width:min(1220px,calc(100% - 40px));margin:35px auto 0;padding-top:18px;border-top:1px solid var(--border);display:flex;justify-content:space-between;gap:15px;color:#687180;font-size:9px;letter-spacing:.4px}
+
+/* RESPONSIVE */
+@media(max-width:1050px){
+    .nav-links{display:none}
+    .mobile-menu{display:block}
+    .navbar .nav-discord{margin-left:auto}
+    .hero h1{letter-spacing:-5px}
+    .factions{grid-template-columns:repeat(2,1fr)}
+    .project-grid,.rules-wrap{grid-template-columns:1fr}
+}
+@media(max-width:700px){
+    .navbar{top:10px;width:calc(100% - 18px)}
+    .brand-text{display:none}
+    .nav-discord{display:none}
+    .mobile-menu{display:grid;place-items:center}
+    .nav-links{
+        position:absolute;left:0;right:0;top:62px;display:none;flex-direction:column;align-items:stretch;
+        padding:8px;border:1px solid var(--border);border-radius:16px;background:rgba(5,7,10,.96);backdrop-filter:blur(22px)
+    }
+    .nav-links.open{display:flex}
+    .nav-links a{text-align:center}
+    .hero{padding:130px 20px 75px;min-height:900px}
+    .hero-bg{background-position:58% center}
+    .hero h1{font-size:clamp(55px,16vw,92px);letter-spacing:-5px}
+    .hero-subtitle{font-size:17px;letter-spacing:2px}
+    .hero-description{font-size:13px}
+    .hero-stats{grid-template-columns:1fr}
+    .hero-stat{border-right:0;border-bottom:1px solid rgba(255,255,255,.08)}
+    .hero-stat:last-child{border-bottom:0}
+    .section{padding:80px 0}
+    .section-header{grid-template-columns:1fr;gap:22px}
+    .section-title{letter-spacing:-3px}
+    .project-points,.robbery-grid,.links-grid{grid-template-columns:1fr}
+    .factions{grid-template-columns:1fr}
+    .project-main{padding:25px}
+    .rules-head,.rules-body{padding:22px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .footer-brand{grid-column:1/-1}
+    .footer-bottom{flex-direction:column}
+}
+@media(prefers-reduced-motion:reduce){
+    *,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}
+}
+</style>
+</head>
+
+<body>
+<div class="cursor"></div>
+
+<nav class="navbar" id="navbar">
+    <a class="brand" href="#home">
+        <img src="https://cdn.discordapp.com/attachments/1533498424379310292/1541562283245969459/IMG_0273-2.jpg?ex=6a8e0b41&is=6a8cb9c1&hm=9aa11e03ef300b9caabb0a617f58d38b6531655bf8fd46923e94b3b9f9ecc2ca&" alt="Sud Italy RP">
+        <div class="brand-text">
+            <strong>SUD ITALY RP</strong>
+            <span>Official Community</span>
+        </div>
+    </a>
+
+    <div class="nav-links" id="navLinks">
+        <a class="active" href="#home">HOME</a>
+        <a href="#project">IL PROGETTO</a>
+        <a href="#factions">FAZIONI</a>
+        <a href="#rules">REGOLAMENTO</a>
+        <a href="#community">COMMUNITY</a>
+    </div>
+
+    <a class="nav-discord" href="https://discord.gg/suditalyrp" target="_blank" rel="noopener noreferrer">💬 ENTRA NEL DISCORD</a>
+    <button class="mobile-menu" id="mobileMenu" aria-label="Apri menu">☰</button>
+</nav>
+
+<main>
+<section class="hero" id="home">
+    <div class="hero-bg"></div>
+
+    <div class="hero-content">
+        <div class="hero-badge"><i></i> Community italiana • Emergency Hamburg</div>
+
+        <h1>SUD ITALY <span>RP</span></h1>
+
+        <div class="hero-subtitle">IL TUO ROLEPLAY. <span>LA TUA STORIA.</span></div>
+
+        <p class="hero-description">
+            Vivi Emergency Hamburg con una community italiana costruita per chi cerca
+            scene credibili, organizzazione, divertimento e un Roleplay sempre più coinvolgente.
+        </p>
+
+        <div class="hero-actions">
+            <a class="btn btn-primary" href="https://discord.gg/suditalyrp" target="_blank" rel="noopener noreferrer">🚀 ENTRA NEL DISCORD</a>
+            <a class="btn btn-secondary" href="#project">🎮 SCOPRI IL SERVER</a>
+        </div>
+
+        <div class="hero-stats">
+            <div class="hero-stat"><strong><span style="display:inline;color:var(--green);font-size:13px">●</span> SERVER ONLINE</strong><span>Unisciti alla community</span></div>
+            <div class="hero-stat"><strong>🇮🇹 ITALIAN ROLEPLAY</strong><span>Roleplay serio e coinvolgente</span></div>
+            <div class="hero-stat"><strong>◷ 24/7 COMMUNITY</strong><span>Sempre attivi per te</span></div>
+        </div>
+    </div>
+
+    <div class="scroll-hint">SCROLL TO EXPLORE<div>⌄</div></div>
+</section>
+
+<section class="section" id="project">
+<div class="container">
+    <div class="section-header reveal">
+        <div>
+            <div class="eyebrow">01 — Il progetto</div>
+            <h2 class="section-title">VIVI LA<br> CITTÀ.</h2>
+        </div>
+        <p class="section-description">
+            Sud Italy RP nasce per creare un'esperienza di Roleplay italiana moderna,
+            organizzata e soprattutto divertente. Entra, scegli la tua strada e costruisci
+            la tua storia dentro Emergency Hamburg.
+        </p>
+    </div>
+
+    <div class="project-grid">
+        <article class="project-main reveal">
+            <h3>Una città. Infinite storie.</h3>
+            <p>
+                Che tu voglia essere parte delle Forze dell'Ordine, soccorrere la città,
+                lavorare nei servizi pubblici oppure vivere il lato criminale del Roleplay,
+                troverai spazio per creare il tuo personaggio e giocare con gli altri.
+            </p>
+            <div class="project-points">
+                <div class="project-point"><b>01 / REALISMO</b><span>Scene coerenti e attenzione alle regole RP.</span></div>
+                <div class="project-point"><b>02 / COMMUNITY</b><span>Una community italiana sempre pronta a giocare.</span></div>
+                <div class="project-point"><b>03 / EVENTI</b><span>Situazioni e attività per rendere la città viva.</span></div>
+            </div>
+        </article>
+
+        <div class="project-side">
+            <article class="project-side-card reveal"><div class="icon">🎭</div><h4>Il tuo personaggio</h4><p>Crea una storia, scegli un ruolo e rendi riconoscibile il tuo personaggio.</p></article>
+            <article class="project-side-card reveal"><div class="icon">🚨</div><h4>Roleplay attivo</h4><p>Emergenze, inseguimenti, soccorsi, lavori, rapine e scene organizzate.</p></article>
+        </div>
+    </div>
+</div>
+</section>
+
+<section class="section" id="factions">
+<div class="container">
+    <div class="section-header reveal">
+        <div>
+            <div class="eyebrow">02 — Fazioni</div>
+            <h2 class="section-title">TROVA IL<br>TUO RUOLO.</h2>
+        </div>
+        <p class="section-description">
+            La città vive grazie alle persone che la abitano. Scegli il tuo percorso
+            e contribuisci alle scene con il tuo stile di gioco.
+        </p>
+    </div>
+
+    <div class="factions">
+        <article class="faction reveal"><div class="icon">🚔</div><h3>Forze dell'Ordine</h3><p>Controllo del territorio, interventi, inseguimenti e gestione delle emergenze.</p><div class="line"></div></article>
+        <article class="faction reveal"><div class="icon">🚒</div><h3>Vigili del Fuoco</h3><p>Incendi, incidenti, soccorsi e interventi coordinati in città.</p><div class="line"></div></article>
+        <article class="faction reveal"><div class="icon">🏥</div><h3>Servizi Sanitari</h3><p>Soccorso ai cittadini, emergenze mediche e scene sanitarie RP.</p><div class="line"></div></article>
+        <article class="faction reveal"><div class="icon">⚔️</div><h3>Gang & Criminalità</h3><p>Attività criminali, rivalità e situazioni ad alto rischio nel rispetto delle regole.</p><div class="line"></div></article>
+    </div>
+</div>
+</section>
+
+<section class="section" id="rules">
+<div class="container">
+    <div class="section-header reveal">
+        <div>
+            <div class="eyebrow">03 — Regolamento</div>
+            <h2 class="section-title">PLAY<br>FAIR.</h2>
+        </div>
+        <p class="section-description">
+            Le regole sono raccolte in modo completo e leggibile. Niente menu a schede:
+            ogni regolamento è disponibile interamente nella propria sezione.
+        </p>
+    </div>
+
+    <div class="rules-wrap">
+        <article class="rules-card reveal">
+            <div class="rules-head"><h3>🎮 Regolamento Roleplay</h3><span>RP / COMPLETO</span></div>
+            <div class="rules-body">
+                <p>Tutti i giocatori sono tenuti a mantenere comportamenti coerenti con il proprio personaggio e con lo scenario RP.</p>
+
+                <div class="warning">
+                    <strong>🚫 VIOLAZIONI GRAVI</strong>
+                    <p>Stop Stick, atti osceni, bombe e C4, utilizzo scorretto di equipaggiamento e altre azioni gravemente irrealistiche possono portare a sanzioni severe.</p>
+                </div>
+
+                <h4>Comportamenti vietati</h4>
+                <ul class="rules-list">
+                    <li><strong>Fail RP:</strong> azioni irrealistiche o incoerenti.</li>
+                    <li><strong>No Fear:</strong> ignorare situazioni di pericolo.</li>
+                    <li><strong>Powergaming:</strong> costringere altri giocatori ad azioni impossibili o irrealistiche.</li>
+                    <li><strong>Revenge Kill:</strong> tornare dopo la morte per vendicarsi.</li>
+                    <li><strong>RDM:</strong> uccidere senza valido motivo RP.</li>
+                    <li><strong>VDM:</strong> utilizzare veicoli per danneggiare o uccidere senza motivo RP.</li>
+                    <li><strong>Cuff Rush:</strong> arrestare o immobilizzare senza valido motivo.</li>
+                    <li><strong>Combat Logging:</strong> disconnettersi durante una scena o combattimento.</li>
+                    <li><strong>LTAA:</strong> uscire o resettare per evitare conseguenze RP.</li>
+                    <li><strong>Metagaming:</strong> utilizzare informazioni ottenute fuori dall'RP.</li>
+                    <li><strong>MixChat:</strong> confondere comunicazioni IC e OOC.</li>
+                    <li><strong>Stream Sniping:</strong> utilizzare una live per ottenere vantaggi.</li>
+                </ul>
+
+                <div class="rule-divider"></div>
+                <h4>Safe Zone</h4>
+                <div class="notice">
+                    <strong>🛡️ ZONE PROTETTE</strong>
+                    <p>🚔 Questura · 🚒 Caserma Vigili del Fuoco · 🏥 Ospedale · ⛓️ Prigione · 🔧 Tuning · 🏠 Ville · 🪖 Zone Militari</p>
+                </div>
+                <p>Le scene iniziate fuori dalla Safe Zone possono continuare all'interno solamente quando previsto dalle regole RP.</p>
+
+                <div class="rule-divider"></div>
+                <h4>Norme Gang</h4>
+                <ul class="rules-list">
+                    <li>💣 Vietato utilizzare bombe.</li>
+                    <li>🏠 Vietato entrare nelle ville di altre gang per provocare.</li>
+                    <li>❌ Vietato RDM tra membri della stessa gang nella città.</li>
+                    <li>⚔️ Gli 1vs1 tra membri della stessa gang sono consentiti esclusivamente nel grande parcheggio davanti alla nave del porto.</li>
+                </ul>
+                <div class="notice">
+                    <strong>⚔️ REGOLE 1VS1</strong>
+                    <p>I poliziotti non possono arrestare i partecipanti durante gli 1vs1. Tutte le altre regole RP rimangono valide. Gli 1vs1 sono situazioni OFF-RP.</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="rules-card reveal">
+            <div class="rules-head"><h3>💬 Regolamento Discord</h3><span>DISCORD / COMPLETO</span></div>
+            <div class="rules-body">
+                <h4>Rispetto generale</h4>
+                <ul class="rules-list">
+                    <li>È vietato insultare familiari o altri utenti.</li>
+                    <li>È vietato divulgare dati personali.</li>
+                    <li>È vietato condividere contenuti osceni.</li>
+                    <li>È obbligatorio rispettare Staff e membri.</li>
+                    <li>È vietato inviare link dannosi.</li>
+                    <li>È richiesto un linguaggio rispettoso.</li>
+                </ul>
+
+                <div class="warning">
+                    <strong>🚫 SANZIONI</strong>
+                    <p>Le violazioni più gravi possono comportare Timeout, Kick o Ban Permanente.</p>
+                </div>
+
+                <div class="rule-divider"></div>
+                <h4>Linguaggio</h4>
+                <ul class="rules-list">
+                    <li>Evita spam e flood.</li>
+                    <li>Evita comportamenti offensivi.</li>
+                    <li>Non disturbare gli utenti nei vocali.</li>
+                </ul>
+
+                <div class="rule-divider"></div>
+                <h4>Staff</h4>
+                <ul class="rules-list">
+                    <li>È vietato chiedere ruoli Staff.</li>
+                    <li>Le candidature vengono aperte quando necessario.</li>
+                    <li>Le decisioni dello Staff devono essere rispettate.</li>
+                </ul>
+
+                <div class="rule-divider"></div>
+                <h4>Ticket</h4>
+                <ul class="rules-list">
+                    <li>Apri un ticket solo quando necessario.</li>
+                    <li>Non aprire ticket multipli per lo stesso problema.</li>
+                    <li>Rispetta lo Staff durante l'assistenza.</li>
+                </ul>
+
+                <div class="rule-divider"></div>
+                <h4>Comportamento nella community</h4>
+                <p>Utilizza i canali correttamente, evita spam, provocazioni e contenuti fuori tema. L'obiettivo è mantenere un ambiente piacevole per tutti.</p>
+            </div>
+        </article>
+    </div>
+
+    <div class="robbery reveal">
+        <h3>💰 Norme Rapine</h3>
+        <div class="robbery-grid">
+            <div class="robbery-item"><b>🏪 Farm Shop</b><span>2 rapinatori + 1 ostaggio · Polizia 3-4 · Max 4.000$</span></div>
+            <div class="robbery-item"><b>💎 Gioielleria</b><span>5 rapinatori + ostaggio · Polizia come da RP · Illimitata</span></div>
+            <div class="robbery-item"><b>🏦 Banca</b><span>5 rapinatori + ostaggio · Richiesta illimitata</span></div>
+            <div class="robbery-item"><b>👕 Clothing</b><span>2 rapinatori + 1 ostaggio · Polizia 3-4 · Max 4.000$</span></div>
+            <div class="robbery-item"><b>🎵 Club</b><span>5 rapinatori · Polizia 8-9 · Max 8.000$</span></div>
+            <div class="robbery-item"><b>⛽ Gas-N-Go Fuel</b><span>2 rapinatori + 1 ostaggio · Polizia 3-4 · Max 4.000$</span></div>
+            <div class="robbery-item"><b>⛽ Ares Fuel</b><span>2 rapinatori + 1 ostaggio · Polizia 3-4 · Max 4.000$</span></div>
+            <div class="robbery-item"><b>🛠️ Tool Shop</b><span>2 rapinatori + 1 ostaggio · Polizia 3-4 · Max 4.000$</span></div>
+            <div class="robbery-item"><b>⛽ Osso Fuel</b><span>2 rapinatori + 1 ostaggio · Polizia 3-4 · Max 4.000$</span></div>
+        </div>
+        <div class="notice">
+            <strong>⚠️ NOTA</strong>
+            <p>Tutte le rapine devono rispettare il regolamento RP. Gli abusi saranno sanzionati dallo Staff.</p>
+        </div>
+    </div>
+</div>
+</section>
+
+<section class="section" id="community">
+<div class="container">
+    <div class="section-header reveal">
+        <div>
+            <div class="eyebrow">04 — Community</div>
+            <h2 class="section-title">LINK<br>UFFICIALI.</h2>
+        </div>
+        <p class="section-description">
+            Tutti i collegamenti ufficiali di Sud Italy RP raccolti in un unico posto.
+        </p>
+    </div>
+
+    <div class="links-grid">
+        <a class="link-card reveal" href="https://discord.gg/suditalyrp" target="_blank" rel="noopener noreferrer">
+            <div class="link-arrow">↗</div>
+            <div class="link-icon">🇮🇹</div>
+            <div><h3>Server Principale</h3><span>La community ufficiale Sud Italy RP</span></div>
+        </a>
+
+        <a class="link-card reveal" href="https://discord.gg/tuPPbM64vS" target="_blank" rel="noopener noreferrer">
+            <div class="link-arrow">↗</div>
+            <div class="link-icon">🚔</div>
+            <div><h3>Server FDO</h3><span>Spazio dedicato alle Forze dell'Ordine</span></div>
+        </a>
+
+        <a class="link-card reveal" href="https://www.tiktok.com/@sud.italy.rp1" target="_blank" rel="noopener noreferrer">
+            <div class="link-arrow">↗</div>
+            <div class="link-icon">🎵</div>
+            <div><h3>TikTok</h3><span>Video, contenuti e aggiornamenti</span></div>
+        </a>
+    </div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+    <div class="final-cta reveal">
+        <div class="eyebrow">SUD ITALY RP</div>
+        <h2>PRONTO A ENTRARE<br><span style="color:var(--yellow)">IN CITTÀ?</span></h2>
+        <p>Unisciti alla community, conosci nuovi giocatori e vivi il tuo Roleplay su Emergency Hamburg.</p>
+        <div class="hero-actions">
+            <a class="btn btn-primary" href="https://discord.gg/suditalyrp" target="_blank" rel="noopener noreferrer">🚀 ENTRA NEL DISCORD</a>
+            <a class="btn btn-secondary" href="https://www.tiktok.com/@sud.italy.rp1" target="_blank" rel="noopener noreferrer">🎵 SEGUICI SU TIKTOK</a>
+        </div>
+    </div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="footer-inner">
+    <div class="footer-brand">
+        <img src="https://cdn.discordapp.com/attachments/1533498424379310292/1541562283245969459/IMG_0273-2.jpg?ex=6a8e0b41&is=6a8cb9c1&hm=9aa11e03ef300b9caabb0a617f58d38b6531655bf8fd46923e94b3b9f9ecc2ca&" alt="Sud Italy RP Logo">
+        <div>
+            <h3>SUD ITALY RP 🇮🇹</h3>
+            <p>Community italiana dedicata al Roleplay su Emergency Hamburg.</p>
+        </div>
+    </div>
+
+    <div class="footer-column">
+        <h4>Navigazione</h4>
+        <a href="#home">Home</a>
+        <a href="#project">Il progetto</a>
+        <a href="#factions">Fazioni</a>
+        <a href="#rules">Regolamento</a>
+        <a href="#community">Community</a>
+    </div>
+
+    <div class="footer-column">
+        <h4>Community</h4>
+        <a href="https://discord.gg/suditalyrp" target="_blank" rel="noopener noreferrer">Discord principale</a>
+        <a href="https://discord.gg/tuPPbM64vS" target="_blank" rel="noopener noreferrer">Server FDO</a>
+        <a href="https://www.tiktok.com/@sud.italy.rp1" target="_blank" rel="noopener noreferrer">TikTok</a>
+    </div>
+</div>
+
+<div class="footer-bottom">
+    <span>© <span id="year"></span> Sud Italy RP. Tutti i diritti riservati.</span>
+    <span>Made for the community 🇮🇹</span>
+</div>
+</footer>
+
+<script>
+const navbar = document.getElementById("navbar");
+const mobileMenu = document.getElementById("mobileMenu");
+const navLinks = document.getElementById("navLinks");
+
+window.addEventListener("scroll", () => {
+    navbar.classList.toggle("scrolled", window.scrollY > 35);
+}, {passive:true});
+
+mobileMenu.addEventListener("click", () => {
+    navLinks.classList.toggle("open");
+});
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => navLinks.classList.remove("open"));
+});
+
+const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add("visible");
+            revealObserver.unobserve(entry.target);
+        }
+    });
+},{threshold:.12});
+
+document.querySelectorAll(".reveal").forEach(el => revealObserver.observe(el));
+
+const sections = document.querySelectorAll("main section[id]");
+const links = document.querySelectorAll(".nav-links a");
+
+const navObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(!entry.isIntersecting) return;
+        links.forEach(link => link.classList.remove("active"));
+        const active = document.querySelector('.nav-links a[href="#'+entry.target.id+'"]');
+        if(active) active.classList.add("active");
+    });
+},{threshold:.35});
+
+sections.forEach(section => navObserver.observe(section));
+
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener("click", event => {
+        const target = document.querySelector(link.getAttribute("href"));
+        if(!target) return;
+        event.preventDefault();
+        target.scrollIntoView({behavior:"smooth",block:"start"});
+    });
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
