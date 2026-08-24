@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#06080d">
+<meta name="description" content="Sud Italy RP — Chi siamo">
+<title>Sud Italy RP — Chi siamo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#05070b;--panel:rgba(13,17,24,.76);--white:#f7f8fb;--muted:#9da6b5;--yellow:#ffd447;--yellow2:#ff9d00;--border:rgba(255,255,255,.1);--shadow:0 25px 90px rgba(0,0,0,.42)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{min-height:100vh;background:var(--bg);color:var(--white);font-family:Inter,sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:10;background:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);background-size:70px 70px;mask-image:linear-gradient(#000,transparent 88%)}
+.bg{position:fixed;inset:0;z-index:-3;background:radial-gradient(circle at 10% 15%,rgba(255,212,71,.09),transparent 28%),radial-gradient(circle at 90% 30%,rgba(93,108,255,.08),transparent 30%),#05070b}
+.nav{position:fixed;top:18px;left:50%;transform:translateX(-50%);width:min(1180px,calc(100% - 28px));z-index:20;display:flex;justify-content:space-between;align-items:center;padding:10px 12px;border:1px solid var(--border);border-radius:18px;background:rgba(5,7,11,.68);backdrop-filter:blur(22px);box-shadow:0 18px 55px rgba(0,0,0,.3)}
+.brand{display:flex;align-items:center;gap:11px;color:#fff;text-decoration:none}
+.brand img{width:43px;height:43px;object-fit:cover;border-radius:12px;border:1px solid rgba(255,255,255,.14)}
+.brand strong{display:block;font:800 14px "Space Grotesk"}
+.brand small{display:block;color:#818b9b;font-size:8px;font-weight:800;letter-spacing:2px;margin-top:3px}
+.home{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 17px;border-radius:12px;background:var(--yellow);color:#111;text-decoration:none;font-size:11px;font-weight:900;transition:.25s}
+.home:hover{transform:translateY(-2px);box-shadow:0 12px 35px rgba(255,212,71,.2)}
+.hero{position:relative;min-height:78vh;display:flex;align-items:flex-end;overflow:hidden;padding:150px max(5vw,25px) 90px}
+.hero-image{position:absolute;inset:0;z-index:-2;background:url("https://cdn.discordapp.com/attachments/1420059113462960229/1541584866477350943/1786849976791.png?ex=6a8e2049&is=6a8ccec9&hm=5695620c0593e6b71dbeef6b7ea012233a50e11adf85913132d67711c01e84df&") center/cover no-repeat;transform:scale(1.04);filter:saturate(.9)}
+.hero:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(4,6,9,.96),rgba(4,6,9,.62) 48%,rgba(4,6,9,.32)),linear-gradient(0deg,var(--bg) 0%,transparent 45%,rgba(5,7,11,.1))}
+.hero-content{width:min(1150px,100%);margin:auto}
+.eyebrow{color:var(--yellow);font-size:10px;font-weight:900;letter-spacing:3px;text-transform:uppercase;margin-bottom:15px}
+h1{font:700 clamp(58px,9vw,118px)/.83 "Space Grotesk";letter-spacing:-7px}
+h1 span{color:var(--yellow);text-shadow:0 0 55px rgba(255,212,71,.22)}
+.lead{max-width:680px;margin-top:28px;color:#c0c7d3;font-size:16px;line-height:1.85}
+.wrap{width:min(1150px,calc(100% - 40px));margin:auto}
+.section{padding:95px 0}
+.grid{display:grid;grid-template-columns:1.25fr .75fr;gap:18px}
+.card{position:relative;padding:32px;border:1px solid var(--border);border-radius:26px;background:linear-gradient(145deg,rgba(18,23,31,.9),rgba(8,10,14,.82));box-shadow:var(--shadow);overflow:hidden}
+.card:before{content:"";position:absolute;width:220px;height:220px;right:-110px;top:-110px;border-radius:50%;background:radial-gradient(circle,rgba(255,212,71,.12),transparent 70%)}
+.card h2{font:700 34px "Space Grotesk";letter-spacing:-1.5px;margin-bottom:16px}
+.card h2 span{color:var(--yellow)}
+.card p{color:#aeb6c3;font-size:14px;line-height:1.9}
+.big{min-height:300px}
+.side{display:flex;flex-direction:column;gap:18px}
+.mini{min-height:141px}
+.mini h3{font:700 20px "Space Grotesk";margin-bottom:8px}
+.mini p{font-size:12px}
+.section-title{margin-bottom:28px}
+.section-title .eyebrow{margin-bottom:10px}
+.section-title h2{font:700 clamp(38px,6vw,68px)/.9 "Space Grotesk";letter-spacing:-4px}
+.factions{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.faction{padding:23px;border:1px solid var(--border);border-radius:20px;background:rgba(255,255,255,.025);transition:.3s}
+.faction:hover{transform:translateY(-6px);border-color:rgba(255,212,71,.28);background:rgba(255,212,71,.035)}
+.icon{font-size:27px;margin-bottom:18px}
+.faction h3{font-size:15px;margin-bottom:7px}
+.faction p{color:var(--muted);font-size:11px;line-height:1.7}
+.special{margin-top:16px;padding:27px;border:1px solid rgba(255,212,71,.17);border-radius:22px;background:linear-gradient(135deg,rgba(255,212,71,.055),rgba(255,255,255,.02))}
+.special strong{display:block;font:700 19px "Space Grotesk";margin-bottom:9px}
+.special p{color:#adb5c1;font-size:13px;line-height:1.8}
+.links{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.link{position:relative;display:block;min-height:150px;padding:24px;border:1px solid var(--border);border-radius:21px;background:#0c1016;color:#fff;text-decoration:none;transition:.3s}
+.link:hover{transform:translateY(-6px);border-color:rgba(255,212,71,.3)}
+.link b{display:block;font-size:28px;margin-bottom:22px}
+.link h3{font:700 17px "Space Grotesk"}
+.link p{margin-top:5px;color:var(--muted);font-size:10px}
+.arrow{position:absolute;right:18px;top:18px;width:34px;height:34px;display:grid;place-items:center;border-radius:10px;background:rgba(255,255,255,.05);color:var(--yellow)}
+footer{padding:35px 20px 45px;border-top:1px solid var(--border);text-align:center;color:#697282;font-size:10px}
+@media(max-width:850px){.grid{grid-template-columns:1fr}.factions{grid-template-columns:repeat(2,1fr)}.links{grid-template-columns:1fr}}
+@media(max-width:560px){.brand small{display:none}.hero{min-height:72vh;padding-top:130px}.hero h1{letter-spacing:-4px}.wrap{width:min(100% - 28px,1150px)}.card{padding:25px}.factions{grid-template-columns:1fr}.section{padding:70px 0}}
+</style>
+</head>
+<body>
+<div class="bg"></div>
+
+<nav class="nav">
+<a class="brand" href="index.html">
+<img src="https://cdn.discordapp.com/attachments/1533498424379310292/1541562283245969459/IMG_0273-2.jpg?ex=6a8e0b41&is=6a8cb9c1&hm=9aa11e03ef300b9caabb0a617f58d38b6531655bf8fd46923e94b3b9f9ecc2ca&" alt="Sud Italy RP">
+<div><strong>SUD ITALY RP</strong><small>OFFICIAL COMMUNITY</small></div>
+</a>
+<a class="home" href="index.html">← TORNA ALLA HOME</a>
+</nav>
+
+<header class="hero">
+<div class="hero-image"></div>
+<div class="hero-content">
+<div class="eyebrow">01 — La nostra community</div>
+<h1>CHI <span>SIAMO.</span></h1>
+<p class="lead">Benvenuti su Sud Italy RP 🇮🇹🍕 — una community italiana di Roblox ambientata su Emergency Hamburg, nata per offrire un'esperienza Roleplay coinvolgente, divertente e accessibile a tutti.</p>
+</div>
+</header>
+
+<main>
+<section class="section">
+<div class="wrap">
+<div class="grid">
+<article class="card big">
+<h2>Benvenuti su <span>Sud Italy RP</span></h2>
+<p>Siamo una community di Roblox, ambientati su Emergency Hamburg, cerchiamo di usufruire un RP volenteroso assistendovi a tutti.</p>
+<br>
+<p>Lo scopo dello Staff member è di non farvi mancare niente e che vi divertiate a mai finire, ma ad un unico scopo: che eseguiate il regolamento in modo responsabile.</p>
+<br>
+<p>Il nostro server è conosciuto come <strong>"Il più divertente"</strong> perché ci basiamo principalmente sul far prima divertire ai nuovi arrivati e poi, in secondo piano, divertirci noi dello Staff member.</p>
+</article>
+<div class="side">
+<article class="card mini"><h3>🎮 Roleplay</h3><p>Scenari, fazioni e situazioni pensate per vivere un'esperienza RP sempre più coinvolgente.</p></article>
+<article class="card mini"><h3>🤝 Community</h3><p>Una community dove nuovi e vecchi giocatori possono divertirsi insieme e trovare assistenza.</p></article>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section" style="padding-top:20px">
+<div class="wrap">
+<div class="section-title"><div class="eyebrow">02 — Fazioni</div><h2>FORZE DELL'ORDINE.</h2></div>
+<div class="factions">
+<article class="faction"><div class="icon">👮</div><h3>Polizia di Stato</h3><p>Disciplina, professionalità e rispetto al servizio della città.</p></article>
+<article class="faction"><div class="icon">🚔</div><h3>Carabinieri</h3><p>Reparto Mobile dei Carabinieri dedicato alle operazioni sul territorio.</p></article>
+<article class="faction"><div class="icon">💶</div><h3>Guardia di Finanza</h3><p>Un reparto organizzato e pronto a partecipare alle attività RP.</p></article>
+<article class="faction"><div class="icon">🪖</div><h3>Esercito del Sud</h3><p>Una fazione dedicata agli scenari militari e alle operazioni speciali.</p></article>
+</div>
+<div class="special"><strong>⭐ Reparti speciali</strong><p>Includiamo anche delle forze speciali per qualche reparto, con agenti professionisti e maturi. Per fare il bando per le Forze Speciali basta aprire Ticket e avere già il bando del reparto della Fazione interessata.</p></div>
+</div>
+</section>
+
+<section class="section">
+<div class="wrap">
+<div class="grid">
+<article class="card">
+<h2>🚑 Medici & Pompieri</h2>
+<p>Includiamo anche degli ottimi <strong>Medici</strong> e <strong>Pompieri</strong>, pronti a rispondere e recarsi sul luogo per ogni tipo di chiamata.</p>
+</article>
+<article class="card">
+<h2>🎫 Vuoi entrare?</h2>
+<p>Se siete interessati a qualche reparto, basta aprire un Ticket e il nostro Staff vi assisterà.</p>
+</article>
+</div>
+</div>
+</section>
+
+<section class="section" style="padding-top:20px">
+<div class="wrap">
+<div class="section-title"><div class="eyebrow">03 — Community</div><h2>VIENI A TROVARCI.</h2></div>
+<p style="max-width:650px;color:#aeb6c3;line-height:1.8;font-size:14px;margin-bottom:25px">Che dire, se vi ispiriamo mentalmente come server, vienici a trovare in game nella mappa di Emergency Hamburg.</p>
+<div class="links">
+<a class="link" href="https://discord.gg/A234uUaQq" target="_blank" rel="noopener"><span class="arrow">↗</span><b>🚔</b><h3>Server F.d.O</h3><p>Community dedicata alle Forze dell'Ordine</p></a>
+<a class="link" href="https://discord.gg/suditalyrp" target="_blank" rel="noopener"><span class="arrow">↗</span><b>🇮🇹</b><h3>Server principale</h3><p>La community ufficiale Sud Italy RP</p></a>
+<a class="link" href="https://www.tiktok.com/@sud.italy.rp1" target="_blank" rel="noopener"><span class="arrow">↗</span><b>🎵</b><h3>TikTok</h3><p>Video, contenuti e aggiornamenti</p></a>
+</div>
+</div>
+</section>
+</main>
+
+<footer>© 2026 Sud Italy RP — Official Community 🇮🇹🍕</footer>
+</body>
+</html>
