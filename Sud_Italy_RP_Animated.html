@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sud Italy RP | Sito Ufficiale</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+:root{
+  --gold:#ffd54a; --gold2:#ffb300; --blue:#5865f2; --green:#00d084;
+  --bg:#05070b; --panel:rgba(13,17,27,.72); --line:rgba(255,213,74,.18);
+  --text:#f7f8fb; --muted:#aab2c2; --radius:24px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;min-width:0}
+body{
+  background:var(--bg);color:var(--text);font-family:Inter,Arial,sans-serif;
+  overflow-x:hidden;min-width:320px;
+}
+body:before{
+  content:"";position:fixed;inset:0;z-index:-5;
+  background:
+   radial-gradient(circle at 15% 20%,rgba(255,213,74,.13),transparent 30%),
+   radial-gradient(circle at 85% 75%,rgba(88,101,242,.16),transparent 32%),
+   linear-gradient(135deg,#05070b,#0b101a 55%,#06080d);
+}
+body:after{
+  content:"";position:fixed;inset:0;z-index:-4;pointer-events:none;opacity:.2;
+  background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+  background-size:55px 55px;
+  mask-image:linear-gradient(to bottom,black,transparent 90%);
+}
+::selection{background:var(--gold);color:#111}
+a{color:var(--gold)}
+button,a{font-family:inherit}
+.page{display:none;min-height:100vh}
+.page.active{display:block;animation:pageIn .65s cubic-bezier(.2,.8,.2,1)}
+@keyframes pageIn{from{opacity:0;transform:translateY(24px) scale(.99)}to{opacity:1;transform:none}}
+
+#particles{position:fixed;inset:0;z-index:-3;pointer-events:none}
+.particle{position:absolute;width:3px;height:3px;background:var(--gold);border-radius:50%;opacity:.45;animation:float linear infinite}
+@keyframes float{from{transform:translate3d(0,110vh,0)}to{transform:translate3d(var(--drift),-10vh,0)}}
+
+.hero{
+  min-height:100vh;position:relative;display:flex;align-items:center;justify-content:center;
+  padding:70px 22px;overflow:hidden;
+  background:
+   linear-gradient(180deg,rgba(0,0,0,.18),rgba(5,7,11,.85)),
+   url("https://cdn.discordapp.com/attachments/1420059113462960229/1530641651607933008/file_00000000463081f4b60ce751997abd67.png?ex=6a66509f&is=6a64ff1f&hm=4720bd94e7e6c2d7d023f728d6140e3d241c696d8509a33bea3327885c4724c6&");
+  background-size:cover;background-position:center;
+}
+.hero:before{
+  content:"";position:absolute;inset:-15%;
+  background:radial-gradient(circle,transparent 35%,rgba(0,0,0,.7) 85%);
+  animation:pulse 5s ease-in-out infinite;pointer-events:none;
+}
+@keyframes pulse{50%{transform:scale(1.04);opacity:.72}}
+.content{
+  position:relative;max-width:1050px;width:100%;padding:65px 45px;text-align:center;
+  border:1px solid rgba(255,255,255,.13);border-radius:32px;
+  background:linear-gradient(145deg,rgba(10,13,20,.82),rgba(10,13,20,.52));
+  backdrop-filter:blur(18px);box-shadow:0 30px 100px rgba(0,0,0,.55),0 0 70px rgba(255,213,74,.08);
+  overflow:hidden;animation:heroIn 1s cubic-bezier(.2,.8,.2,1);
+}
+.content:before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 20%,rgba(255,255,255,.06) 50%,transparent 80%);transform:translateX(-120%);animation:shine 6s infinite}
+@keyframes shine{45%,100%{transform:translateX(120%)}}
+@keyframes heroIn{from{opacity:0;transform:translateY(35px) scale(.96)}to{opacity:1;transform:none}}
+.content h1{
+  font-family:"Space Grotesk",sans-serif;font-size:clamp(44px,7vw,82px);font-weight:700;
+  letter-spacing:-3px;color:var(--gold);margin-bottom:24px;
+  text-shadow:0 0 20px rgba(255,213,74,.4),0 0 70px rgba(255,213,74,.16);
+  animation:titleGlow 3s ease-in-out infinite;
+}
+@keyframes titleGlow{50%{text-shadow:0 0 35px rgba(255,213,74,.75),0 0 100px rgba(255,213,74,.22)}}
+.content p{font-size:clamp(17px,2vw,22px);line-height:1.9;color:#edf0f7;margin-bottom:42px}
+.buttons{display:flex;justify-content:center;align-items:center;gap:16px;flex-wrap:wrap}
+.btn{
+  position:relative;min-width:230px;height:62px;padding:0 28px;display:flex;align-items:center;justify-content:center;
+  border:1px solid rgba(255,255,255,.12);border-radius:16px;cursor:pointer;
+  font-size:16px;font-weight:800;text-decoration:none;color:#fff;
+  transition:transform .25s ease,box-shadow .25s ease,filter .25s ease;overflow:hidden;
+}
+.btn:before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent,rgba(255,255,255,.18),transparent);transform:translateX(-120%);transition:.6s}
+.btn:hover:before{transform:translateX(120%)}
+.btn:hover{transform:translateY(-7px) scale(1.02);filter:brightness(1.08)}
+.discord-btn{background:linear-gradient(135deg,#5865f2,#7289da);box-shadow:0 12px 35px rgba(88,101,242,.25)}
+.secondary{background:linear-gradient(135deg,#f57c00,#ffb300);box-shadow:0 12px 35px rgba(255,152,0,.2)}
+.about-btn{background:linear-gradient(135deg,#075cff,#3385ff);box-shadow:0 12px 35px rgba(0,102,255,.2)}
+.game-btn{background:linear-gradient(135deg,#00a95c,#00d084);box-shadow:0 12px 35px rgba(0,208,132,.18)}
+
+.section{
+  min-height:100vh;padding:105px clamp(18px,7vw,110px) 80px;
+  position:relative;background:transparent;
+}
+.section:before{
+  content:"";position:absolute;top:0;left:10%;right:10%;height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.35;
+}
+.section-title{
+  font-family:"Space Grotesk",sans-serif;font-size:clamp(36px,5vw,58px);text-align:center;
+  color:var(--gold);margin-bottom:22px;text-shadow:0 0 30px rgba(255,213,74,.25);
+  animation:sectionTitle 1s ease both;
+}
+@keyframes sectionTitle{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+.section-text{max-width:900px;margin:auto;text-align:center;font-size:18px;line-height:1.9;color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:55px}
+.card{
+  position:relative;background:var(--panel);backdrop-filter:blur(15px);
+  border:1px solid var(--line);border-radius:var(--radius);padding:32px;
+  box-shadow:0 15px 45px rgba(0,0,0,.22);transition:transform .35s ease,border-color .35s,box-shadow .35s;
+  overflow:hidden;
+}
+.card:before{
+  content:"";position:absolute;left:0;right:0;top:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);transform:scaleX(0);transition:.4s;
+}
+.card:after{
+  content:"";position:absolute;width:160px;height:160px;right:-90px;top:-90px;
+  background:radial-gradient(circle,rgba(255,213,74,.13),transparent 70%);
+}
+.card:hover{transform:translateY(-10px);border-color:rgba(255,213,74,.5);box-shadow:0 25px 65px rgba(0,0,0,.38),0 0 35px rgba(255,213,74,.08)}
+.card:hover:before{transform:scaleX(1)}
+.card h3{color:var(--gold);margin-bottom:18px;font-size:21px}
+.card p,.card li{line-height:1.85;color:#e5e8ef}
+.card ul{padding-left:20px}
+.card li{margin:7px 0}
+hr{border:none;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.3;margin:32px 0}
+.card[style*="background:#8b0000"]{
+  background:linear-gradient(135deg,rgba(139,0,0,.8),rgba(65,0,0,.7))!important;
+  box-shadow:0 0 40px rgba(255,40,40,.08);
+}
+.card[style*="background:#1b1b1b"]{background:rgba(255,255,255,.045)!important}
+footer{position:relative;background:#030509;padding:38px 25px;text-align:center;border-top:1px solid var(--line)}
+footer h2{font-family:"Space Grotesk",sans-serif;color:var(--gold);margin-bottom:12px}
+footer p{color:#737b8b}
+@media(max-width:700px){
+  .content{padding:45px 20px;border-radius:24px}
+  .content h1{letter-spacing:-2px}
+  .btn{width:100%;min-width:0}
+  .section{padding:80px 14px 55px}
+  .card{padding:24px}
+}
+</style>
+
+</head>
+<body>
+
+
+<section id="home" class="page active">
+
+<div class="hero">
+
+<div class="content">
+
+<h1>SUD ITALY RP 🇮🇹</h1>
+
+<p>
+Benvenuti su <strong>Sud Italy RP</strong>.
+<br><br>
+Una community italiana dedicata al Roleplay su <strong>Emergency Hamburg</strong>.
+<br><br>
+Vivi un'esperienza seria, realistica e coinvolgente insieme alla nostra community.
+</p>
+
+<div class="buttons">
+
+<a class="btn discord-btn"
+href="https://discord.gg/suditalyrp"
+target="_blank">
+🚀 ENTRA NEL DISCORD
+</a>
+
+<button class="btn about-btn" onclick="showPage('about')">
+❓ CHI SIAMO
+</button>
+
+<button class="btn game-btn" onclick="showPage('game')">
+📜 REGOLAMENTO GAME
+</button>
+
+<button class="btn discord-btn" onclick="showPage('discord')">
+💬 REGOLAMENTO DISCORD
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="about" class="page">
+<div class="section">
+<h2 class="section-title">🇮🇹 CHI SIAMO</h2>
+<p class="section-text">Scopri la community di <strong>Sud Italy RP</strong>, un progetto italiano dedicato al Roleplay su <strong>Emergency Hamburg</strong>.</p>
+<div class="cards">
+
+<div class="card"><h3>🇮🇹🍕 Benvenuti su Sud Italy RP</h3><p><strong>Sud Italy RP</strong> è una community italiana di Roblox ambientata su Emergency Hamburg.<br><br>Il nostro obiettivo è creare un'esperienza <strong>Roleplay seria, realistica e divertente</strong>, offrendo supporto a tutti i giocatori.<br><br>Lo Staff lavora ogni giorno per migliorare il server e garantire un ambiente organizzato, sicuro e piacevole per tutti.</p></div>
+
+<div class="card"><h3>🎯 La nostra missione</h3><ul><li>✅ Offrire un Roleplay serio e coinvolgente.</li><li>✅ Aiutare i nuovi giocatori ad ambientarsi.</li><li>✅ Creare una community rispettosa e unita.</li><li>✅ Organizzare eventi e attività RP.</li><li>✅ Garantire supporto tramite lo Staff.</li></ul></div>
+
+<div class="card"><h3>👮 Forze dell'Ordine (FdO)</h3><p>Le nostre Forze dell'Ordine sono composte da agenti disciplinati, maturi e rispettosi verso tutti i cittadini.<br><br><strong>Reparti principali:</strong></p><ul><li>👮 Polizia di Stato</li><li>🚓 Reparto Mobile dei Carabinieri</li><li>💰 Guardia di Finanza</li><li>🪖 Esercito del Sud</li></ul><p>Se sei interessato ad entrare in un reparto, puoi aprire un Ticket nel nostro Discord.</p></div>
+
+<div class="card"><h3>⚡ Forze Speciali</h3><p>Sud Italy RP dispone anche di Forze Speciali composte da agenti professionisti e selezionati.<br><br>Per partecipare ai bandi delle Forze Speciali è necessario avere già il bando della Fazione interessata e aprire un Ticket.</p></div>
+
+<div class="card"><h3>🚑 Servizi di Emergenza</h3><p>All'interno della nostra città sono presenti anche importanti servizi di emergenza.<br><br>🚑 <strong>Medici</strong><br>🚒 <strong>Vigili del Fuoco</strong><br><br>Sempre pronti a rispondere alle chiamate e intervenire sul luogo dell'emergenza.</p></div>
+
+<div class="card"><h3>❤️ Entra nella nostra community</h3><p>Se cerchi un server serio, organizzato e con una community attiva, Sud Italy RP è il posto giusto.<br><br>Vieni a trovarci in game su <strong>Emergency Hamburg</strong> e vivi un'esperienza Roleplay unica.</p></div>
+
+<div class="card"><h3>🔗 Link Utili</h3><ul><li>🚔 <a href="https://discord.gg/HcVTshY8Jm" target="_blank" style="color:#FFD54A;">Server F.d.O</a></li><br><li>🇮🇹 <a href="https://discord.gg/suditalyrp" target="_blank" style="color:#FFD54A;">Server principale di Sud Italy RP</a></li><br><li>🎵 <a href="https://www.tiktok.com/@sud.italy.rp1" target="_blank" style="color:#FFD54A;">Pagina TikTok</a></li></ul></div>
+
+</div>
+<div class="buttons" style="margin-top:60px;"><button class="btn secondary" onclick="showPage('home')">⬅ TORNA ALLA HOME</button></div>
+</div>
+</section>
+
+<section id="game" class="page">
+<div class="section">
+<h2 class="section-title">📜 REGOLAMENTO GAME</h2>
+<p class="section-text">Per garantire un’esperienza RP corretta ed equilibrata, tutte le seguenti azioni sono vietate.<br>Entrando nel server si accettano implicitamente queste regole.</p>
+
+<div class="card" style="max-width:1100px;margin:50px auto;text-align:left;">
+
+<h3>1️⃣ Comportamento RP scorretto</h3>
+<div style="margin-top:30px;padding:25px;background:#8b0000;border-left:6px solid #ff3b3b;border-radius:15px;">
+<h3 style="color:#fff;margin-bottom:15px;">🚫 BAN PERMA</h3>
+<p style="color:#fff;line-height:2;">
+❌ Vietato utilizzare <strong>Stop Stick</strong>.<br>
+❌ Vietato compiere <strong>atti osceni</strong>.<br>
+❌ Vietato utilizzare il <strong>Radar Gun</strong>, ma può usarlo solo la <strong>Polizia Locale</strong>.<br>
+❌ Vietato utilizzare <strong>bombe e C4</strong>.<br>
+❌ Vietato utilizzare <strong>Flashbang</strong>, possono essere utilizzati solamente dai <strong>Reparti Speciali</strong> e dai <strong>Militari</strong>.<br>
+❌ Vietato utilizzare <strong>GPS</strong>, può essere utilizzato solamente dai <strong>Reparti Speciali</strong>.<br>
+❌ Vietato effettuare <strong>Evading Staff</strong>.
+</p>
+</div>
+
+<hr>
+<ul>
+<li><strong>Fail RP:</strong> Azioni irrealistiche o incoerenti con il ruolo del proprio personaggio.</li>
+<li><strong>No Fear:</strong> Ignorare la paura in situazioni pericolose dove un personaggio realistico reagirebbe.</li>
+<li><strong>Powergaming (PG):</strong> Costringere altri giocatori a subire azioni impossibili oppure rendere il proprio personaggio troppo potente o immortale.</li>
+<li><strong>Revenge Kill (RK):</strong> Tornare dopo la morte solamente per vendicarsi senza un valido motivo RP.</li>
+<li><strong>Random Deathmatch (RDM):</strong> Uccidere altri giocatori senza un motivo valido RP.</li>
+<li><strong>Vehicle Deathmatch (VDM):</strong> Usare veicoli per fare danni o uccidere altri giocatori senza motivo RP.</li>
+<li><strong>Cuff-Rush:</strong> Arrestare o immobilizzare altri giocatori senza motivo valido o senza contesto RP.</li>
+<li><strong>Uscire durante una scena RP:</strong> Lasciare una scena RP attiva senza motivo valido.<br>(Può comportare un ban temporaneo.)</li>
+<li><strong>No Crash:</strong> Ignorare incidenti o conseguenze realistiche delle proprie azioni.</li>
+</ul>
+
+<hr>
+<h3>2️⃣ Abusi verso altri giocatori</h3>
+<ul>
+<li><strong>Bunny Hopping:</strong> Saltare ripetutamente per ottenere vantaggi ingiusti.</li>
+<li><strong>Bug Abuse:</strong> Sfruttare bug o glitch del gioco per ottenere vantaggi ingiusti o compiere azioni non previste.</li>
+<li><strong>Car-Surf:</strong> Stare sopra veicoli in movimento senza motivo RP coerente.</li>
+<li><strong>Cop Baiting:</strong> Provocare la polizia solamente per farla reagire.</li>
+<li><strong>Cop Evading:</strong> Tentare di sfuggire alle forze dell'ordine con comportamenti irrealistici o abusivi, evitando intenzionalmente l'arresto senza una valida motivazione RP.</li>
+</ul>
+
+<hr>
+<h3>3️⃣ Violazioni Meccaniche / OOC</h3>
+<ul>
+<li><strong>IC (In Character):</strong> Tutto ciò che riguarda il tuo personaggio e le azioni svolte all'interno del Roleplay.</li>
+<li><strong>OOC (Out Of Character):</strong> Tutto ciò che viene detto o fatto fuori dal Roleplay e che non riguarda il proprio personaggio.</li>
+<li><strong>Metagaming (MG):</strong> Usare informazioni ottenute fuori dal gioco (OOC) all’interno dell’RP.</li>
+<li><strong>MixChat:</strong> Mescolare IC (in-character) e OOC (out-of-character) nella stessa conversazione.</li>
+<li><strong>Combat Logging:</strong> Disconnettersi durante un combattimento per evitare conseguenze RP.</li>
+<li><strong>LTAA (Leave To Avoid Arrest):</strong> Disconnettersi o resettare per evitare arresti o conseguenze RP.</li>
+<li><strong>Stream Sniping:</strong> Usare live streaming per interferire o trollare un giocatore.</li>
+</ul>
+
+<hr>
+<h3>4️⃣ Safe Zone</h3>
+<p>Le Safe-Zone sono le seguenti:</p>
+<ul><li>🚔 Questura<br>(Se entrate in una zona militare come uffici o corridoi riservati sarete sottoposti ad arresto immediato.)</li><li>🚒 Caserma Vigili del Fuoco</li><li>🏥 Ospedale</li><li>⛓️ Prigione</li><li>🔧 Tuning</li><li>🏠 Ville</li><li>🪖 Zone Militari</li></ul>
+<div style="margin-top:25px;padding:20px;background:#1b1b1b;border-left:5px solid #FFD54A;border-radius:12px;">Le scene che iniziano fuori dalla Safe-Zone possono continuare dentro.</div>
+
+<hr>
+<h3>5️⃣ Extra / Regole Generali</h3>
+<ul>
+<li><strong>🎯 Sponsor:</strong> È vietato pubblicizzare altri server all’interno del nostro server.<br><strong>Sanzione:</strong> Ban permanente e possibile blacklist.</li>
+<li><strong>🔥 Flame:</strong> Insulti rivolti verso altri giocatori o comportamenti offensivi.<br>(Violazione grave, la sanzione dipenderà dalla situazione.)</li>
+</ul>
+
+<hr>
+<h3>6️⃣ Norme per le Gang</h3>
+<ul>
+<li>💣 È vietato l’utilizzo di bombe.</li>
+<li>🏠 È vietato entrare nelle ville di altre gang per insultare o provocare i membri.</li>
+<li>❌ È vietato fare RDM tra membri della stessa gang nella città.</li>
+<li>⚔️ L’unica zona dove è consentito fare 1vs1 tra membri della stessa gang è il grande parcheggio davanti alla nave del porto.</li>
+</ul>
+<div style="margin-top:25px;padding:20px;background:#1b1b1b;border-left:5px solid #FFD54A;border-radius:12px;">
+<strong>⚔️ Regole 1vs1:</strong><br><br>
+• I poliziotti non possono arrestare i partecipanti durante gli 1vs1.<br><br>
+• Tutte le altre regole RP rimangono comunque valide.<br><br>
+• Gli 1vs1 sono considerati situazioni <strong>OFF-RP</strong>.<br><br>
+• Non ascoltare i responsabili della zona può portare a conseguenze RP.
+</div>
+<br>
+<ul>
+<li>⚠️ Se un membro commette RDM, VDM, FRP o simili contro cittadini, criminali o poliziotti, il Warn verrà assegnato solamente al giocatore che ha commesso l'infrazione.<br><br>La decisione di rimuovere o meno la gang sarà presa esclusivamente dai CEO.</li>
+<li>🏠 Le ville e i ghetti sono considerate Safe Zone.</li>
+<li>🔫 È possibile sparare ad un poliziotto solamente se effettua un’irruzione all’interno di queste zone.</li>
+</ul>
+
+<hr>
+<h3>7️⃣ Norme Rapine</h3>
+<p>Tutte le rapine devono rispettare sempre le regole RP.</p>
+<ul>
+<li>🏪 <strong>Farm Shop</strong><br>• Rapinatori: massimo 2 persone + 1 ostaggio<br>• Polizia: massimo 3-4 persone<br>• Richiesta massima: 4.000$</li><br>
+<li>💎 <strong>Gioielleria</strong><br>• Rapinatori: massimo 5 persone + ostaggio<br>• Polizia: come da RP<br>• Richiesta: illimitata</li><br>
+<li>🏦 <strong>Banca</strong><br>• Stesse regole della Gioielleria<br>• Massimo 5 rapinatori + ostaggio<br>• Richiesta illimitata</li><br>
+<li>👕 <strong>Clothing</strong><br>• Rapinatori: massimo 2 persone + 1 ostaggio<br>• Polizia: massimo 3-4 persone<br>• Richiesta massima: 4.000$</li><br>
+<li>🎵 <strong>Club</strong><br>• Rapinatori: massimo 5 persone<br>• Polizia: 8-9 persone<br>• Richiesta massima: 8.000$</li><br>
+<li>⛽ <strong>Gas-N-Go Fuel</strong><br>• Rapinatori: massimo 2 persone + 1 ostaggio<br>• Polizia: massimo 3-4 persone<br>• Richiesta massima: 4.000$</li><br>
+<li>⛽ <strong>Ares Fuel</strong><br>• Rapinatori: massimo 2 persone + 1 ostaggio<br>• Polizia: massimo 3-4 persone<br>• Richiesta massima: 4.000$</li><br>
+<li>🛠️ <strong>Tool Shop</strong><br>• Rapinatori: massimo 2 persone + 1 ostaggio<br>• Polizia: massimo 3-4 persone<br>• Richiesta massima: 4.000$</li><br>
+<li>⛽ <strong>Osso Fuel</strong><br>• Rapinatori: massimo 2 persone + 1 ostaggio<br>• Polizia: massimo 3-4 persone<br>• Richiesta massima: 4.000$</li>
+</ul>
+
+<hr>
+<h3>⚠️ Note Generali</h3>
+<ul><li>Tutte le rapine devono rispettare le regole RP.</li><li>Ogni abuso o violazione comporterà sanzioni.</li></ul>
+</div>
+<div class="buttons" style="margin-top:60px;"><button class="btn secondary" onclick="showPage('home')">⬅ TORNA ALLA HOME</button></div>
+</div>
+</section>
+
+<section id="discord" class="page">
+<div class="section">
+<h2 class="section-title">💬 REGOLAMENTO DISCORD</h2>
+<p class="section-text">Per mantenere una community seria, organizzata e rispettosa, tutti gli utenti sono tenuti a seguire il seguente regolamento.</p>
+
+<div class="card" style="max-width:1100px;margin:50px auto;text-align:left;">
+<h3>1️⃣ Rispetto Generale</h3>
+<ul>
+<li>È severamente vietato insultare familiari o altri utenti.</li>
+<li>È severamente vietato condividere o divulgare contenuti osceni.</li>
+<li>È obbligatorio rispettare lo Staff, i cittadini e tutti i membri della community.</li>
+<li>È vietato divulgare dati personali di altri utenti.</li>
+<li>È vietato inviare link dannosi o contenuti non consentiti.</li>
+<li>È richiesto di mantenere sempre un linguaggio educato e rispettoso.</li>
+</ul>
+
+<div style="margin-top:25px;padding:25px;background:#8b0000;border-left:6px solid #ff3b3b;border-radius:15px;">
+<h3 style="color:#fff;margin-bottom:15px;">🚫 SANZIONI</h3>
+<p style="color:#fff;line-height:2;">Le violazioni più gravi possono comportare:<br>• Timeout<br>• Kick<br>• Ban Permanente</p>
+</div>
+
+<hr>
+<h3>2️⃣ Linguaggio</h3>
+<ul>
+<li>È vietato effettuare <strong>spam o flood</strong>.</li>
+<li>È vietato <strong>scrivere in grande</strong> o utilizzare messaggi eccessivamente ingombranti per disturbare la chat.</li>
+<li>Evita bestemmie e linguaggio offensivo.</li>
+<li>Non disturbare gli altri utenti nei canali vocali.</li>
+</ul>
+<div style="margin-top:25px;padding:20px;background:#1b1b1b;border-left:5px solid #FFD54A;border-radius:12px;">
+<strong>⚠️ SANZIONE:</strong><br><br>
+Chi effettua <strong>spam, flood o scrive in grande</strong> riceverà un <strong>TIMEOUT</strong>.
+</div>
+
+<hr>
+<h3>3️⃣ Staff</h3>
+<ul><li>È vietato chiedere ruoli Staff.</li><li>Le candidature vengono aperte solo quando necessario.</li><li>Le decisioni dello Staff devono essere rispettate.</li></ul>
+
+<hr>
+<h3>4️⃣ Ticket</h3>
+<ul><li>Apri ticket solo se realmente necessario.</li><li>Non aprire ticket multipli per lo stesso problema.</li><li>Rispetta sempre lo Staff durante l'assistenza.</li></ul>
+<div style="margin-top:25px;padding:20px;background:#1b1b1b;border-left:5px solid #FFD54A;border-radius:12px;">I ticket inattivi potranno essere chiusi automaticamente dallo Staff.</div>
+
+<hr>
+<div style="text-align:center;margin-top:40px;">
+<h3 style="color:#FFD54A;">Grazie per far parte di Sud Italy RP ❤️</h3>
+<p style="margin-top:15px;line-height:2;">Seguendo queste semplici regole aiuterai a mantenere una community seria, ordinata e divertente per tutti.</p>
+</div>
+</div>
+
+<div class="buttons" style="margin-top:60px;"><button class="btn secondary" onclick="showPage('home')">⬅ TORNA ALLA HOME</button></div>
+</div>
+</section>
+
+
+
+<footer>
+
+<h2>SUD ITALY RP 🇮🇹</h2>
+
+<p>
+© 2026 Sud Italy RP
+<br><br>
+Tutti i diritti riservati.
+</p>
+
+</footer>
+
+<script>
+function showPage(id){
+document.querySelectorAll(".page").forEach(page=>{page.classList.remove("active")});
+document.getElementById(id).classList.add("active");
+window.scrollTo({top:0,behavior:"smooth"});
+}
+showPage("home");
+</script>
+
+<script>
+function showPage(id){
+  document.querySelectorAll(".page").forEach(page=>page.classList.remove("active"));
+  const target=document.getElementById(id);
+  if(target){
+    target.classList.add("active");
+    window.scrollTo({top:0,behavior:"smooth"});
+  }
+}
+document.addEventListener("DOMContentLoaded",()=>{
+  const layer=document.createElement("div");
+  layer.id="particles";
+  for(let i=0;i<34;i++){
+    const p=document.createElement("i");
+    p.className="particle";
+    p.style.left=Math.random()*100+"%";
+    p.style.setProperty("--drift",(Math.random()*160-80)+"px");
+    p.style.animationDuration=(7+Math.random()*13)+"s";
+    p.style.animationDelay=(-Math.random()*18)+"s";
+    p.style.opacity=(.15+Math.random()*.45);
+    layer.appendChild(p);
+  }
+  document.body.prepend(layer);
+
+  // Reveal cards smoothly as they enter the viewport.
+  const cards=document.querySelectorAll(".card");
+  cards.forEach((c,i)=>{
+    c.style.opacity="0"; c.style.transform="translateY(28px)";
+    c.style.transition="opacity .65s ease "+(i%5)*.08+"s, transform .65s ease "+(i%5)*.08+"s, border-color .35s, box-shadow .35s";
+  });
+  const observer=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.style.opacity="1";
+        e.target.style.transform="";
+        observer.unobserve(e.target);
+      }
+    });
+  },{threshold:.08});
+  cards.forEach(c=>observer.observe(c));
+});
+showPage("home");
+</script>
+
+</body>
+</html>
