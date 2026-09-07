@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#07080b">
+<title>Sud Italy RP — Regolamento Ufficiale</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#050608;--panel:rgba(15,17,22,.72);--panel2:rgba(20,22,29,.88);
+  --gold:#ffd34f;--gold2:#ffae22;--blue:#7289da;--white:#f7f7f8;--muted:#9da2ad;
+  --line:rgba(255,255,255,.09);--danger:#ff5364;--green:#58d68d;
+  --shadow:0 30px 100px rgba(0,0,0,.48);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Inter,Arial,sans-serif;background:var(--bg);color:var(--white);
+  overflow-x:hidden;
+}
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:20;
+  background:linear-gradient(rgba(255,255,255,.012) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.012) 1px,transparent 1px);
+  background-size:55px 55px;mask-image:linear-gradient(to bottom,black,transparent 90%);
+}
+#canvas{position:fixed;inset:0;z-index:-3}
+.ambient{position:fixed;inset:0;z-index:-2;pointer-events:none;background:
+ radial-gradient(circle at 50% 12%,rgba(255,193,46,.12),transparent 25%),
+ radial-gradient(circle at 15% 55%,rgba(114,137,218,.07),transparent 28%),
+ radial-gradient(circle at 85% 75%,rgba(255,174,34,.05),transparent 28%),
+ linear-gradient(180deg,#07080b,#090a0d 45%,#050608);
+}
+nav{
+ position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:50;
+ width:min(1120px,calc(100% - 28px));height:66px;padding:0 14px 0 20px;
+ display:flex;align-items:center;justify-content:space-between;
+ border:1px solid var(--line);background:rgba(7,8,11,.68);backdrop-filter:blur(22px);
+ border-radius:22px;box-shadow:0 15px 55px rgba(0,0,0,.28);
+}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:#fff;font-weight:800}
+.brand img{width:40px;height:40px;object-fit:contain;border-radius:50%;filter:drop-shadow(0 0 10px rgba(255,211,79,.45))}
+.brand span{font-family:"Space Grotesk";letter-spacing:.5px}.brand b{color:var(--gold)}
+.navlinks{display:flex;gap:5px}
+.navlinks a{color:#bfc2ca;text-decoration:none;padding:11px 15px;border-radius:13px;font-size:13px;font-weight:700;transition:.25s}
+.navlinks a:hover,.navlinks a.active{color:#111;background:var(--gold)}
+.navdiscord{background:#5865f2!important;color:#fff!important}
+.menu{display:none;border:0;background:transparent;color:#fff;font-size:25px}
+
+.hero{min-height:100svh;display:grid;place-items:center;position:relative;padding:125px 20px 70px}
+.hero-inner{text-align:center;max-width:1050px;position:relative}
+.eyebrow{
+ display:inline-flex;align-items:center;gap:9px;padding:9px 15px;border:1px solid rgba(255,211,79,.22);
+ border-radius:100px;background:rgba(255,211,79,.055);color:#f4d66c;font-size:11px;font-weight:800;letter-spacing:2px;
+ box-shadow:0 0 35px rgba(255,211,79,.06);animation:fadeUp .9s both;
+}
+.eyebrow i{width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 13px var(--gold);animation:pulse 1.8s infinite}
+.logo-stage{width:min(390px,78vw);aspect-ratio:1;margin:28px auto 12px;position:relative;display:grid;place-items:center;animation:float 5s ease-in-out infinite}
+.logo-stage:before,.logo-stage:after{content:"";position:absolute;border-radius:50%;inset:7%;border:1px solid rgba(255,211,79,.22);box-shadow:0 0 70px rgba(255,190,30,.11),inset 0 0 50px rgba(255,190,30,.05)}
+.logo-stage:after{inset:0;border-color:rgba(255,255,255,.05);animation:spin 22s linear infinite}
+.logo-stage img{
+ width:78%;height:78%;object-fit:contain;position:relative;z-index:2;
+ filter:drop-shadow(0 0 18px rgba(255,196,44,.22)) drop-shadow(0 0 55px rgba(255,190,30,.13));
+ animation:logoIn 1.3s cubic-bezier(.2,.8,.2,1) both;
+}
+.orbit{position:absolute;width:106%;height:106%;border-radius:50%;border:1px dashed rgba(255,211,79,.13);animation:spin 28s linear infinite}
+.orbit:before{content:"";position:absolute;top:8%;left:50%;width:5px;height:5px;background:var(--gold);border-radius:50%;box-shadow:0 0 15px var(--gold)}
+.hero h1{font-family:"Space Grotesk";font-size:clamp(48px,8vw,88px);line-height:.95;letter-spacing:-4px;margin-top:15px;animation:fadeUp 1s .15s both}
+.hero h1 span{color:var(--gold);text-shadow:0 0 35px rgba(255,211,79,.24)}
+.hero p{max-width:670px;margin:25px auto;color:var(--muted);font-size:16px;line-height:1.8;animation:fadeUp 1s .28s both}
+.hero-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;animation:fadeUp 1s .4s both}
+.btn{
+ border:1px solid var(--line);text-decoration:none;color:#fff;padding:14px 20px;border-radius:15px;
+ font-weight:800;font-size:13px;display:inline-flex;align-items:center;gap:8px;transition:.3s;cursor:pointer;
+ background:rgba(255,255,255,.045);backdrop-filter:blur(10px)
+}
+.btn:hover{transform:translateY(-4px);border-color:rgba(255,211,79,.5);box-shadow:0 15px 35px rgba(0,0,0,.3)}
+.btn.gold{background:linear-gradient(135deg,#ffe277,#ffbd27);color:#17130a;border:0;box-shadow:0 12px 35px rgba(255,190,40,.2)}
+.btn.discord{background:#5865f2;border-color:#5865f2}
+.scrollhint{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);color:#676b75;font-size:10px;letter-spacing:2px}
+.scrollhint:after{content:"";display:block;width:1px;height:28px;background:linear-gradient(var(--gold),transparent);margin:8px auto 0}
+
+.marquee{border-block:1px solid var(--line);overflow:hidden;background:rgba(255,255,255,.018);white-space:nowrap}
+.marquee-track{display:inline-flex;gap:45px;padding:14px 0;animation:marquee 25s linear infinite;color:#777b85;font-size:10px;font-weight:800;letter-spacing:2px}
+.marquee strong{color:var(--gold)}
+
+section{padding:110px 20px}
+.wrap{width:min(1120px,100%);margin:auto}
+.section-head{display:flex;justify-content:space-between;gap:25px;align-items:end;margin-bottom:38px}
+.kicker{color:var(--gold);font-size:11px;font-weight:900;letter-spacing:2.5px;margin-bottom:10px}
+.section-title{font-family:"Space Grotesk";font-size:clamp(36px,5vw,58px);letter-spacing:-2px}
+.section-desc{color:var(--muted);max-width:550px;line-height:1.75;font-size:14px}
+
+.rules-nav{
+ display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-bottom:20px
+}
+.rule-choice{
+ padding:25px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.015));
+ cursor:pointer;transition:.35s;position:relative;overflow:hidden;
+}
+.rule-choice:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 0 0,rgba(255,211,79,.12),transparent 45%);opacity:0;transition:.35s}
+.rule-choice:hover:before,.rule-choice.selected:before{opacity:1}
+.rule-choice.selected{border-color:rgba(255,211,79,.45);transform:translateY(-3px);box-shadow:0 20px 50px rgba(0,0,0,.2)}
+.rule-choice .icon{font-size:25px;margin-bottom:14px}.rule-choice h3{font-family:"Space Grotesk";font-size:21px}.rule-choice p{color:#858a95;font-size:12px;margin-top:7px}
+.rule-panel{display:none;animation:panelIn .5s both}.rule-panel.active{display:block}
+.searchbar{
+ width:100%;padding:16px 19px;background:rgba(255,255,255,.035);border:1px solid var(--line);outline:0;
+ color:#fff;border-radius:15px;margin:0 0 22px;font-size:14px;transition:.25s
+}
+.searchbar:focus{border-color:rgba(255,211,79,.4);box-shadow:0 0 0 4px rgba(255,211,79,.05)}
+.rule-card{
+ border:1px solid var(--line);background:linear-gradient(145deg,rgba(18,20,26,.9),rgba(10,11,15,.78));
+ border-radius:22px;margin:12px 0;overflow:hidden;box-shadow:var(--shadow)
+}
+.rule-title{
+ width:100%;border:0;background:transparent;color:#fff;text-align:left;padding:21px 23px;
+ display:flex;align-items:center;justify-content:space-between;gap:15px;font:700 16px "Space Grotesk";cursor:pointer
+}
+.rule-title .num{color:var(--gold);font-size:12px;margin-right:10px}.chev{color:#6d727d;font-size:18px;transition:.3s}
+.rule-card.open .chev{transform:rotate(45deg);color:var(--gold)}
+.rule-body{max-height:0;overflow:hidden;transition:max-height .5s cubic-bezier(.2,.8,.2,1);padding:0 23px;color:#b5b8c0}
+.rule-card.open .rule-body{max-height:4000px;padding-bottom:23px}
+.rule-body p,.rule-body li{font-size:14px;line-height:1.85}.rule-body ul{padding-left:20px}
+.rule-body li{margin:7px 0}.rule-body strong{color:#fff}
+.danger{margin:5px 0 22px;padding:19px;border:1px solid rgba(255,83,100,.28);background:rgba(255,83,100,.06);border-radius:16px}
+.danger h4{color:#ff7380;margin-bottom:10px}.danger p{color:#d9aeb2}
+.note{margin-top:18px;padding:18px;border-left:3px solid var(--gold);background:rgba(255,211,79,.045);border-radius:0 12px 12px 0}
+.rule-body hr{border:0;border-top:1px solid var(--line);margin:22px 0}
+.hidden-result{display:none;text-align:center;color:#777;padding:30px}
+
+.cta{
+ margin-top:75px;padding:55px;border-radius:30px;border:1px solid rgba(255,211,79,.17);
+ background:radial-gradient(circle at 80% 20%,rgba(255,211,79,.11),transparent 30%),linear-gradient(135deg,rgba(255,255,255,.04),rgba(255,255,255,.015));
+ text-align:center;position:relative;overflow:hidden
+}
+.cta h2{font:700 clamp(30px,5vw,48px) "Space Grotesk";letter-spacing:-2px}.cta p{color:var(--muted);margin:13px auto 25px;max-width:600px;line-height:1.7}
+footer{border-top:1px solid var(--line);padding:40px 20px;background:#040507}
+.footer-inner{width:min(1120px,100%);margin:auto;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.footer-logo{display:flex;align-items:center;gap:10px;font-weight:800}.footer-logo img{width:35px;height:35px;object-fit:contain}
+footer small{color:#666b75}
+
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}.reveal.show{opacity:1;transform:none}
+#top{position:fixed;right:22px;bottom:22px;width:46px;height:46px;border:1px solid var(--line);border-radius:50%;background:rgba(10,11,15,.8);color:#fff;z-index:40;opacity:0;pointer-events:none;transition:.3s;cursor:pointer}
+#top.show{opacity:1;pointer-events:auto}
+
+@keyframes logoIn{from{opacity:0;transform:scale(.65) rotate(-8deg);filter:blur(12px)}to{opacity:1;transform:none;filter:none}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes float{50%{transform:translateY(-10px)}} @keyframes pulse{50%{transform:scale(1.45);opacity:.5}}
+@keyframes spin{to{transform:rotate(360deg)}} @keyframes marquee{to{transform:translateX(-50%)}}
+@keyframes panelIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+
+@media(max-width:720px){
+ nav{top:9px;height:58px;border-radius:17px;padding-left:12px}.brand span{font-size:12px}.brand img{width:35px;height:35px}
+ .navlinks{display:none;position:absolute;top:67px;left:0;right:0;flex-direction:column;padding:10px;background:rgba(7,8,11,.95);border:1px solid var(--line);border-radius:18px}
+ .navlinks.open{display:flex}.navlinks a{padding:13px}.menu{display:block}
+ .hero{padding-top:105px}.logo-stage{width:min(330px,82vw)}.hero h1{letter-spacing:-2px}.hero p{font-size:14px}
+ section{padding:80px 14px}.section-head{display:block}.section-desc{margin-top:14px}
+ .rules-nav{grid-template-columns:1fr}.rule-choice{padding:20px}.rule-title{font-size:14px;padding:18px}.rule-body{padding:0 18px}
+ .rule-card.open .rule-body{padding-bottom:20px}.rule-body p,.rule-body li{font-size:13px}
+ .cta{padding:35px 20px}.footer-inner{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+<canvas id="canvas"></canvas><div class="ambient"></div>
+
+<nav>
+ <a class="brand" href="#home"><img src="https://cdn.discordapp.com/attachments/1420059113462960229/1545942224427290734/a_3dbcd5e242e28e044dfca31847b3ba23.gif" alt="Sud Italy RP"><span>SUD ITALY <b>RP</b></span></a>
+ <div class="navlinks" id="navlinks">
+   <a class="active" href="#home">Home</a><a href="#regolamento">Regolamento</a><a href="#game">Game</a><a href="#discord">Discord</a>
+   <a class="navdiscord" href="https://discord.gg/suditalyrp" target="_blank">Discord ↗</a>
+ </div>
+ <button class="menu" id="menu">☰</button>
+</nav>
+
+<main id="home">
+<section class="hero">
+ <div class="hero-inner">
+   <div class="eyebrow"><i></i> REGOLAMENTO UFFICIALE • SUD ITALY RP</div>
+   <div class="logo-stage">
+     <div class="orbit"></div>
+     <img src="https://cdn.discordapp.com/attachments/1420059113462960229/1545942224427290734/a_3dbcd5e242e28e044dfca31847b3ba23.gif" alt="Logo animato Sud Italy RP">
+   </div>
+   <h1>SUD ITALY <span>RP</span></h1>
+   <p>Il regolamento ufficiale di Sud Italy RP. Tutte le norme del <strong>Game</strong> e del <strong>Discord</strong>, organizzate in modo chiaro, moderno e semplice da consultare.</p>
+   <div class="hero-actions">
+     <a class="btn gold" href="#game">🎮 REGOLAMENTO GAME</a>
+     <a class="btn" href="#discord">💬 REGOLAMENTO DISCORD</a>
+     <a class="btn discord" href="https://discord.gg/suditalyrp" target="_blank">🚀 ENTRA NEL DISCORD</a>
+   </div>
+ </div>
+ <div class="scrollhint">SCORRI</div>
+</section>
+
+<div class="marquee"><div class="marquee-track">
+ <span>🇮🇹 <strong>SUD ITALY RP</strong></span><span>•</span><span>ROLEPLAY SERIO</span><span>•</span><span>RISPETTO</span><span>•</span><span>FAIR PLAY</span><span>•</span><span>COMMUNITY</span><span>•</span>
+ <span>🇮🇹 <strong>SUD ITALY RP</strong></span><span>•</span><span>ROLEPLAY SERIO</span><span>•</span><span>RISPETTO</span><span>•</span><span>FAIR PLAY</span><span>•</span><span>COMMUNITY</span>
+</div></div>
+
+<section id="regolamento">
+ <div class="wrap">
+  <div class="section-head reveal">
+   <div><div class="kicker">DOCUMENTAZIONE</div><h2 class="section-title">Il Regolamento.</h2></div>
+   <p class="section-desc">Scegli la sezione che vuoi consultare. Le regole sono state mantenute identiche al regolamento fornito.</p>
+  </div>
+
+  <div class="rules-nav reveal">
+   <div class="rule-choice selected" data-target="game" onclick="switchRules('game')"><div class="icon">🎮</div><h3>Regolamento Game</h3><p>Regole RP, Safe Zone, Gang e Rapine.</p></div>
+   <div class="rule-choice" data-target="discord" onclick="switchRules('discord')"><div class="icon">💬</div><h3>Regolamento Discord</h3><p>Rispetto, linguaggio, staff e ticket.</p></div>
+  </div>
+
+  <div id="game" class="rule-panel active">
+   <input class="searchbar" placeholder="🔎 Cerca una regola nel Game..." oninput="searchRules(this,'gameRules')">
+   <div id="gameRules">
+    <div class="rule-card open">
+     <button class="rule-title"><span><span class="num">01</span>Comportamento RP scorretto</span><span class="chev">+</span></button>
+     <div class="rule-body">
+      <div class="danger"><h4>🚫 BAN PERMA</h4><p>
+      ❌ Vietato utilizzare <strong>Stop Stick</strong>.<br>
+      ❌ Vietato compiere <strong>atti osceni</strong>.<br>
+      ❌ Vietato utilizzare il <strong>Radar Gun</strong>, ma può usarlo solo la <strong>Polizia Locale</strong>.<br>
+      ❌ Vietato utilizzare <strong>bombe e C4</strong>.<br>
+      ❌ Vietato utilizzare <strong>Flashbang</strong>, possono essere utilizzati solamente dai <strong>Reparti Speciali</strong> e dai <strong>Militari</strong>.<br>
+      ❌ Vietato utilizzare <strong>GPS</strong>, può essere utilizzato solamente dai <strong>Reparti Speciali</strong>.<br>
+      ❌ Vietato effettuare <strong>Evading Staff</strong>.
+      </p></div>
+      <hr><ul>
+      <li><strong>Fail RP:</strong> Azioni irrealistiche o incoerenti con il ruolo del proprio personaggio.</li>
+      <li><strong>No Fear:</strong> Ignorare la paura in situazioni pericolose dove un personaggio realistico reagirebbe.</li>
+      <li><strong>Powergaming (PG):</strong> Costringere altri giocatori a subire azioni impossibili oppure rendere il proprio personaggio troppo potente o immortale.</li>
+      <li><strong>Revenge Kill (RK):</strong> Tornare dopo la morte solamente per vendicarsi senza un valido motivo RP.</li>
+      <li><strong>Random Deathmatch (RDM):</strong> Uccidere altri giocatori senza un motivo valido RP.</li>
+      <li><strong>Vehicle Deathmatch (VDM):</strong> Usare veicoli per fare danni o uccidere altri giocatori senza motivo RP.</li>
+      <li><strong>Cuff-Rush:</strong> Arrestare o immobilizzare altri giocatori senza motivo valido o senza contesto RP.</li>
+      <li><strong>Uscire durante una scena RP:</strong> Lasciare una scena RP attiva senza motivo valido.<br>(Può comportare un ban temporaneo.)</li>
+      <li><strong>No Crash:</strong> Ignorare incidenti o conseguenze realistiche delle proprie azioni.</li>
+      </ul>
+     </div>
+    </div>
+
+    <div class="rule-card"><button class="rule-title"><span><span class="num">02</span>Abusi verso altri giocatori</span><span class="chev">+</span></button><div class="rule-body"><ul>
+      <li><strong>Bunny Hopping:</strong> Saltare ripetutamente per ottenere vantaggi ingiusti.</li>
+      <li><strong>Bug Abuse:</strong> Sfruttare bug o glitch del gioco per ottenere vantaggi ingiusti o compiere azioni non previste.</li>
+      <li><strong>Car-Surf:</strong> Stare sopra veicoli in movimento senza motivo RP coerente.</li>
+      <li><strong>Cop Baiting:</strong> Provocare la polizia solamente per farla reagire.</li>
+      <li><strong>Cop Evading:</strong> Tentare di sfuggire alle forze dell'ordine con comportamenti irrealistici o abusivi, evitando intenzionalmente l'arresto senza una valida motivazione RP.</li>
+    </ul></div></div>
+
+    <div class="rule-card"><button class="rule-title"><span><span class="num">03</span>Violazioni Meccaniche / OOC</span><span class="chev">+</span></button><div class="rule-body"><ul>
+      <li><strong>IC (In Character):</strong> Tutto ciò che riguarda il tuo personaggio e le azioni svolte all’interno del Roleplay.</li>
+      <li><strong>OOC (Out Of Character):</strong> Tutto ciò che viene detto o fatto fuori dal Roleplay e che non riguarda il proprio personaggio.</li>
+      <li><strong>Metagaming (MG):</strong> Usare informazioni ottenute fuori dal gioco (OOC) all’interno dell’RP.</li>
+      <li><strong>MixChat:</strong> Mescolare IC (in-character) e OOC (out-of-character) nella stessa conversazione.</li>
+      <li><strong>Combat Logging:</strong> Disconnettersi durante un combattimento per evitare conseguenze RP.</li>
+      <li><strong>LTAA (Leave To Avoid Arrest):</strong> Disconnettersi o resettare per evitare arresti o conseguenze RP.</li>
+      <li><strong>Stream Sniping:</strong> Usare live streaming per interferire o trollare un giocatore.</li>
+    </ul></div></div>
+
+    <div class="rule-card"><button class="rule-title"><span><span class="num">04</span>Safe Zone</span><span class="chev">+</span></button><div class="rule-body">
+      <p>Le Safe-Zone sono le seguenti:</p><ul>
+      <li>🚔 Questura<br>(Se entrate in una zona militare come uffici o corridoi riservati sarete sottoposti ad arresto immediato.)</li>
+      <li>🚒 Caserma Vigili del Fuoco</li><li>🏥 Ospedale</li><li>⛓️ Prigione</li><li>🔧 Tuning</li><li>🏠 Ville</li><li>🪖 Zone Militari</li></ul>
+      <div class="note">Le scene che iniziano fuori dalla Safe-Zone possono continuare dentro.</div>
+    </div></div>
+
+    <div class="rule-card"><button class="rule-title"><span><span class="num">05</span>Extra / Regole Generali</span><span class="chev">+</span></button><div class="rule-body"><ul>
+      <li><strong>🎯 Sponsor:</strong> È vietato pubblicizzare altri server all’interno del nostro server.<br><strong>Sanzione:</strong> Ban permanente e possibile blacklist.</li>
+      <li><strong>🔥 Flame:</strong> Insulti rivolti verso altri giocatori o comportamenti offensivi.<br>(Violazione grave, la sanzione dipenderà dalla situazione.)</li>
+    </ul></div></div>
+
+    <div class="rule-card"><button class="rule-title"><span><span class="num">06</span>Norme per le Gang</span><span class="chev">+</span></button><div class="rule-body">
+      <ul><li>💣 È vietato l’utilizzo di bombe.</li><li>🏠 È vietato entrare nelle ville di altre gang per insultare o provocare i membri.</li><li>❌ È vietato fare RDM tra membri della stessa gang nella città.</li><li>⚔️ L’unica zona dove è consentito fare 1vs1 tra membri della stessa gang è il grande parcheggio davanti alla nave del porto.</li></ul>
+      <div class="note"><strong>⚔️ Regole 1vs1:</strong><br><br>
+      • I poliziotti non possono arrestare i partecipanti durante gli 1vs1.<br><br>
+      • Tutte le altre regole RP rimangono comunque valide.<br><br>
+      • Gli 1vs1 sono considerati situazioni <strong>OFF-RP</strong>.<br><br>
+      • Non ascoltare i responsabili della zona può portare a conseguenze RP.</div><br>
+      <ul><li>⚠️ Se un membro commette RDM, VDM, FRP o simili contro cittadini, criminali o poliziotti, il Warn verrà assegnato solamente al giocatore che ha commesso l'infrazione.<br><br>La decisione di rimuovere o meno la gang sarà presa esclusivamente dai CEO.</li>
+      <li>🏠 Le ville e i ghetti sono considerate Safe Zone.</li><li>🔫 È possibile sparare ad un poliziotto solamente se effettua un’irruzione all’interno di queste zone.</li></ul>
+    </div></div>
+
+    <div class="rule-card"><button class="rule-title"><span><span class="num">07</span>Norme Rapine</span><span class="chev">+</span></button><div class="rule-body">
+      <p>Tutte le rapine devono rispettare sempre le regole RP.</p><ul>
+      <li>🏪 <strong>Farm Shop</strong><br>• Rapinatori: massimo 2 persone + 1 ostaggio<br>• Polizia: massimo 3-4 persone<br>• Richiesta massima: 4.000$</li>
+      <li>💎 <strong>Gioielleria</strong><br>• Rapinatori: massimo 5 persone + ostaggio<br>• Polizia: come da RP<br>• Richiesta: illimitata</li>
+      <li>🏦 <strong>Banca</strong><br>• Stesse regole della Gioielleria<br>• Massimo 5 rapinatori + ostaggio<br>• Richiesta illimitata</li>
+      <li>👕 <strong>Clothing</strong><br>• Rapinatori: massimo 2 persone + 1 ostaggio<br>• Polizia: massimo 3-4 persone<br>• Richiesta massima: 4.000$</li>
+      <li>🎵 <strong>Club</strong><br>• Rapinatori: massimo 5 persone<br>• Polizia: 8-9 persone<br>• Richiesta massima: 8.000$</li>
+      <li>⛽ <strong>Gas-N-Go Fuel</strong><br>• Rapinatori: massimo 2 persone + 1 ostaggio<br>• Polizia: massimo 3-4 persone<br>• Richiesta massima: 4.000$</li>
+      <li>⛽ <strong>Ares Fuel</strong><br>• Rapinatori: massimo 2 persone + 1 ostaggio<br>• Polizia: massimo 3-4 persone<br>• Richiesta massima: 4.000$</li>
+      <li>🛠️ <strong>Tool Shop</strong><br>• Rapinatori: massimo 2 persone + 1 ostaggio<br>• Polizia: massimo 3-4 persone<br>• Richiesta massima: 4.000$</li>
+      <li>⛽ <strong>Osso Fuel</strong><br>• Rapinatori: massimo 2 persone + 1 ostaggio<br>• Polizia: massimo 3-4 persone<br>• Richiesta massima: 4.000$</li>
+      </ul><div class="note"><strong>⚠️ Note Generali</strong><br><br>• Tutte le rapine devono rispettare le regole RP.<br>• Ogni abuso o violazione comporterà sanzioni.</div>
+    </div></div>
+    <div class="hidden-result" id="gameNo">Nessuna regola trovata.</div>
+   </div>
+  </div>
+
+  <div id="discord" class="rule-panel">
+   <input class="searchbar" placeholder="🔎 Cerca una regola nel Discord..." oninput="searchRules(this,'discordRules')">
+   <div id="discordRules">
+    <div class="rule-card open"><button class="rule-title"><span><span class="num">01</span>Rispetto Generale</span><span class="chev">+</span></button><div class="rule-body">
+      <ul><li>È severamente vietato insultare familiari o altri utenti.</li><li>È severamente vietato condividere o divulgare contenuti osceni.</li><li>È obbligatorio rispettare lo Staff, i cittadini e tutti i membri della community.</li><li>È vietato divulgare dati personali di altri utenti.</li><li>È vietato inviare link dannosi o contenuti non consentiti.</li><li>È richiesto di mantenere sempre un linguaggio educato e rispettoso.</li></ul>
+      <div class="danger"><h4>🚫 SANZIONI</h4><p>Le violazioni più gravi possono comportare:<br>• Timeout<br>• Kick<br>• Ban Permanente</p></div>
+    </div></div>
+    <div class="rule-card"><button class="rule-title"><span><span class="num">02</span>Linguaggio</span><span class="chev">+</span></button><div class="rule-body">
+      <ul><li>È vietato effettuare <strong>spam o flood</strong>.</li><li>È vietato <strong>scrivere in grande</strong> o utilizzare messaggi eccessivamente ingombranti per disturbare la chat.</li><li>Evita bestemmie e linguaggio offensivo.</li><li>Non disturbare gli altri utenti nei canali vocali.</li></ul>
+      <div class="note"><strong>⚠️ SANZIONE:</strong><br><br>Chi effettua <strong>spam, flood o scrive in grande</strong> riceverà un <strong>TIMEOUT</strong>.</div>
+    </div></div>
+    <div class="rule-card"><button class="rule-title"><span><span class="num">03</span>Staff</span><span class="chev">+</span></button><div class="rule-body"><ul><li>È vietato chiedere ruoli Staff.</li><li>Le candidature vengono aperte solo quando necessario.</li><li>Le decisioni dello Staff devono essere rispettate.</li></ul></div></div>
+    <div class="rule-card"><button class="rule-title"><span><span class="num">04</span>Ticket</span><span class="chev">+</span></button><div class="rule-body">
+      <ul><li>Apri ticket solo se realmente necessario.</li><li>Non aprire ticket multipli per lo stesso problema.</li><li>Rispetta sempre lo Staff durante l’assistenza.</li></ul>
+      <div class="note">I ticket inattivi potranno essere chiusi automaticamente dallo Staff.</div>
+    </div></div>
+    <div class="cta"><h2>Grazie per far parte di Sud Italy RP ❤️</h2><p>Seguendo queste semplici regole aiuterai a mantenere una community seria, ordinata e divertente per tutti.</p><a class="btn discord" href="https://discord.gg/suditalyrp" target="_blank">🚀 ENTRA NEL DISCORD</a></div>
+    <div class="hidden-result" id="discordNo">Nessuna regola trovata.</div>
+   </div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="footer-inner">
+  <div class="footer-logo"><img src="https://cdn.discordapp.com/attachments/1420059113462960229/1545942224427290734/a_3dbcd5e242e28e044dfca31847b3ba23.gif" alt=""> SUD ITALY RP 🇮🇹</div>
+  <small>© 2026 Sud Italy RP • Regolamento Ufficiale</small>
+ </div>
+</footer>
+<button id="top" aria-label="Torna su">↑</button>
+
+<script>
+const menu=document.getElementById('menu'), links=document.getElementById('navlinks');
+menu.onclick=()=>links.classList.toggle('open');
+
+document.querySelectorAll('.rule-title').forEach(btn=>{
+ btn.addEventListener('click',()=>{
+  const card=btn.parentElement;
+  card.classList.toggle('open');
+ });
+});
+
+function switchRules(type){
+ document.querySelectorAll('.rule-choice').forEach(x=>x.classList.toggle('selected',x.dataset.target===type));
+ document.querySelectorAll('.rule-panel').forEach(x=>x.classList.remove('active'));
+ document.getElementById(type).classList.add('active');
+ document.getElementById('regolamento').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function searchRules(input,id){
+ const root=document.getElementById(id), q=input.value.toLowerCase().trim();
+ let found=0;
+ root.querySelectorAll('.rule-card').forEach(card=>{
+  const ok=card.innerText.toLowerCase().includes(q);
+  card.style.display=ok?'block':'none'; if(ok) found++;
+ });
+ const no=document.getElementById(id==='gameRules'?'gameNo':'discordNo');
+ no.style.display=found?'none':'block';
+}
+
+const observer=new IntersectionObserver(entries=>{
+ entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')});
+},{threshold:.08});
+document.querySelectorAll('.reveal').forEach(e=>observer.observe(e));
+
+const topBtn=document.getElementById('top');
+window.addEventListener('scroll',()=>{
+ topBtn.classList.toggle('show',scrollY>600);
+ document.querySelectorAll('nav a[href^="#"]').forEach(a=>a.classList.remove('active'));
+});
+topBtn.onclick=()=>scrollTo({top:0,behavior:'smooth'});
+
+const c=document.getElementById('canvas'),ctx=c.getContext('2d');
+let w,h,pts=[];
+function resize(){w=c.width=innerWidth*devicePixelRatio;h=c.height=innerHeight*devicePixelRatio;ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0);w=innerWidth;h=innerHeight;
+ pts=Array.from({length:Math.min(70,Math.floor(innerWidth/18))},()=>({x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.5+.3,v:Math.random()*.22+.05,a:Math.random()*.35+.08}));
+}
+resize();addEventListener('resize',resize);
+function stars(){
+ ctx.clearRect(0,0,w,h);
+ pts.forEach(p=>{p.y-=p.v;if(p.y<0)p.y=h;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=`rgba(255,211,79,${p.a})`;ctx.fill()});
+ requestAnimationFrame(stars);
+}
+stars();
+
+document.querySelectorAll('.navlinks a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+</script>
+</body>
+</html>
